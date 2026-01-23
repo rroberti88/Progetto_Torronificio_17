@@ -6,27 +6,37 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
-        <!-- Sinistra: Nome -->
-        <div>
-            <h2>Torronificio Nardone dal 1903</h2>
+    <!-- Header principale -->
+    <div style="position: relative; width: 100%; height: 100px;">
+
+        <!-- Sezioni a sinistra -->
+        <div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%);">
+            <p>
+                <a href="Shop.html">Shop</a> | 
+                <a href="Ricette.html">Ricette</a> | 
+            </p>
         </div>
 
-        <!-- Centro: Logo -->
-        <div>
-            <!-- Sostituisci "logo.png" con il percorso della tua immagine -->
+        <!-- Logo al centro esatto -->
+        <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
             <img src="LogoNardone.jpg" alt="Logo Torronificio" width="150">
         </div>
 
-        <!-- Destra: Link alle pagine future -->
-        <div>
+        <!-- Login e Carrello a destra -->
+        <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
             <p>
-                <a href="#">Shop</a> | 
-                <a href="#">Ricette</a> | 
-                <a href="#">Storia, Fiere ed Eventi</a>
+                <a href="Login.html">Login</a> | 
+                <a href="Carrello.html">Carrello</a>
             </p>
         </div>
+
     </div>
+
+    <!-- Contenuto principale -->
+    <div style="text-align: center; margin-top: 150px;">
+        <h1>Benvenuti al Torronificio Nardone</h1>
+        <p>Scopri i nostri torroni artigianali e le ricette tradizionali dal 1903.</p>
+    </div>
+
 </body>
 </html>
