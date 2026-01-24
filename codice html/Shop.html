@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>Shop</title>
     <link rel="icon" type="image/png" href="../immagini jpg/LogoNardone.jpg">
+    <link rel="stylesheet" href="../css/Shop.css">
+  
 </head>
-<body>
-    <!-- HEADER -->
-    <div style="position: relative; width: 100%; height: 100px;">
 
-        <!-- Sezioni a sinistra -->
-        <div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); display: flex; gap: 10px; align-items: center;">
-            <a href="Home.html" style="text-decoration: none;">Home</a>
-            <span>|</span>
-            <a href="Ricette.html" style="text-decoration: none;">Ricette</a>
-        </div>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-left">
+        <a href="Home.html">Home</a>
+        <span>|</span>
+        <a href="Ricette.html">Ricette</a>
+    </div>
 
         <!-- Logo al centro -->
         <div align = "center">
@@ -22,234 +24,203 @@
                 <img src="../immagini jpg/LogoNardone.jpg" alt="Logo" width="150">
             </a>
         </div>
+    <a href="Home.html">
+        <img src="../immagini jpg/LogoNardone.jpg" alt="Logo" width="150">
+    </a>
 
-        <!-- Login e Carrello a destra -->
-        <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; gap: 10px;">
-            <a href="Login.html" style="text-decoration: none; font-size: 18px;">👤</a>
-            <span>|</span>
-            <a href="Carrello.html" style="text-decoration: none; font-size: 18px;">🛒</a>
-        </div>
-
+    <div class="header-right">
+        <a href="Login.html" style="font-size:18px;">👤</a>
+        <span>|</span>
+        <a href="Carrello.html" style="font-size:18px;">🛒</a>
     </div>
+</header>
 
-    <!-- SHOP -->
-    <table width="100%" cellspacing="20">
-        <tr>
-<!-- Colonna sinistra: categorie, ricerca e filtro -->
-<td width="20%" valign="top">
-    <h2>Categorie</h2>
-<ul style="list-style: none; padding: 0;">
-    <li><a href="#torrone" style="text-decoration: none;">Torrone</a></li>
-    <li><a href="#panettoni" style="text-decoration: none;">Panettoni</a></li>
-    <li><a href="#torroncini" style="text-decoration: none;">Torroncini sfusi (1kg)</a></li>
-    <li><a href="#croccanti" style="text-decoration: none;">Croccanti</a></li>
-    <li><a href="#confezioni" style="text-decoration: none;">Confezioni regalo</a></li>
-    <li><a href="#biscotti" style="text-decoration: none;">Biscotti</a></li>
-    <li><a href="#uova" style="text-decoration: none;">Uova di Pasqua</a></li>
-    <li><a href="#cioccolato" style="text-decoration: none;">Cioccolato</a></li>
-</ul>
+<!-- SHOP -->
+<div class="shop">
 
+    <!-- SIDEBAR -->
+    <aside>
+        <h2>Categorie</h2>
+        <ul>
+            <li><a href="#torrone">Torrone</a></li>
+            <li><a href="#panettoni">Panettoni</a></li>
+            <li><a href="#torroncini">Torroncini sfusi (1kg)</a></li>
+            <li><a href="#croccanti">Croccanti</a></li>
+            <li><a href="#confezioni">Confezioni regalo</a></li>
+            <li><a href="#biscotti">Biscotti</a></li>
+            <li><a href="#uova">Uova di Pasqua</a></li>
+            <li><a href="#cioccolato">Cioccolato</a></li>
+        </ul>
 
-    <!-- Barra di ricerca -->
-    <h3>Cerca prodotto</h3>
-    <form>
-        <input type="text" placeholder="Nome prodotto" name="search" style="width: 100%; padding: 5px;">
-        <button type="submit" style="margin-top: 5px; width: 100%;">Cerca</button>
-    </form>
+        <h3>Cerca prodotto</h3>
+        <form>
+            <input type="text" placeholder="Nome prodotto" style="width:100%; padding:5px;">
+            <button type="submit" style="width:100%; margin-top:5px;">Cerca</button>
+        </form>
 
-    <!-- Filtro prezzo -->
-    <h3>Filtra per prezzo</h3>
-    <form>
-        <label for="min">Min €:</label><br>
-        <input type="number" id="min" name="min" style="width: 80%; padding: 3px;"><br><br>
+        <h3>Filtra per prezzo</h3>
+        <form>
+            <label>Min €:</label><br>
+            <input type="number" style="width:80%;"><br><br>
 
-        <label for="max">Max €:</label><br>
-        <input type="number" id="max" name="max" style="width: 80%; padding: 3px;"><br><br>
+            <label>Max €:</label><br>
+            <input type="number" style="width:80%;"><br><br>
 
-        <button type="submit" style="width: 100%;">Applica filtro</button>
-    </form>
-</td>
+            <button type="submit" style="width:100%;">Applica filtro</button>
+        </form>
+    </aside>
 
+    <!-- PRODOTTI -->
+    <main>
 
-            <!-- Colonna destra: prodotti -->
-            <td width="80%" valign="top">
-
-                <!-- Sezione Torrone -->
-                <h2 id="torrone">Torrone</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="torrone1.jpg" alt="Torrone 1" width="150"><br>
-                            <b>€5,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="torrone2.jpg" alt="Torrone 2" width="150"><br>
-                            <b>€6,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- Sezione Panettoni -->
-                <h2 id="panettoni">Panettoni</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="panettone1.jpg" alt="Panettone 1" width="150"><br>
-                            <b>€12,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="panettone2.jpg" alt="Panettone 2" width="150"><br>
-                            <b>€15,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- Sezione Torroncini -->
-                <h2 id="torroncini">Torroncini</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="torroncino1.jpg" alt="Torroncino 1" width="150"><br>
-                            <b>€2,50</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="torroncino2.jpg" alt="Torroncino 2" width="150"><br>
-                            <b>€3,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- Sezione Croccanti -->
-                <h2 id="croccanti">Croccanti</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="croccante1.jpg" alt="Croccante 1" width="150"><br>
-                            <b>€4,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="croccante2.jpg" alt="Croccante 2" width="150"><br>
-                            <b>€4,50</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- Sezione Confezioni regalo -->
-                <h2 id="confezioni">Confezioni regalo</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="confezione1.jpg" alt="Confezione regalo 1" width="150"><br>
-                            <b>€20,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="confezione2.jpg" alt="Confezione regalo 2" width="150"><br>
-                            <b>€25,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- Sezione Biscotti -->
-                <h2 id="biscotti">Biscotti</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="biscotti1.jpg" alt="Biscotti 1" width="150"><br>
-                            <b>€3,50</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="biscotti2.jpg" alt="Biscotti 2" width="150"><br>
-                            <b>€4,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- Sezione Uova di Pasqua -->
-                <h2 id="uova">Uova di Pasqua</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="uova1.jpg" alt="Uovo di Pasqua 1" width="150"><br>
-                            <b>€10,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="uova2.jpg" alt="Uovo di Pasqua 2" width="150"><br>
-                            <b>€12,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- Sezione Cioccolato -->
-                <h2 id="cioccolato">Cioccolato</h2>
-                <table cellspacing="10">
-                    <tr>
-                        <td align="center" valign="top" width="150">
-                            <img src="cioccolato1.jpg" alt="Cioccolato 1" width="150"><br>
-                            <b>€6,00</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                        <td align="center" valign="top" width="150">
-                            <img src="cioccolato2.jpg" alt="Cioccolato 2" width="150"><br>
-                            <b>€7,50</b><br>
-                            <button>Aggiungi al carrello</button>
-                        </td>
-                    </tr>
-                </table>
-
-            </td>
-        </tr>
-    </table>
-
-    <!-- FOOTER UNICO -->
-    <footer style="margin-top: 150px;">
-        <hr>
-        <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 80px; padding: 30px 0;">
-            <!-- SINISTRA -->
-            <div style="width: 250px; text-align: center;">
-                <h3>
-                    <img src="../immagini jpg/LogoNardone.jpg" alt="Logo Torronificio Nardone" width="150">
-                </h3>
-                <p>📧 <a href="mailto:info@torronenardone.it" style="text-decoration: none;">info@torronenardone.it</a></p>
-                <p>ⓕ <a href="https://www.facebook.com" target="_blank" style="text-decoration: none;">Torronificio Nardone S.R.L.</a></p>
+        <h2 id="torrone">Torrone</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="torrone1.jpg" width="150"><br>
+                <b>€5,00</b><br>
+                <button>Aggiungi al carrello</button>
             </div>
-            <!-- CENTRO -->
-            <div style="width: 300px; text-align: center;">
-                <h2>Il Nostro Showroom</h2>
-                <address style="font-style: normal;">
-                    <strong>Torronificio Nardone</strong><br>
-                    Via Roma, 144<br>
-                    83030 Pietradefusi fraz. Dentecane (AV)<br>
-                    ☎️ <a href="tel:+390825962028" style="text-decoration: none;">+39 0825 962028</a>
-                </address>
-            </div>
-            <!-- DESTRA -->
-            <div style="width: 250px; text-align: center;">
-                <h3>Orari di Apertura</h3>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li><strong>Lunedì - Venerdì:</strong><br>08:30 - 13:30 / 15:30 - 20:00</li>
-                    <li><strong>Sabato:</strong><br>10:30 - 13:30 / 15:30 - 19:30</li>
-                    <li><strong>Domenica:</strong><br>08:30 - 12:30</li>
-                </ul>
+            <div class="prodotto">
+                <img src="torrone2.jpg" width="150"><br>
+                <b>€6,00</b><br>
+                <button>Aggiungi al carrello</button>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 20px;">
-            <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
+
+        <h2 id="panettoni">Panettoni</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="panettone1.jpg" width="150"><br>
+                <b>€12,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+            <div class="prodotto">
+                <img src="panettone2.jpg" width="150"><br>
+                <b>€15,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
         </div>
-    </footer>
+
+        <h2 id="torroncini">Torroncini</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="torroncino1.jpg" width="150"><br>
+                <b>€2,50</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+            <div class="prodotto">
+                <img src="torroncino2.jpg" width="150"><br>
+                <b>€3,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+        </div>
+
+        <h2 id="croccanti">Croccanti</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="croccante1.jpg" width="150"><br>
+                <b>€4,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+            <div class="prodotto">
+                <img src="croccante2.jpg" width="150"><br>
+                <b>€4,50</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+        </div>
+
+        <h2 id="confezioni">Confezioni regalo</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="confezione1.jpg" width="150"><br>
+                <b>€20,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+            <div class="prodotto">
+                <img src="confezione2.jpg" width="150"><br>
+                <b>€25,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+        </div>
+
+        <h2 id="biscotti">Biscotti</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="biscotti1.jpg" width="150"><br>
+                <b>€3,50</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+            <div class="prodotto">
+                <img src="biscotti2.jpg" width="150"><br>
+                <b>€4,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+        </div>
+
+        <h2 id="uova">Uova di Pasqua</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="uova1.jpg" width="150"><br>
+                <b>€10,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+            <div class="prodotto">
+                <img src="uova2.jpg" width="150"><br>
+                <b>€12,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+        </div>
+
+        <h2 id="cioccolato">Cioccolato</h2>
+        <div class="lista-prodotti">
+            <div class="prodotto">
+                <img src="cioccolato1.jpg" width="150"><br>
+                <b>€6,00</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+            <div class="prodotto">
+                <img src="cioccolato2.jpg" width="150"><br>
+                <b>€7,50</b><br>
+                <button>Aggiungi al carrello</button>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<!-- FOOTER UNICO -->
+<footer style="margin-top: 150px;">
+    <hr>
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 80px; padding: 30px 0;">
+        <div style="width: 250px; text-align: center;">
+            <h3>
+                <img src="../immagini jpg/LogoNardone.jpg" alt="Logo Torronificio Nardone" width="150">
+            </h3>
+            <p>📧 <a href="mailto:info@torronenardone.it" style="text-decoration: none;">info@torronenardone.it</a></p>
+            <p>ⓕ <a href="https://www.facebook.com" target="_blank" style="text-decoration: none;">Torronificio Nardone S.R.L.</a></p>
+        </div>
+        <div style="width: 300px; text-align: center;">
+            <h2>Il Nostro Showroom</h2>
+            <address style="font-style: normal;">
+                <strong>Torronificio Nardone</strong><br>
+                Via Roma, 144<br>
+                83030 Pietradefusi fraz. Dentecane (AV)<br>
+                ☎️ <a href="tel:+390825962028" style="text-decoration: none;">+39 0825 962028</a>
+            </address>
+        </div>
+        <div style="width: 250px; text-align: center;">
+            <h3>Orari di Apertura</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li><strong>Lunedì - Venerdì:</strong><br>08:30 - 13:30 / 15:30 - 20:00</li>
+                <li><strong>Sabato:</strong><br>10:30 - 13:30 / 15:30 - 19:30</li>
+                <li><strong>Domenica:</strong><br>08:30 - 12:30</li>
+            </ul>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
+    </div>
+</footer>
 
 </body>
 </html>

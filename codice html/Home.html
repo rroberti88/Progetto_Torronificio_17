@@ -4,65 +4,41 @@
     <meta charset="UTF-8">
     <title>Torronificio Nardone</title>
     <link rel="icon" type="image/png" href="../immagini jpg/LogoNardone.jpg">
-
+    <link rel="stylesheet" href="../css/Home.css">
 </head>
 <body>
 
-    <!-- Header principale -->
-    <div style="position: relative; width: 100%; height: 100px;">
+<!-- HEADER -->
+<div class="header">
 
-        <!-- Sezioni a sinistra -->
-       <div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); display: flex; gap: 10px; align-items: center;">
-
-    <a href="Shop.html" style="text-decoration: none;">
-        Shop
-    </a>
-
-    <span>|</span>
-
-    <a href="Ricette.html" style="text-decoration: none;">
-        Ricette
-    </a>
-
-</div>
-
-
-        <!-- Logo al centro esatto -->
-        <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
-            <img src="../immagini jpg/LogoNardone.jpg" alt="Logo Torronificio" width="150">
-        </div>
-
-        <!-- Login e Carrello a destra -->
-        <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; gap: 10px;">
-    
-    <a href="Login.html" style="text-decoration: none; font-size: 18px;">
-        👤
-    </a>
-
-    <span>|</span>
-
-    <a href="Carrello.html" style="text-decoration: none; font-size: 18px;">
-        🛒
-    </a>
-
-</div>
-
-
+    <!-- Menu a sinistra -->
+    <div class="header-left">
+        <a href="Shop.html">Shop</a>
+        <span>|</span>
+        <a href="Ricette.html">Ricette</a>
     </div>
 
-    <!-- Contenuto principale -->
-    <div style="text-align: center; margin-top: 30px;">
-    <a href="#">
-        <button>Chi siamo</button>
-    </a>
+    <!-- Logo centrale + Bottone Chi Siamo -->
+    <div class="logo-chi-siamo">
+        <a href="Home.html">
+            <img src="../immagini jpg/LogoNardone.jpg" alt="Logo Torronificio" width="150">
+        </a>
+        <a href="#"><button class="chi-siamo">Chi siamo</button></a>
+    </div>
+
+    <!-- Icone login e carrello a destra -->
+    <div class="header-right">
+        <a href="Login.html">👤</a>
+        <span>|</span>
+        <a href="Carrello.html">🛒</a>
+    </div>
+
 </div>
 
-<div style="width: 100%; display: flex; justify-content: flex-end; margin-top: 50px;">
-
-    <div style="width: 50%; text-align: center;">
-
+<!-- INTRO TESTO A DESTRA -->
+<div class="intro-container">
+    <div class="intro-text">
         <h2>Non è solo torrone, è l'arte di sapersi viziare!</h2>
-
         <p>
             Creare l'estasi perfetta è una questione di equilibrio.
             Cerchiamo la nota croccante che spezza la morbidezza,
@@ -71,157 +47,90 @@
             Trasformiamo elementi puri in capolavori da mordere,
             dove la qualità non è un traguardo, ma il nostro unico punto di partenza.
         </p>
-
-        <!-- Bottone SHOP centrato nella colonna di destra -->
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="#shop">
-                <button>Shop</button>
-            </a>
+        <div class="shop-button">
+            <a href="#shop"><button>Shop</button></a>
         </div>
+    </div>
+</div>
 
+<!-- CATEGORIE PRINCIPALI -->
+<div class="categorie-principali">
+
+    <h2>Scopri le nostre categorie principali</h2>
+
+    <div class="categorie-row">
+        <a href="Shop.html#torrone" class="categoria-box">
+            <img src="../immagini jpg/0101.jpg" alt="Torrone">
+            <span>Torrone</span>
+        </a>
+        <a href="Shop.html#panettoni" class="categoria-box">
+            <img src="../immagini jpg/panettone_tradizionale.jpg" alt="Panettoni">
+            <span>Panettoni</span>
+        </a>
+        <a href="Shop.html#torroncini" class="categoria-box">
+            <img src="torroncino1.jpg" alt="Torroncini">
+            <span>Torroncini sfusi</span>
+        </a>
+        <a href="Shop.html#croccanti" class="categoria-box">
+            <img src="../immagini jpg/0156 mandorle+riso.jpg" alt="Croccanti">
+            <span>Croccanti</span>
+        </a>
+    </div>
+
+    <div class="categorie-row">
+        <a href="Shop.html#confezioni" class="categoria-box">
+            <img src="../immagini jpg/0115 .jpg" alt="Confezioni regalo">
+            <span>Confezioni regalo</span>
+        </a>
+        <a href="Shop.html#biscotti" class="categoria-box">
+            <img src="../immagini jpg/0135 dolcetti mandorle.jpg" alt="Biscotti">
+            <span>Biscotti</span>
+        </a>
+        <a href="Shop.html#uova" class="categoria-box">
+            <img src="../immagini jpg/fondente 500g.jpg" alt="Uova di Pasqua">
+            <span>Uova di Pasqua</span>
+        </a>
+        <a href="Shop.html#cioccolato" class="categoria-box">
+            <img src="cioccolato1.jpg" alt="Cioccolato">
+            <span>Cioccolato</span>
+        </a>
     </div>
 
 </div>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer style="margin-top: 150px;">
-
     <hr>
-
-    <div style="
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 80px;
-        padding: 30px 0;
-    ">
-
-        <!-- SINISTRA -->
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 80px; padding: 30px 0;">
         <div style="width: 250px; text-align: center;">
-
             <h3>
                 <img src="../immagini jpg/LogoNardone.jpg" alt="Logo Torronificio Nardone" width="150">
             </h3>
-
-            <p>
-                📧
-                <a href="mailto:info@torronenardone.it" style="text-decoration: none;">
-                    info@torronenardone.it
-                </a>
-            </p>
-
-            <p>
-                ⓕ
-                <a href="https://www.facebook.com" target="_blank" style="text-decoration: none;">
-                    Torronificio Nardone S.R.L.
-                </a>
-            </p>
-
+            <p>📧 <a href="mailto:info@torronenardone.it" style="text-decoration: none;">info@torronenardone.it</a></p>
+            <p>ⓕ <a href="https://www.facebook.com" target="_blank" style="text-decoration: none;">Torronificio Nardone S.R.L.</a></p>
         </div>
-<footer style="margin-top: 150px;">
-
-    <hr>
-
-    <div style="
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 80px;
-        padding: 30px 0;
-    ">
-
-        <!-- SINISTRA -->
-        <div style="width: 250px; text-align: center;">
-
-            <h3>
-                <img src="../immagini jpg/LogoNardone.jpg" alt="Logo Torronificio Nardone" width="150">
-            </h3>
-
-            <p>
-                📧
-                <a href="mailto:info@torronenardone.it" style="text-decoration: none;">
-                    info@torronenardone.it
-                </a>
-            </p>
-
-            <p>
-                ⓕ
-                <a href="https://www.facebook.com" target="_blank" style="text-decoration: none;">
-                    Torronificio Nardone S.R.L.
-                </a>
-            </p>
-
-        </div>
-
-        <!-- CENTRO -->
         <div style="width: 300px; text-align: center;">
-
             <h2>Il Nostro Showroom</h2>
-        <!-- CENTRO -->
-        <div style="width: 300px; text-align: center;">
-
-            <h2>Il Nostro Showroom</h2>
-
             <address style="font-style: normal;">
                 <strong>Torronificio Nardone</strong><br>
                 Via Roma, 144<br>
                 83030 Pietradefusi fraz. Dentecane (AV)<br>
-                ☎️
-                <a href="tel:+390825962028" style="text-decoration: none;">
-                    +39 0825 962028
-                </a>
+                ☎️ <a href="tel:+390825962028" style="text-decoration: none;">+39 0825 962028</a>
             </address>
-
         </div>
-            <address style="font-style: normal;">
-                <strong>Torronificio Nardone</strong><br>
-                Via Roma, 144<br>
-                83030 Pietradefusi fraz. Dentecane (AV)<br>
-                ☎️
-                <a href="tel:+390825962028" style="text-decoration: none;">
-                    +39 0825 962028
-                </a>
-            </address>
-
-        </div>
-
-        <!-- DESTRA -->
         <div style="width: 250px; text-align: center;">
-
             <h3>Orari di Apertura</h3>
-
             <ul style="list-style: none; padding: 0; margin: 0;">
                 <li><strong>Lunedì - Venerdì:</strong><br>08:30 - 13:30 / 15:30 - 20:00</li>
                 <li><strong>Sabato:</strong><br>10:30 - 13:30 / 15:30 - 19:30</li>
                 <li><strong>Domenica:</strong><br>08:30 - 12:30</li>
             </ul>
-
         </div>
-        <!-- DESTRA -->
-        <div style="width: 250px; text-align: center;">
-
-            <h3>Orari di Apertura</h3>
-
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li><strong>Lunedì - Venerdì:</strong><br>08:30 - 13:30 / 15:30 - 20:00</li>
-                <li><strong>Sabato:</strong><br>10:30 - 13:30 / 15:30 - 19:30</li>
-                <li><strong>Domenica:</strong><br>08:30 - 12:30</li>
-            </ul>
-
-        </div>
-
     </div>
-
-    <!-- COPYRIGHT -->
     <div style="text-align: center; margin-top: 20px;">
         <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
     </div>
-
 </footer>
-
-
 
 </body>
 </html>
