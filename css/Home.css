@@ -21,6 +21,22 @@
     align-items: center;
 }
 
+.header-icons {
+    display: inline-flex;     
+    gap: 10px;                
+    align-items: center;       
+}
+
+.header-icons a {
+    font-size: 22px;           
+    text-decoration: none; 
+    color: inherit;
+    transition: 0.3s;
+}
+
+.header-icons a:hover {
+    color: #ffd54f;            
+}
 /* ================= LOGO + CHI SIAMO ================= */
 .logo-chi-siamo {
     display: flex;

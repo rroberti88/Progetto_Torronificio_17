@@ -8,18 +8,42 @@ body {
     color: #333;
 }
 
-/* HEADER */
-.header {
-    text-align: center;
-    padding: 30px 0;
-    background: white;
+/* ===================== HEADER ===================== */
+.mini-header {
+    display: flex;                  /* crea una riga */
+    align-items: center;            /* centra verticalmente */
+    justify-content: space-between; /* spinge logo al centro e icona a destra */
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
 }
 
-.header img {
-    width: 130px; 
-    height: auto;
+.header-left {
+    width: 150px;                   /* bilancia il logo */
 }
 
+.header-center {
+    flex: 1;
+    text-align: center;             /* logo centrato */
+}
+
+.header-center img {
+    max-height: 100px;              /* dimensione logo */
+}
+
+.header-right {
+    width: 50px;                    /* spazio per icona */
+    text-align: right;
+    font-size: 30px;                /* dimensione icona home */
+}
+
+.header-right a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* BACK LINK (se presente) */
 .back-link {
     display: block;
     font-size: 0.9em;
@@ -34,7 +58,7 @@ body {
     color: #5d4037;
 }
 
-/* SEZIONE PRODOTTI (DUE RIGHE DA TRE) */
+/* ===================== SEZIONE PRODOTTI ===================== */
 .mustof-section {
     max-width: 1100px;
     margin: 0 auto;
@@ -68,7 +92,6 @@ body {
 }
 
 .prodotto-card:hover {
-    transform: scale(1,5);
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(93, 64, 55, 0.1);
 }
@@ -87,7 +110,7 @@ body {
     margin: 0;
 }
 
-/* FIERE E CERTIFICAZIONI */
+/* ===================== FIERE E CERTIFICAZIONI ===================== */
 .events-certifications {
     background-color: #f9f3ee;
     padding: 80px 20px;
@@ -129,7 +152,7 @@ body {
     margin: 20px 0;
 }
 
-/* BOX CERTIFICAZIONE */
+/* ===================== BOX CERTIFICAZIONE ===================== */
 .cert-box {
     display: flex;
     align-items: center;
@@ -141,6 +164,7 @@ body {
     margin: 60px auto 0;
     gap: 40px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    flex-wrap: wrap; /* rende responsive la box su mobile */
 }
 
 .cert-text h2 {
@@ -152,6 +176,10 @@ body {
 .cert-text p {
     line-height: 1.6;
     opacity: 0.95;
+}
+
+.cert-tags {
+    margin-top: 15px;
 }
 
 .tag {
@@ -171,4 +199,36 @@ body {
     width: 100%;
     border-radius: 10px;
     border: 5px solid rgba(255,255,255,0.1);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media screen and (max-width: 768px) {
+    .prodotti-griglia {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cert-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cert-img-container {
+        flex: 1 0 auto;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .prodotti-griglia {
+        grid-template-columns: 1fr;
+    }
+
+    .header-right {
+        font-size: 26px;
+    }
+
+    .header-center img {
+        max-height: 80px;
+    }
 }

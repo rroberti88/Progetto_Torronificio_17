@@ -1,0 +1,24 @@
+.mini-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header-center {
+    text-align: center;
+    flex: 1;
+}
+
+.header-right {
+    font-size: 22px;
+}
+
+.header-right a {
+    text-decoration: none;
+}
+
+.home-link {
+    text-decoration: none;
+    color: inherit;
+}

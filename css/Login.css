@@ -1,0 +1,32 @@
+.mini-header {
+    display: flex;                  /* crea una riga */
+    align-items: center;            /* centra verticalmente */
+    justify-content: space-between; /* spinge logo al centro e icona a destra */
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-left {
+    width: 150px;                   /* spazio vuoto per bilanciare il logo */
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;             /* logo centrato */
+}
+
+.header-center img {
+    max-height: 100px;              /* dimensione logo */
+}
+
+.header-right {
+    width: 50px;                    /* spazio per icona */
+    text-align: right;
+    font-size: 30px;                /* dimensione icona home */
+}
+
+.header-right a {
+    text-decoration: none;
+    color: inherit;
+}
