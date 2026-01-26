@@ -68,6 +68,7 @@ body {
 }
 
 .prodotto-card:hover {
+    transform: scale(1,5);
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(93, 64, 55, 0.1);
 }
@@ -170,119 +171,4 @@ body {
     width: 100%;
     border-radius: 10px;
     border: 5px solid rgba(255,255,255,0.1);
-}
-
-/* === NUOVO FOOTER PROFESSIONALE === */
-.main-footer {
-    background-color: #3e2723; /* Marrone scuro "Cioccolato" */
-    color: #fdf8f3;
-    padding: 80px 20px 30px;
-    text-align: center;
-    position: relative;
-    border-top: 5px solid #ffd54f; /* Riga oro superiore */
-}
-
-/* Intro del footer (La tua Call to Action) */
-.footer-intro {
-    max-width: 800px;
-    margin: 0 auto 60px;
-}
-
-.footer-intro h2 {
-    color: #ffd54f;
-    font-size: 2.2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.footer-intro p {
-    font-size: 1.2em;
-    font-style: italic;
-    opacity: 0.8;
-    line-height: 1.6;
-}
-
-.footer-divider {
-    border: 0;
-    border-top: 1px solid rgba(255, 213, 79, 0.2);
-    margin: 40px auto;
-    max-width: 1100px;
-}
-
-/* Contenuto a colonne */
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: left; /* Allineamento più elegante */
-}
-
-.footer-column {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-column img {
-    background: white; /* Crea un quadratino bianco dietro al logo */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    width: 140px;
-}
-
-.footer-column h3 {
-    color: #ffd54f;
-    font-size: 1.3em;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    border-bottom: 2px solid rgba(255, 213, 79, 0.3);
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.footer-column p, .footer-column address, .hours-list li {
-    font-size: 0.95em;
-    line-height: 2;
-    color: rgba(255, 255, 255, 0.8);
-    font-style: normal;
-    margin-bottom: 10px;
-}
-
-.footer-column a {
-    text-decoration: none;
-    color: #ffd54f;
-    transition: 0.3s;
-}
-
-.footer-column a:hover {
-    color: white;
-}
-
-.hours-list {
-    list-style: none;
-    padding: 0;
-}
-
-.hours-list strong {
-    color: white;
-}
-
-/* Parte inferiore dei copyright */
-.footer-bottom {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.85em;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Responsive per schermi piccoli */
-@media (max-width: 768px) {
-    .prodotti-griglia { grid-template-columns: 1fr; }
-    .footer-content { flex-direction: column; text-align: center; }
-    .footer-column h3 { border-bottom: none; }
-    .cert-box { flex-direction: column; padding: 30px; text-align: center; }
 }
