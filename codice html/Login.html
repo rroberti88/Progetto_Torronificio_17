@@ -25,7 +25,7 @@
 
     </div>
 
-    <div style="width: 300px; margin-left: 250px; background-color: lightblue; border: 1px solid black; padding: 20px; text-align: center;">
+    <div id="loginContainer" style="display:none;" style="width: 300px; margin-left: 250px; background-color: lightblue; border: 1px solid black; padding: 20px; text-align: center;">
         <h2>Login</h2>
         <form>
             <label for="username">Username:</label><br>
@@ -38,22 +38,33 @@
         </form>
     </div>
 
-    <script>
-        const username = document.getElementById('username');
-        const password = document.getElementById('password');
-        const submitBtn = document.getElementById('submitBtn');
+    <div id="registerContainer" style="display:none;" style="width: 300px; margin-left: 250px; background-color: lightblue; border: 1px solid black; padding: 20px; text-align: center;">
+        <h2>Registrati</h2>
+        <form>
 
-        function checkInputs(){
-            if (username.value.trim() !== '' && password.value.trim() !== ''){
-                submitBtn.disabled = false;
-            } else {
-                submitBtn.disabled = true;
-            }
-        }
+            <label for="newName">Nome:</label><br>
+            <input type="text" id="newName" name="newName" placeholder="Inserisci il tuo nome"><br><br>
 
-    username.addEventListener('input', checkInputs);
-    password.addEventListener('input', checkInputs);
-    </script>
+            <label for="newCognome "> Cognome:</label><br>
+            <input type="text" id="newCognome" name="newCognome" placeholder="Inserisci il tuo cognome"><br><br>
+
+            <label for="newMail "> E-Mail :</label><br>
+            <input type="mail" id="newMail" name="newMail" placeholder="esempio@mail.dominio"><br><br>
+
+            <label for="data-nascita">Seleziona la data:</label>
+            <input type="date" id="data-nascita" name="data-nascita" placeholder="AAAA-MM-GG"><br><br>
+
+            <label for="newUsername">Username:</label><br>
+            <input type="text" id="newUsername" name="newUsername" placeholder="Inserisci il tuo username"><br><br>
+
+            <label for="newPassword">Password:</label><br>
+            <input type="password" id="newPassword" name="password" placeholder="Nuova password"><br><br>
+    
+            <button type="submit" id="submitBtn" disabled> Registrati </button>
+        </form>
+    </div>
+
+    
 
 
     <!-- Footer -->
@@ -134,7 +145,8 @@
     
     </div>
     
+    <!-- Flatpickr JS -->
     
-    
+    <script src="../script/Login.js"></script>
     </body>
     </html>
