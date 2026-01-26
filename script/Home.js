@@ -43,7 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (result.isConfirmed) {
                 // Vai alla pagina login mostrando il modulo login
                 window.location.href = "Login.html?mode=login";
-            } else {
+            } else if (result.isDismissed) {
+                // click fuori / ESC → torna alla home
+                window.location.href = "Home.html";
+            }
+            else {
                 // Vai alla pagina login mostrando il modulo registrazione
                 window.location.href = "Login.html?mode=register";
             }

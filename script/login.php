@@ -1,21 +1,20 @@
 <?php
 session_start();
-include "db.php"; // Assumendo che login.php sia in "script/"
+include "db.php";
 
-// Prendi i dati dal form
-$email = $_POST["username"];  // il form manda "username" anche se in realtà è l'email
+$username = $_POST["username"];
 $password = $_POST["password"];
 
-// Controlla che l'utente esista
-$sql = "SELECT * FROM `login` WHERE `email`='$email'";
-$result = $conn->query($sql);
+$stmt = $conn->prepare("SELECT * FROM login WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
 
     if (password_verify($password, $user["password"])) {
-        $_SESSION["login"] = $user["email"];
-        // Redirect corretto alla home, salendo di una cartella e entrando in codice html
+        $_SESSION["user"] = $user["username"];
         header("Location: ../codice html/Home.html");
         exit();
     } else {

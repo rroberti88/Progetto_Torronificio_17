@@ -2,402 +2,437 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
+    <title>Shop – Torrone Nardone</title>
     <link rel="icon" type="image/png" href="../immagini jpg/LogoNardone.jpg">
     <link rel="stylesheet" href="../css/Shop.css">
-  
 </head>
-
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="header-left">
-        <a href="Home.html">Home</a>
-        <span>|</span>
+        <a href="Home.html">Home</a> | 
         <a href="FEM.html">Fiere, Eventi e Prodotti di spicco</a>
     </div>
 
-        <!-- Logo al centro -->
-        <div align = "center">
-            
-        </div>
-    <a href="Home.html">
-        <img src="../immagini jpg/LogoNardone.jpg" alt="Logo" width="150">
-        <p>
-            <a href="Home.html" style="text-decoration: none;"> Torna alla home</a>
-        </p>
+    <a href="Home.html" class="logo">
+        <img src="../immagini jpg/LogoNardone.jpg" width="150" alt="Logo Torronificio Nardone">
+        <p>Torna alla home</p>
     </a>
-</div>
 
     <div class="header-right">
-        <a href="Login.html" style="font-size:18px;">👤</a>
-        <span>|</span>
-        <a href="Carrello.html" style="font-size:18px;">🛒</a>
+        <a href="Login.html" title="Login">👤</a> | 
+        <a href="Carrello.html" title="Carrello">🛒</a>
     </div>
 </header>
 
-<!-- SHOP -->
 <div class="shop">
-
-    <!-- SIDEBAR -->
-    <aside>
+    <aside class="sidebar">
         <h2>Categorie</h2>
-        <ul>
-            <li><a href="#torrone">Torrone</a></li>
-            <li><a href="#panettoni">Panettoni</a></li>
-            <li><a href="#torroncini">Torroncini sfusi (1kg)</a></li>
-            <li><a href="#croccanti">Croccanti</a></li>
-            <li><a href="#confezioni">Confezioni regalo</a></li>
-            <li><a href="#biscotti">Biscotti</a></li>
-            <li><a href="#uova">Uova di Pasqua</a></li>
-            <li><a href="#cioccolato">Cioccolato</a></li>
+        <ul class="categorie">
+            <li><a href="#" class="categoria active" data-category="all">Tutti</a></li>
+            <li><a href="#" class="categoria" data-category="torrone">Torrone</a></li>
+            <li><a href="#" class="categoria" data-category="panettoni">Panettoni</a></li>
+            <li><a href="#" class="categoria" data-category="torroncini">Torroncini</a></li>
+            <li><a href="#" class="categoria" data-category="croccanti">Croccanti</a></li>
+            <li><a href="#" class="categoria" data-category="biscotti">Biscotti</a></li>
+            <li><a href="#" class="categoria" data-category="confezioni">Confezioni regalo</a></li>
+            <li><a href="#" class="categoria" data-category="uova">Uova di Pasqua</a></li>
+            <li><a href="#" class="categoria" data-category="cioccolato">Cioccolato</a></li>
         </ul>
 
         <h3>Cerca prodotto</h3>
-        <form>
-            <input type="text" placeholder="Nome prodotto" style="width:100%; padding:5px;">
-            <button type="submit" style="width:100%; margin-top:5px;">Cerca</button>
-        </form>
-
-        <h3>Filtra per prezzo</h3>
-        <form>
-            <label>Min €:</label><br>
-            <input type="number" style="width:80%;"><br><br>
-
-            <label>Max €:</label><br>
-            <input type="number" style="width:80%;"><br><br>
-
-            <button type="submit" style="width:100%;">Applica filtro</button>
-        </form>
+        <input type="text" id="searchBar" placeholder="Cerca per nome prodotto..." autocomplete="off">
     </aside>
 
-    <!-- PRODOTTI -->
-    <main>
+    <main class="prodotti">
 
-        <h2 id="torrone">Torrone</h2>
-        <div class="lista-prodotti">
-            <div class="prodotto">
-                <img src="../immagini jpg/070.jpg" width="150"><br>
-                <b>Morbido al pistacchio (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
+        <!-- ================= TORRONE ================= -->
+        <section class="sezione-prodotti">
+            <h2 class="titolo-sezione" data-category="torrone" >Torrone</h2>
+                <div class="lista-prodotti">
+                
+                <!-- Inserisci qui tutti i prodotti di Torrone -->
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/070.jpg" width="150">
+                    <p class="nome-prodotto">Morbido al pistacchio (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/071.jpg" width="150">
+                    <p class="nome-prodotto">Morbido allo zenzero (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/072.jpg" width="150">
+                    <p class="nome-prodotto">Tenero al cioccolato (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/074.jpg" width="150">
+                    <p class="nome-prodotto">Morbido al croccantino (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/090.jpg" width="150">
+                    <p class="nome-prodotto">Morbido al caramello (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/091.jpg" width="150">
+                    <p class="nome-prodotto">Morbido al cocco (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/092.jpg" width="150">
+                    <p class="nome-prodotto">Nocciolato morbido (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/093.jpg" width="150">
+                    <p class="nome-prodotto">Mandorlato morbido (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/094.jpg" width="150">
+                    <p class="nome-prodotto">Nocciolato bianco (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/095.jpg" width="150">
+                    <p class="nome-prodotto">Tenero bianco (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/098.jpg" width="150"><br>
+                    <p class="nome-prodotto">Ricoperto al cioccolato (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/099.jpg" width="150"><br>
+                    <p class="nome-prodotto">Farcito al cioccolato (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/0101.jpg" width="150"><br>
+                    <p class="nome-prodotto">Pannardone alla strega (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/0102.jpg" width="150"><br>
+                    <p class="nome-prodotto">Pannardone allo cherry(150) </p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+               
+                <div class="prodotto" data-category="torrone">
+                    <img src="../immagini jpg/0107.jpg" width="150"><br>
+                    <p class="nome-prodotto">Pannardone al limoncello (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
             </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/071.jpg" width="150"><br>
-                <b>Morbido allo zenzero (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/072.jpg" width="150"><br>
-                <b>Tenero al cioccolato (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/074.jpg" width="150"><br>
-                <b>Morbido al croccantino (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/090.jpg" width="150"><br>
-                <b>Morbido al caramello (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/091.jpg" width="150"><br>
-                <b>Morbido al cocco (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/092.jpg" width="150"><br>
-                <b>Nocciolato morbido (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/093.jpg" width="150"><br>
-                <b>Mandorlato morbido (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/094.jpg" width="150"><br>
-                <b>Nocciolato bianco (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/095.jpg" width="150"><br>
-                <b>Tenero bianco (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/098.jpg" width="150"><br>
-                <b>Ricoperto al cioccolato (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/099.jpg" width="150"><br>
-                <b>Farcito al cioccolato (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0101.jpg" width="150"><br>
-                <b>Pannardone alla strega (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0102.jpg" width="150"><br>
-                <b>Pannardone allo cherry (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-           
-            <div class="prodotto">
-                <img src="../immagini jpg/0107.jpg" width="150"><br>
-                <b>Pannardone al limoncello (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-           
-            
-        </div>
+        </section>
 
-        <h2 id="panettoni">Panettoni</h2>
-        <div class="lista-prodotti"> 
-            <div class="prodotto">
-                <img src="../immagini jpg/panettone_mela_cioccolato.jpg" width="150"><br>
-                <b> Panettone mela e cioccolato €28,00</b><br>
-                <button>Aggiungi al carrello</button>
+        <!-- ================= PANETTONI ================= -->
+        <section class="sezione-prodotti">
+            <h2 class="titolo-sezione" data-category="panettoni">Panettoni</h2>
+            <div class="lista-prodotti">
+                
+                <!-- Inserisci tutti i panettoni qui -->
+                <div class="prodotto" data-category="panettoni">
+                    <img src="../immagini jpg/panettone_mela_cioccolato.jpg" width="150">
+                    <p class="nome-prodotto">Panettone mela e cioccolato</p>
+                    <p class="prezzo">€28,00</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="panettoni">
+                    <img src="../immagini jpg/panettone_pistacchio.jpg" width="150">
+                    <p class="nome-prodotto">Panettone al pistacchio</p>
+                    <p class="prezzo">€28,00</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="panettoni">
+                    <img src="../immagini jpg/panettone_tradizionale.jpg" width="150"><br>
+                    <p class="nome-prodotto">Panettone tradizionale</p>
+                    <p class="prezzo">€28,00</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
             </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/panettone_pistacchio.jpg" width="150"><br>
-                <b>Panettone al pistacchio €28,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/panettone_tradizionale.jpg" width="150"><br>
-                <b>Panettone tradizionale €28,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-           
-        </div>
+        </section>
 
-<h2 id="torroncini"><h2>Torroncini</h2>
-
-<div class="lista-prodotti">
-    
-    <div class="prodotto">
-        <img src="..//immagini jpg/0140.jpg" width="150"><br>
-        <b>Pannardini alla strega (150g) €3,50</b><br>
-        <button>Aggiungi al carrello</button>
-    </div>
-
-    <div class="prodotto">
-        <img src="..//immagini jpg/0141.jpg" width="150"><br>
-        <b>Pannardini al limoncello (150g) €3,50</b><br>
-        <button>Aggiungi al carrello</button>
-    </div>
-
-    <div class="prodotto">
-        <img src="..//immagini jpg/0142 pannardelli.jpg" width="150"><br>
-        <b>Croccantini (150g) €3,50</b><br>
-        <button>Aggiungi al carrello</button>
-    </div>
-
-    <div class="prodotto">
-        <img src="..//immagini jpg/0148.jpg" width="150"><br>
-        <b>Pannardini allo cherry (150g) €3,50</b><br>
-        <button>Aggiungi al carrello</button>
-    </div>
-     <div class="prodotto">
-                <img src="..//immagini jpg/0144.jpg" width="150"><br>
-                <b>Nardorelli (150g) €3,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-
-    
-</div>
+        <!-- ================= TORRONCINI ================= -->
+<section class="sezione-prodotti">
+    <h2 class="titolo-sezione" data-category="torroncini">Torroncini</h2>
+    <div class="lista-prodotti">
         
-
-        <h2 id="croccanti">Croccanti</h2>
-        <div class="lista-prodotti">
-            <div class="prodotto">
-                <img src="../immagini jpg/0150.jpg" width="150"><br>
-                <b>Croccante alle mandorle €3,50 (120g)</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0151.jpg" width="150"><br>
-                <b>Croccante alle nocciole  €3,50 (120g)</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0152.jpg" width="150"><br>
-                <b>Croccante alle arachidi €3,50 (120g)</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0153 croccante mandorle 150g 1.jpg" width="150"><br>
-                <b>Sacchetti di croccantini alle mandorle (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0154.jpg" width="150"><br>
-                <b>Sacchetti di croccantini alle nocciole (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0155 1.jpg" width="150"><br>
-                <b>Sacchetti di croccantini alle arachidi (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0156 mandorle+riso.jpg" width="150"><br>
-                <b>Croccante mandorle e riso (120g) €3,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0157 arachidi+riso.jpg" width="150"><br>
-                <b>Croccante arachidi e riso (120g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0158 sesamo.jpg" width="150"><br>
-                <b>Croccante sesamo (120g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="../immagini jpg/0159 mandorle+cioccolato.jpg" width="150"><br>
-                <b>Croccante mandorle (120g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            
+        <div class="prodotto" data-category="torroncini">
+            <img src="../immagini jpg/0140.jpg" width="150">
+            <p class="nome-prodotto">Pannardini alla strega (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
         </div>
-
-        <h2 id="confezioni">Confezioni regalo</h2>
-        <div class="lista-prodotti">
-            <div class="prodotto">
-                <img src="../immagini jpg/0115 .jpg" width="150"><br>
-                <b>Confezione di torroncini misti(1kg) €26,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/8005101001095.jpg" width="150"><br>
-                <b>Confezione di pannardini (500g) €13,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-             <div class="prodotto">
-                <img src="..//immagini jpg/0121.jpg" width="150"><br>
-                <b>Confezione di pannardini al limoncello (200g) €6,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-             <div class="prodotto">
-                <img src="..//immagini jpg/0126.jpg" width="150"><br>
-                <b>Confezione di nardorelli (200g) €6,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-             <div class="prodotto">
-                <img src="..//immagini jpg/0128.jpg" width="150"><br>
-                <b>Confezione di gioie (200g) €6,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-              <div class="prodotto">
-                <img src="..//immagini jpg/STRENNA.jpg" width="150"><br>
-                <b>Confezione regalo €65,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-             
+        <div class="prodotto" data-category="torroncini">
+            <img src="../immagini jpg/0141.jpg" width="150">
+            <p class="nome-prodotto">Pannardini al limoncello (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
         </div>
-
-        <h2 id="biscotti">Biscotti</h2>
-        <div class="lista-prodotti">
-            <div class="prodotto">
-                <img src="..//immagini jpg/0135 dolcetti mandorle.jpg" width="150">
-                <br><b> Biscotti mandorle (150g) €3,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/0136 dolcetti al cioccolato.jpg" width="150"><br>
-                <b>Biscotti al cioccolato (150g) €3,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-             <div class="prodotto">
-                <img src="..//immagini jpg/0137 dolcetti al limoncello.jpg" width="150"><br>
-                <b>Biscotti al limoncello (150g) €3,50</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
+        <div class="prodotto" data-category="torroncini">
+            <img src="../immagini jpg/0142 pannardelli.jpg" width="150">
+            <p class="nome-prodotto">Croccantini (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
         </div>
-
-        <h2 id="uova">Uova di Pasqua</h2>
-        <div class="lista-prodotti">
-            <div class="prodotto">
-                <img src="..//immagini jpg/026 cereali 500g.jpg" width="150"><br>
-                <b>€10,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/027 nocciolato.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/latte 500g.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/028 croccantino 500g.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/029 torrone 500g.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/060 organza latte.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/062 organza fondente.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/063 tessuto latte.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/064 tessuto fondente.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/065 bicolor latte.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-                <img src="..//immagini jpg/066 bicolor fondente.jpg" width="150"><br>
-                <b>€12,00</b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            
+        <div class="prodotto" data-category="torroncini">
+            <img src="../immagini jpg/0148.jpg" width="150">
+            <p class="nome-prodotto">Pannardini allo cherry (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
         </div>
-
-        <h2 id="cioccolato">Cioccolato</h2>
-        <div class="lista-prodotti">
-             <div class="prodotto">
-                <img src="../immagini jpg/0103.jpg" width="150"><br>
-                <b>Tenero al gianduia (150g) €3,50 </b><br>
-                <button>Aggiungi al carrello</button>
-            </div>
-            <div class="prodotto">
-        <img src="..//immagini jpg/0143 le gioie 150g.jpg" width="150"><br>
-        <b>Gioie (150g) €3,50</b><br>
-        <button>Aggiungi al carrello</button>
+        <div class="prodotto" data-category="torroncini">
+            <img src="../immagini jpg/0144.jpg" width="150">
+            <p class="nome-prodotto">Nardorelli (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
     </div>
-    
-        </div>
+</section>
 
+<!-- ================= CROCCANTI ================= -->
+<section class="sezione-prodotti">
+    <h2 class="titolo-sezione" data-category="croccanti">Croccanti</h2>
+    <div class="lista-prodotti">
+        
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0150.jpg" width="150">
+            <p class="nome-prodotto">Croccante alle mandorle (120g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0151.jpg" width="150">
+            <p class="nome-prodotto">Croccante alle nocciole (120g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0152.jpg" width="150">
+            <p class="nome-prodotto">Croccante alle arachidi (120g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0153 croccante mandorle 150g 1.jpg" width="150">
+            <p class="nome-prodotto">Sacchetti di croccantini alle mandorle (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0154.jpg" width="150">
+            <p class="nome-prodotto">Sacchetti di croccantini alle nocciole (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0155 1.jpg" width="150">
+            <p class="nome-prodotto">Sacchetti di croccantini alle arachidi (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0156 mandorle+riso.jpg" width="150">
+            <p class="nome-prodotto">Croccante mandorle e riso (120g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0157 arachidi+riso.jpg" width="150">
+            <p class="nome-prodotto">Croccante arachidi e riso (120g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0158 sesamo.jpg" width="150">
+            <p class="nome-prodotto">Croccante sesamo (120g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="croccanti">
+            <img src="../immagini jpg/0159 mandorle+cioccolato.jpg" width="150">
+            <p class="nome-prodotto">Croccante mandorle (120g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CONFEZIONI REGALO ================= -->
+<section class="sezione-prodotti">
+    <h2 class="titolo-sezione" data-category="confezioni">Confezioni regalo</h2>
+    <div class="lista-prodotti">
+        
+        <div class="prodotto" data-category="confezioni">
+            <img src="../immagini jpg/0115 .jpg" width="150">
+            <p class="nome-prodotto">Confezione di torroncini misti (1kg)</p>
+            <p class="prezzo">€26,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="confezioni">
+            <img src="../immagini jpg/8005101001095.jpg" width="150">
+            <p class="nome-prodotto">Confezione di pannardini (500g)</p>
+            <p class="prezzo">€13,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="confezioni">
+            <img src="../immagini jpg/0121.jpg" width="150">
+            <p class="nome-prodotto">Confezione di pannardini al limoncello (200g)</p>
+            <p class="prezzo">€6,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="confezioni">
+            <img src="../immagini jpg/0126.jpg" width="150">
+            <p class="nome-prodotto">Confezione di nardorelli (200g)</p>
+            <p class="prezzo">€6,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="confezioni">
+            <img src="../immagini jpg/0128.jpg" width="150">
+            <p class="nome-prodotto">Confezione di gioie (200g)</p>
+            <p class="prezzo">€6,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="confezioni">
+            <img src="../immagini jpg/STRENNA.jpg" width="150">
+            <p class="nome-prodotto">Confezione regalo</p>
+            <p class="prezzo">€65,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= BISCOTTI ================= -->
+<section class="sezione-prodotti">
+    <h2 class="titolo-sezione" data-category="biscotti">Biscotti</h2>
+    <div class="lista-prodotti">
+        
+        <div class="prodotto" data-category="biscotti">
+            <img src="../immagini jpg/0135 dolcetti mandorle.jpg" width="150">
+            <p class="nome-prodotto">Biscotti mandorle (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="biscotti">
+            <img src="../immagini jpg/0136 dolcetti al cioccolato.jpg" width="150">
+            <p class="nome-prodotto">Biscotti al cioccolato (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="biscotti">
+            <img src="../immagini jpg/0137 dolcetti al limoncello.jpg" width="150">
+            <p class="nome-prodotto">Biscotti al limoncello (150g)</p>
+            <p class="prezzo">€3,50</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= UOVA DI PASQUA ================= -->
+<section class="sezione-prodotti">
+    <h2 class="titolo-sezione" data-category="uova">Uova di Pasqua</h2>
+    <div class="lista-prodotti">
+       
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/026 cereali 500g.jpg" width="150">
+            <p class="prezzo">€10,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/027 nocciolato.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/latte 500g.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/028 croccantino 500g.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/029 torrone 500g.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/060 organza latte.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/062 organza fondente.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/063 tessuto latte.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/064 tessuto fondente.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/065 bicolor latte.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+        <div class="prodotto" data-category="uova">
+            <img src="../immagini jpg/066 bicolor fondente.jpg" width="150">
+            <p class="prezzo">€12,00</p>
+            <button>Aggiungi al carrello</button>
+        </div>
+    </div>
+</section>
+
+        <!-- ================= CIOCCOLATO ================= -->
+        <section class="sezione-prodotti">
+            <h2 class="titolo-sezione" data-category="cioccolato">Cioccolato</h2>
+            <div class="lista-prodotti">
+                
+                <div class="prodotto" data-category="cioccolato">
+                    <img src="../immagini jpg/0103.jpg" width="150">
+                    <p class="nome-prodotto">Tenero al gianduia (150g)</p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+                <div class="prodotto" data-category="cioccolato">
+                    <img src="..//immagini jpg/0143 le gioie 150g.jpg" width="150"><br>
+                    <p class="nome-prodotto">Gioie (150g) </p>
+                    <p class="prezzo">€3,50</p>
+                    <button>Aggiungi al carrello</button>
+                </div>
+            </div>
+        </section>
+
+        <p id="noResults" style="display:none; text-align:center; margin-top:40px;">Nessun prodotto trovato</p>
     </main>
 </div>
 
@@ -434,6 +469,8 @@
         <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
     </div>
 </footer>
+
+<script src="../script/Shop.js"></script>
 
 </body>
 </html>

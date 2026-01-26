@@ -1,3 +1,8 @@
+/* RESET & BASE */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -6,6 +11,11 @@ body {
 a {
     text-decoration: none;
     color: black;
+}
+
+/* RESET MARGINI DEFAULT (CAUSA PIÙ COMUNE DEL "VA GIÙ") */
+h1, h2, h3, p {
+    margin: 0;
 }
 
 /* HEADER */
@@ -40,6 +50,7 @@ header {
     display: flex;
     gap: 30px;
     padding: 20px;
+    align-items: flex-start; /* sidebar e main partono dall'alto */
 }
 
 aside {
@@ -48,12 +59,22 @@ aside {
 
 main {
     width: 80%;
+    /* forza il contenuto del main a partire dall'alto/sinistra */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Se hai un titolo categoria dentro main (es. h2), dagli un margine controllato */
+main h1, main h2, main h3 {
+    margin-bottom: 20px; /* spazio sotto al titolo, non sopra */
 }
 
 /* SIDEBAR */
 aside ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 aside li {
@@ -63,22 +84,46 @@ aside li {
 /* PRODOTTI */
 .lista-prodotti {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    gap: 20px;
+    margin: 0;               /* IMPORTANTISSIMO: niente margine sopra */
+    padding: 0;
+    align-items: flex-start;
 }
 
 .prodotto {
     width: 150px;
     text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.prodotto:hover
-{ 
-  transform: scale(1.50); 
-  transition: 0.3s; 
+.prodotto img {
+    max-width: 100%;
+    height: auto;
 }
 
+/* Hover */
+.prodotto:hover {
+    transform: scale(1.50);
+    z-index: 2;
+}
+
+/* NASCONDERE I PRODOTTI NON SELEZIONATI */
+.prodotto.nascosto {
+    display: none;
+}
+
+/* BUTTON GENERALE */
 button {
     margin-top: 5px;
 }
+
+#titolo-categoria{
+    margin-bottom: 20px;
+    }
+    .titolo-sezione{
+    margin: 20px 0;
+    }
