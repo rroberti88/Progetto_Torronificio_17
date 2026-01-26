@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* LOGO CENTRATO */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.header img {
+    width: 200px; /* puoi modificare la misura */
+    height: auto; /* mantiene le proporzioni */
+}
+
+.mustof-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* tre colonne */
+    width: 55%;
+    margin-left: auto;   /* tutto spinto a destra */
+    margin-right: 40px;
+    gap: 20px;
+}
+
+/* TITOLO */
+.titolo {
+    grid-column: 2;  
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Griglia dei prodotti */
+.prodotti-di-spicco {
+    grid-column: 1 / 4; /* occupa tutte e tre le colonne */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* CARD */
+.prodotto {
+    text-align: center;
+    width: 120px;   /* larghezza fissa della card */
+    height: 150px;  /* altezza fissa della card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* IMMAGINI */
+.prodotto img {
+    width: 120px;      /* larghezza fissa */
+    height: 120px;     /* altezza fissa */
+    object-fit: cover; /* ritaglia l'immagine mantenendo proporzioni */
+    margin-bottom: 10px;
+}
+
+.prodotto:hover
+{ 
+  transform: scale(1.05); 
+  transition: 0.3s; 
+}
+
