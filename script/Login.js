@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const loginContainer = document.getElementById("loginContainer");
     const registerContainer = document.getElementById("registerContainer");
@@ -81,5 +79,3 @@ function checkRegInputs() {
 [regNome, regCognome, regEmail, regData, regUsername, regPassword].forEach(field => {
     field.addEventListener('input', checkRegInputs);
 });
-
-
