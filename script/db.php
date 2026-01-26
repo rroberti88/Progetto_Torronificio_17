@@ -1,14 +1,17 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";  // lascia vuoto se non hai password per root
-$dbname = "torronificio nardone"; // nome del database con spazio
+$host = "localhost";
+$dbname = "torronificio"; // Nome esatto del database
+$user = "root";
+$pass = "";
 
-// Crea connessione
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Controlla connessione
-if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
+try {
+    $pdo = new PDO(
+        "mysql:host=$host;dbname=$dbname;charset=utf8",
+        $user,
+        $pass
+    );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Errore DB: " . $e->getMessage());
 }
 ?>
