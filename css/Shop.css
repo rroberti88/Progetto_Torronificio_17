@@ -73,6 +73,12 @@ aside li {
     text-align: center;
 }
 
+.prodotto:hover
+{ 
+  transform: scale(1.50); 
+  transition: 0.3s; 
+}
+
 button {
     margin-top: 5px;
 }
