@@ -24,7 +24,8 @@
     
 
     <!-- LOGIN CONTAINER -->
-    <div id="loginContainer" style="display:none; width: 300px; margin: 20px auto; background-color: #cce7ff; border: 1px solid #000; padding: 20px; text-align: center;">
+    <div id="loginContainer" class="container">
+        <div class="box">
         <h2>Login</h2>
         <form action="../script/login.php" method="post">
             <label for="username">Username:</label><br>
@@ -36,9 +37,11 @@
             <button type="submit" id="loginBtn" disabled>Accedi</button>
         </form>
     </div>
+    </div>
 
     <!-- REGISTRAZIONE CONTAINER -->
-    <div id="registerContainer" style="display:none; width: 300px; margin: 20px auto; background-color: #d4f8d4; border: 1px solid #000; padding: 20px; text-align: center;">
+    <div id="registerContainer" class="container">
+        <div class="box">
         <h2>Registrati</h2>
         <form action="../script/register.php" method="post">
             <label for="newName">Nome:</label><br>
@@ -61,6 +64,7 @@
 
             <button type="submit" id="regBtn" disabled>Registrati</button>
         </form>
+    </div>
     </div>
 
     <!-- Footer -->

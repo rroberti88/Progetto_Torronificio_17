@@ -53,4 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-  });
+    const btnChiSiamo = document.getElementById("btnChiSiamo");
+const storia = document.getElementById("storia");
+const overlay = document.getElementById("overlay");
+
+btnChiSiamo.addEventListener("click", () => {
+    storia.classList.toggle("active");
+    overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+    storia.classList.remove("active");
+    overlay.classList.remove("active");
+});
+
+});

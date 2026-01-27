@@ -1,4 +1,4 @@
-/* RESET DI BASE */
+/* ===================== RESET DI BASE ===================== */
 body {
     margin: 0;
     padding: 0;
@@ -10,9 +10,9 @@ body {
 
 /* ===================== HEADER ===================== */
 .mini-header {
-    display: flex;                  /* crea una riga */
-    align-items: center;            /* centra verticalmente */
-    justify-content: space-between; /* spinge logo al centro e icona a destra */
+    display: flex;                  
+    align-items: center;            
+    justify-content: space-between; 
     padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;
@@ -20,22 +20,22 @@ body {
 }
 
 .header-left {
-    width: 150px;                   /* bilancia il logo */
+    width: 150px;                   
 }
 
 .header-center {
     flex: 1;
-    text-align: center;             /* logo centrato */
+    text-align: center;             
 }
 
 .header-center img {
-    max-height: 100px;              /* dimensione logo */
+    max-height: 100px;              
 }
 
 .header-right {
-    width: 50px;                    /* spazio per icona */
+    width: 50px;                    
     text-align: right;
-    font-size: 30px;                /* dimensione icona home */
+    font-size: 30px;                
 }
 
 .header-right a {
@@ -89,6 +89,7 @@ body {
     transition: all 0.3s ease;
     width: 100%;
     max-width: 280px;
+    cursor: pointer;
 }
 
 .prodotto-card:hover {
@@ -138,6 +139,13 @@ body {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(93,64,55,0.1);
 }
 
 .foto-fiera {
@@ -164,7 +172,14 @@ body {
     margin: 60px auto 0;
     gap: 40px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    flex-wrap: wrap; /* rende responsive la box su mobile */
+    flex-wrap: wrap; 
+    transition: all 0.3s ease; /* aggiunto per hover */
+    cursor: pointer;
+}
+
+.cert-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .cert-text h2 {
