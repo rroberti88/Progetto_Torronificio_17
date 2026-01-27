@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Login & Registrazione</title>
+    <title>Login Fallito</title>
     <link rel="icon" type="image/png" href="../immagini jpg/logo (2).jpg">
     <link rel="stylesheet" href="../css/Login.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <!-- CONTENUTO PRINCIPALE CENTRATO -->
+    <!-- CONTENUTO CENTRATO -->
     <div class="main-content">
 
         <!-- LOGIN CONTAINER -->
@@ -37,37 +37,11 @@
                     <input type="password" id="password" name="password" placeholder="Inserisci la password" required><br><br>
 
                     <button type="submit" id="loginBtn">Accedi</button>
+
+                    <!-- MESSAGGIO DI ERRORE -->
+                    <div class="error-message">Username o password errata!</div>
                 </form>
-                <p>Non hai un account? <a href="#" id="showRegister">Registrati</a></p>
-            </div>
-        </div>
-
-        <!-- REGISTRAZIONE CONTAINER -->
-        <div id="registerContainer" class="container">
-            <div class="box">
-                <h2>Registrati</h2>
-                <form action="../script/register.php" method="post">
-                    <label for="newName">Nome:</label><br>
-                    <input type="text" id="newName" name="newName" required><br><br>
-
-                    <label for="newCognome">Cognome:</label><br>
-                    <input type="text" id="newCognome" name="newCognome" required><br><br>
-
-                    <label for="newMail">E-Mail:</label><br>
-                    <input type="email" id="newMail" name="newMail" required><br><br>
-
-                    <label for="data_nascita">Data di nascita:</label><br>
-                    <input type="date" id="data_nascita" name="data_nascita" required><br><br>
-
-                    <label for="newUsername">Username:</label><br>
-                    <input type="text" id="newUsername" name="newUsername" required><br><br>
-
-                    <label for="newPassword">Password:</label><br>
-                    <input type="password" id="newPassword" name="newPassword" required><br><br>
-
-                    <button type="submit" id="regBtn">Registrati</button>
-                </form>
-                <p>Hai già un account? <a href="#" id="showLogin">Accedi</a></p>
+                <p>Non hai un account? <a href="Login.html">Registrati</a></p>
             </div>
         </div>
 
@@ -114,26 +88,6 @@
             <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
         </div>
     </footer>
-
-    <!-- JS per switch login/registrazione -->
-    <script>
-        const showRegister = document.getElementById('showRegister');
-        const showLogin = document.getElementById('showLogin');
-        const loginContainer = document.getElementById('loginContainer');
-        const registerContainer = document.getElementById('registerContainer');
-
-        showRegister.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginContainer.style.display = 'none';
-            registerContainer.style.display = 'block';
-        });
-
-        showLogin.addEventListener('click', (e) => {
-            e.preventDefault();
-            registerContainer.style.display = 'none';
-            loginContainer.style.display = 'block';
-        });
-    </script>
 
 </body>
 </html>
