@@ -45,3 +45,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const carrello = document.getElementById("carrello");
+    if (carrello) {
+      carrello.addEventListener("click", function (e) {
+        e.preventDefault();
+        Swal.fire({
+          title: "Vuoi andare al carrello?",
+          text: "Conferma per procedere",
+          imageUrl: "../immagini jpg/LogoNardone.jpg",
+          imageWidth: 120,
+          imageHeight: 80,
+          imageAlt: "Logo Torronificio Nardone",
+          showCancelButton: true,
+          confirmButtonText: "Sì",
+          cancelButtonText: "No",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = carrello.getAttribute("href");
+          }
+        });
+      });
+    } else {
+      console.error("Link carrello non trovato!");
+    }
+});
