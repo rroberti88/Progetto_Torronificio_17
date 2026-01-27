@@ -8,6 +8,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let currentCategory = "all";
 
+    const params = new URLSearchParams(window.location.search);
+    const catFromHome = params.get("categoria");
+
+    if (catFromHome) {
+    currentCategory = catFromHome;
+
+  // attiva visivamente la categoria nella sidebar
+    categorieLinks.forEach(l => l.classList.remove("active"));
+    const linkDaAttivare = document.querySelector(`.categoria[data-category="${catFromHome}"]`);
+    if (linkDaAttivare) linkDaAttivare.classList.add("active");
+    }
+
     function getNomeCategoriaAttiva() {
         const linkAttivo = document.querySelector(".categoria.active");
         return linkAttivo ? linkAttivo.textContent.trim() : "Tutti i prodotti";
