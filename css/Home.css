@@ -298,6 +298,25 @@ button.chi-siamo:hover {
     visibility: visible;
 }
 
+.hidden {
+    display: none !important;
+    }
+    
+    
+    .saluto-utente {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 15px;
+    color: #5d4037;
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    }
+
+
 /* ================= RESPONSIVE ================= */
 @media screen and (max-width: 768px) {
     .intro-container {
