@@ -69,4 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       console.error("Link carrello non trovato!");
     }
+    
+    
 });
