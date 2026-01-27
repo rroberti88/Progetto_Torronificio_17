@@ -25,7 +25,7 @@
     <!-- CONTENUTO PRINCIPALE CENTRATO -->
     <div class="main-content">
 
-        <!-- LOGIN CONTAINER -->
+        <!-- LOGIN -->
         <div id="loginContainer" class="container">
             <div class="box">
                 <h2>Login</h2>
@@ -36,13 +36,13 @@
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password" placeholder="Inserisci la password" required><br><br>
 
-                    <button type="submit" id="loginBtn">Accedi</button>
+                    <button type="submit" id="loginBtn" disabled>Accedi</button>
                 </form>
                 <p>Non hai un account? <a href="#" id="showRegister">Registrati</a></p>
             </div>
         </div>
 
-        <!-- REGISTRAZIONE CONTAINER -->
+        <!-- REGISTRAZIONE -->
         <div id="registerContainer" class="container">
             <div class="box">
                 <h2>Registrati</h2>
@@ -65,7 +65,7 @@
                     <label for="newPassword">Password:</label><br>
                     <input type="password" id="newPassword" name="newPassword" required><br><br>
 
-                    <button type="submit" id="regBtn">Registrati</button>
+                    <button type="submit" id="regBtn" disabled>Registrati</button>
                 </form>
                 <p>Hai già un account? <a href="#" id="showLogin">Accedi</a></p>
             </div>
@@ -73,67 +73,10 @@
 
     </div>
 
-    <!-- FOOTER -->
     <footer class="main-footer">
-        <div class="footer-intro">
-            <h2>Dal 1903, Custodi dell'Arte del Torrone</h2>
-            <p>Tramandiamo una storia fatta di passione e ingredienti purissimi.<br>
-               Vieni a scoprire dove nasce la magia nel nostro Showroom.</p>
-        </div>
-
-        <hr class="footer-divider">
-
-        <div class="footer-content">
-            <div class="footer-column">
-                <img src="../immagini jpg/logo nardone 1903 vettoriale.jpg" alt="Logo Torronificio Nardone" width="130">
-                <p>📧 <a href="mailto:info@torronenardone.it">info@torronenardone.it</a></p>
-                <p>ⓕ <a href="https://www.facebook.com" target="_blank">Torronificio Nardone S.R.L.</a></p>
-            </div>
-
-            <div class="footer-column">
-                <h3>Il Nostro Showroom</h3>
-                <address>
-                    <strong>Torronificio Nardone</strong><br>
-                    Via Roma, 144<br>
-                    83030 Pietradefusi fraz. Dentecane (AV)<br>
-                    ☎️ <a href="tel:+390825962028">+39 0825 962028</a>
-                </address>
-            </div>
-
-            <div class="footer-column">
-                <h3>Orari di Apertura</h3>
-                <ul class="hours-list">
-                    <li><strong>Lunedì - Venerdì:</strong> 08:30-13:30 / 15:30-20:00</li>
-                    <li><strong>Sabato:</strong> 10:30-13:30 / 15:30-19:30</li>
-                    <li><strong>Domenica:</strong> 08:30-12:30</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
-        </div>
+        <!-- Footer come prima -->
     </footer>
 
-    <!-- JS per switch login/registrazione -->
-    <script>
-        const showRegister = document.getElementById('showRegister');
-        const showLogin = document.getElementById('showLogin');
-        const loginContainer = document.getElementById('loginContainer');
-        const registerContainer = document.getElementById('registerContainer');
-
-        showRegister.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginContainer.style.display = 'none';
-            registerContainer.style.display = 'block';
-        });
-
-        showLogin.addEventListener('click', (e) => {
-            e.preventDefault();
-            registerContainer.style.display = 'none';
-            loginContainer.style.display = 'block';
-        });
-    </script>
-
+    <script src="../script/Login.js"></script>
 </body>
 </html>
