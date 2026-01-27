@@ -23,3 +23,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const btnChiSiamo = document.getElementById("btnChiSiamo");
+    const storia = document.getElementById("storia");
+    const overlay = document.getElementById("overlay");
+
+    if (!btnChiSiamo || !storia || !overlay) return;
+
+    // Apri storia
+    btnChiSiamo.addEventListener("click", function () {
+        storia.classList.add("active");
+        overlay.classList.add("active");
+    });
+
+    // Chiudi cliccando sull’overlay
+    overlay.addEventListener("click", function () {
+        storia.classList.remove("active");
+        overlay.classList.remove("active");
+    });
+});
+
