@@ -1,3 +1,21 @@
+/* ===================== SFONDO ===================== */
+
+.shop {
+    position: relative;
+}
+
+.shop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url("../immagini jpg/caldaia.jpg") center/cover fixed;
+    opacity: 0.15; /* regola qui la trasparenza */
+
+    z-index: -1;
+}
+
+
 /* ===================== RESET & BASE ===================== */
 * {
     box-sizing: border-box;
@@ -10,25 +28,108 @@ body {
     color: #5d4037;
     background-color: #fff8e1;
 }
+.categorie a {
+    text-decoration: none;
+    color: #5b3a29; /* il tuo marrone */
+  }
 
-/* ===================== HEADER PIÙ COMPATTO (PER ALZARE TUTTO) ===================== */
-header {
-    height: 90px; /* Ridotto per far salire le categorie */
-    background: linear-gradient(135deg, #fff8e1, #f4e3a1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+  
+/* ===================== HEADER  ===================== */
+header{
+    height: 86px;
+    padding: 0 34px;
+  
+    /* effetto vetro + oro */
+    background: rgba(255, 248, 225, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-.header-center img {
-    height: 65px; /* Logo leggermente più piccolo per risparmiare spazio verticale */
+  
+    border-bottom: 1px solid rgba(201,161,59,.28);
+    box-shadow: 0 10px 30px rgba(0,0,0,.10);
+  }
+  
+  /* linea oro sotto (dà subito premium) */
+  header::after{
+    content:"";
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c9a13b, #8d6e63, #c9a13b, transparent);
+    opacity: .9;
+  }
+  
+  /* blocchi laterali */
+  .header-left,
+  .header-right{
+    width: 90px;           /* mantiene il logo centrato */
+    display:flex;
+    align-items:center;
+  }
+  
+  .header-left{ justify-content:flex-start; }
+  .header-right{ justify-content:flex-end; }
+  
+  /* icone home/carrello */
+  #home, #carrello{
+    width: 46px;
+    height: 46px;
+    display:grid;
+    place-items:center;
+  
+    text-decoration:none;
+    font-size: 22px;
+  
+    border-radius: 14px;
+    background: rgba(255,255,255,.7);
+    border: 1px solid rgba(201,161,59,.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  
+  #home:hover, #carrello:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.95);
+    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  }
+  
+  /* logo centrato */
+  .logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  
+    padding: 4px 8px;
+    border-radius: 18px;
+  
+    background: rgba(255,255,255,.6);
+    border: 1px solid rgba(201,161,59,.22);
+    box-shadow: 0 10px 26px rgba(0,0,0,.10);
+    text-decoration:none;
+  }
+  
+  .logo img{
+    height: 62px;
     width: auto;
-}
+    display:block;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
+  }
+  
+  .logo:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(0,0,0,.13);
+  }
 
 /* ===================== LAYOUT SHOP ===================== */
 .shop {
@@ -128,6 +229,32 @@ aside li:hover {
     outline: none;
     font-size: 0.9em;
 }
+#searchBar{
+    width:100%;
+    padding:12px 14px;
+    border-radius:14px;
+    border:2px solid transparent;
+    background:#fff;
+    font-size:14px;
+    color:#5b3a29;
+    
+    
+    box-shadow:0 4px 10px rgba(0,0,0,.06);
+    transition:all .25s ease;
+    }
+    
+    
+    #searchBar::placeholder{
+    color:#b8a999;
+    }
+    
+    
+    #searchBar:focus{
+    outline:none;
+    border-color:#c49a4a;
+    box-shadow:0 0 0 4px rgba(196,154,74,.20);
+    transform:scale(1.02);
+    }
 
 /* ===================== GRIGLIA PRODOTTI ===================== */
 main {
@@ -153,6 +280,17 @@ main {
     height: 160px;
     object-fit: contain;
 }
+
+.prodotto{
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease;
+    }
+    
+    
+    .prodotto:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
 
 .prezzo {
     font-size: 1.3em;
