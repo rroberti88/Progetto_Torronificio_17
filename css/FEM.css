@@ -247,3 +247,169 @@ body {
         max-height: 80px;
     }
 }
+
+/* ===================== MINI HEADER ===================== */
+.mini-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+}
+
+.mini-header:hover {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-center {
+    text-align: center;
+    flex: 1;
+}
+
+.header-center img {
+    max-height: 90px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.header-center img:hover {
+    transform: scale(1.05);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 22px;
+}
+
+/* ===================== LINK HEADER ===================== */
+.header-right a,
+.home-link {
+    text-decoration: none;
+    color: #5d4037;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.header-right a:hover,
+.home-link:hover {
+    background: linear-gradient(135deg, #fff8e1, #fff3cd);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ===================== CARRELLO ===================== */
+.cart-link {
+    text-decoration: none;
+    color: #5d4037;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    font-weight: bold;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.cart-link:hover {
+    background: linear-gradient(135deg, #fff8e1, #fff3cd);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ===================== BADGE CARRELLO ===================== */
+.cart-link .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #c62828;
+    color: white;
+    font-size: 0.75em;
+    padding: 3px 7px;
+    border-radius: 50%;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.cart-link .badge:hover {
+    transform: scale(1.1);
+}
+
+/* HEADER CENTRATO COME SHOP */
+.mini-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;           /* zero top/bottom per allineare bene */
+    height: 86px;               /* stessa altezza di Shop */
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+}
+
+.header-left,
+.header-right {
+    width: 90px;               /* blocchi laterali uguali a Shop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;   /* centro orizzontalmente */
+    align-items: center;       /* centro verticalmente */
+    height: 100%;              /* prende tutta l’altezza dell’header */
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px;              /* uguale all’altezza header */
+    height: 86px;
+    padding: 0;               /* zero padding per farlo “quadrato” come Shop */
+    border-radius: 18px;
+    background: rgba(255,255,255,.6);
+    border: 1px solid rgba(201,161,59,.22);
+    box-shadow: 0 10px 26px rgba(0,0,0,.10);
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 70px;         /* leggermente più piccolo del contenitore */
+    max-width: 70px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
+}
+
+.logo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(0,0,0,.13);
+}

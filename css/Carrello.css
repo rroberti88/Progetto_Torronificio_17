@@ -22,8 +22,10 @@
 }
 
 .header-center {
-    text-align: center;
     flex: 1;
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
 }
 
 .header-center img {
@@ -105,4 +107,36 @@
 
 .cart-link .badge:hover {
     transform: scale(1.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Dimensione riquadro identica a Shop */
+    width: 86px;   /* uguale all’altezza header in Shop */
+    height: 86px;
+    
+    padding: 8px;  /* spazio interno attorno all’immagine */
+    
+    border-radius: 18px;
+    background: rgba(255,255,255,.6);
+    border: 1px solid rgba(201,161,59,.22);
+    box-shadow: 0 10px 26px rgba(0,0,0,.10);
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 70px; /* leggermente più piccolo del contenitore per centrarlo */
+    max-width: 70px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
+}
+
+/* Hover */
+.logo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(0,0,0,.13);
 }

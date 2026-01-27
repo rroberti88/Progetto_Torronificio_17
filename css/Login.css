@@ -10,6 +10,39 @@ body {
 }
 
 /* ================= MINI HEADER ================= */
+.header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.6); /* sfondo semi-trasparente */
+    border: 1px solid rgba(201,161,59,0.22); /* bordo leggero dorato */
+    box-shadow: 0 10px 26px rgba(0,0,0,0.10); /* ombra soffusa */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    height: 62px;
+    width: auto;
+    display: block;
+    object-fit: contain; 
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.20)); /* ombra sull’immagine */
+}
+
+.logo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.13);
+}
+
+
 .mini-header {
     display: flex;
     align-items: center;
