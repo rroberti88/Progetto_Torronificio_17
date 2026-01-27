@@ -14,7 +14,7 @@
   
   
   /* ===== IMMAGINE DI SFONDO ===== */
-  /* 🔥 CAMBIA QUI IL NOME SE VUOI */
+  
   .main-footer::before{
     content:"";
     position:absolute;
