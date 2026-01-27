@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const params = new URLSearchParams(window.location.search);
     const catFromHome = params.get("categoria");
+    
+
 
     if (catFromHome) {
     currentCategory = catFromHome;
