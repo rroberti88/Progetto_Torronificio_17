@@ -1,23 +1,24 @@
 <?php
 require_once "db.php";
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: ../codice%20html/Login.html?mode=register&reg_error=1");
+    exit();
+}
 
-    $nome = trim($_POST["newName"]);
-    $cognome = trim($_POST["newCognome"]);
-    $email = trim($_POST["newMail"]);
-    $data_nascita = $_POST["data_nascita"];
-    $username = trim($_POST["newUsername"]);
-    $password = $_POST["newPassword"];
+$nome = trim($_POST["newName"] ?? "");
+$cognome = trim($_POST["newCognome"] ?? "");
+$email = trim($_POST["newMail"] ?? "");
+$data_nascita = $_POST["data_nascita"] ?? "";
+$username = trim($_POST["newUsername"] ?? "");
+$password = $_POST["newPassword"] ?? "";
 
-    if (
-        empty($nome) || empty($cognome) || empty($email) ||
-        empty($data_nascita) || empty($username) || empty($password)
-    ) {
-        die("Tutti i campi sono obbligatori.");
-    }
+if ($nome === "" || $cognome === "" || $email === "" || $data_nascita === "" || $username === "" || $password === "") {
+    header("Location: ../codice%20html/Login.html?mode=register&reg_error=1");
+    exit();
+}
 
-    // Controllo username / email
+try {
     $checkSql = "SELECT id FROM users WHERE username = :username OR email = :email";
     $checkStmt = $pdo->prepare($checkSql);
     $checkStmt->execute([
@@ -25,18 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ":email" => $email
     ]);
 
-    if ($checkStmt->rowCount() > 0) {
-        die("Username o email già registrati.");
+    if ($checkStmt->fetch(PDO::FETCH_ASSOC)) {
+        header("Location: ../codice%20html/Login.html?mode=register&reg_error=exists");
+        exit();
     }
 
-    // Hash password
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-    // Inserimento utente
-    $sql = "INSERT INTO users 
-            (nome, cognome, email, data_nascita, username, password)
-            VALUES 
-            (:nome, :cognome, :email, :data_nascita, :username, :password)";
+    $sql = "INSERT INTO users (nome, cognome, email, data_nascita, username, password)
+            VALUES (:nome, :cognome, :email, :data_nascita, :username, :password)";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
@@ -48,10 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ":password" => $password_hash
     ]);
 
-    // Dopo l'inserimento nel DB
-    header("Location: ../codice html/RegisterSuccess.html"); // aggiusta il percorso se serve
+    header("Location: ../codice%20html/Login.html?mode=login&registered=1");
     exit();
-} else {
-    echo "Accesso non valido.";
+
+} catch (PDOException $e) {
+    header("Location: ../codice%20html/Login.html?mode=register&reg_error=1");
+    exit();
 }
-?>

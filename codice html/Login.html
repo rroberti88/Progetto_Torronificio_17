@@ -1,119 +1,126 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <title>Login & Registrazione</title>
-    <link rel="icon" type="image/png" href="../immagini jpg/logo (2).jpg">
-    <link rel="stylesheet" href="../css/Login.css">
-    <link rel="stylesheet" href="../css/footer.css">
+  <meta charset="UTF-8">
+  <title>Login & Registrazione</title>
+  <link rel="icon" type="image/png" href="../immagini jpg/logo (2).jpg">
+  <link rel="stylesheet" href="../css/Login.css">
+  <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <div class="mini-header">
-        <div class="header-left"></div>
-        <div class="header-center">
-            <a href="Home.html" class="logo">
-                <img src="../immagini jpg/LogoNardone.png" width="150" alt="Logo Torronificio Nardone">
-            </a>            
-        </div>
-        <div class="header-right">
-            <a id="home" href="Home.html" title="Torna alla Home">🏠</a>
-        </div>
+  <!-- HEADER -->
+  <div class="mini-header">
+    <div class="header-left"></div>
+    <div class="header-center">
+      <a href="Home.html" class="logo">
+        <img src="../immagini jpg/LogoNardone.png" width="150" alt="Logo Torronificio Nardone">
+      </a>
+    </div>
+    <div class="header-right">
+      <a id="home" href="Home.html" title="Torna alla Home">🏠</a>
+    </div>
+  </div>
+
+  <!-- CONTENUTO PRINCIPALE -->
+  <div class="main-content">
+
+    <!-- MESSAGGIO (error/success) -->
+    <div id="globalMsg" class="msg" style="display:none;" role="alert" aria-live="polite"></div>
+
+
+    <!-- LOGIN -->
+    <div id="loginContainer" class="container">
+      <div class="box">
+        <h2>Login</h2>
+        <form action="../script/login.php" method="post" id="loginForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Inserisci la password" required>
+
+          <button type="submit" id="loginBtn" disabled>Accedi</button>
+        </form>
+
+        <p>Non hai un account? <a href="#" id="showRegister">Registrati</a></p>
+      </div>
     </div>
 
-    <!-- CONTENUTO PRINCIPALE CENTRATO -->
-    <div class="main-content">
+    <!-- REGISTRAZIONE -->
+    <div id="registerContainer" class="container" style="display:none;">
+      <div class="box">
+        <h2>Registrati</h2>
+        <form action="../script/register.php" method="post" id="registerForm">
+          <label for="newName">Nome:</label>
+          <input type="text" id="newName" name="newName" required>
 
-        <!-- LOGIN -->
-        <div id="loginContainer" class="container">
-            <div class="box">
-                <h2>Login</h2>
-                <form action="../script/login.php" method="post">
-                    <label for="username">Username:</label><br>
-                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required><br><br>
+          <label for="newCognome">Cognome:</label>
+          <input type="text" id="newCognome" name="newCognome" required>
 
-                    <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" placeholder="Inserisci la password" required><br><br>
+          <label for="newMail">E-Mail:</label>
+          <input type="email" id="newMail" name="newMail" required>
 
-                    <button type="submit" id="loginBtn" disabled>Accedi</button>
-                </form>
-                <p>Non hai un account? <a href="#" id="showRegister">Registrati</a></p>
-            </div>
-        </div>
+          <label for="data_nascita">Data di nascita:</label>
+          <input type="date" id="data_nascita" name="data_nascita" required>
 
-        <!-- REGISTRAZIONE -->
-        <div id="registerContainer" class="container">
-            <div class="box">
-                <h2>Registrati</h2>
-                <form action="../script/register.php" method="post">
-                    <label for="newName">Nome:</label><br>
-                    <input type="text" id="newName" name="newName" required><br><br>
+          <label for="newUsername">Username:</label>
+          <input type="text" id="newUsername" name="newUsername" required>
 
-                    <label for="newCognome">Cognome:</label><br>
-                    <input type="text" id="newCognome" name="newCognome" required><br><br>
+          <label for="newPassword">Password:</label>
+          <input type="password" id="newPassword" name="newPassword" required>
 
-                    <label for="newMail">E-Mail:</label><br>
-                    <input type="email" id="newMail" name="newMail" required><br><br>
+          <button type="submit" id="regBtn" disabled>Registrati</button>
+        </form>
 
-                    <label for="data_nascita">Data di nascita:</label><br>
-                    <input type="date" id="data_nascita" name="data_nascita" required><br><br>
-
-                    <label for="newUsername">Username:</label><br>
-                    <input type="text" id="newUsername" name="newUsername" required><br><br>
-
-                    <label for="newPassword">Password:</label><br>
-                    <input type="password" id="newPassword" name="newPassword" required><br><br>
-
-                    <button type="submit" id="regBtn" disabled>Registrati</button>
-                </form>
-                <p>Hai già un account? <a href="#" id="showLogin">Accedi</a></p>
-            </div>
-        </div>
-
+        <p>Hai già un account? <a href="#" id="showLogin">Accedi</a></p>
+      </div>
     </div>
 
-    <footer class="main-footer">
-        <div class="footer-intro">
-            <h2>Dal 1903, Custodi dell'Arte del Torrone</h2>
-            <p>Tramandiamo una storia fatta di passione e ingredienti purissimi.<br>
-               Vieni a scoprire dove nasce la magia nel nostro Showroom.</p>
-        </div>
-    
-        <hr class="footer-divider">
-    
-        <div class="footer-content">
-            <div class="footer-column">
-                <img src="../immagini jpg/LogoNardone.png" alt="Logo Torronificio Nardone" width="130">
-                <p>📧 <a href="mailto:info@torronenardone.it">info@torronenardone.it</a></p>
-                <p>ⓕ <a href="https://www.facebook.com" target="_blank">Torronificio Nardone S.R.L.</a></p>
-            </div>
-    
-            <div class="footer-column">
-                <h3>Il Nostro Showroom</h3>
-                <address>
-                    <strong>Torronificio Nardone</strong><br>
-                    Via Roma, 144<br>
-                    83030 Pietradefusi fraz. Dentecane (AV)<br>
-                    ☎️ <a href="tel:+390825962028">+39 0825 962028</a>
-                </address>
-            </div>
-    
-            <div class="footer-column">
-                <h3>Orari di Apertura</h3>
-                <ul class="hours-list">
-                    <li><strong>Lunedì - Venerdì:</strong> 08:30-13:30 / 15:30-20:00</li>
-                    <li><strong>Sabato:</strong> 10:30-13:30 / 15:30-19:30</li>
-                    <li><strong>Domenica:</strong> 08:30-12:30</li>
-                </ul>
-            </div>
-        </div>
-    
-        <div class="footer-bottom">
-            <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
-        </div>
-    </footer>
+  </div>
 
-    <script src="../script/Login.js"></script>
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-intro">
+      <h2>Dal 1903, Custodi dell'Arte del Torrone</h2>
+      <p>Tramandiamo una storia fatta di passione e ingredienti purissimi.<br>
+        Vieni a scoprire dove nasce la magia nel nostro Showroom.</p>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-content">
+      <div class="footer-column">
+        <img src="../immagini jpg/LogoNardone.png" alt="Logo Torronificio Nardone" width="130">
+        <p>📧 <a href="mailto:info@torronenardone.it">info@torronenardone.it</a></p>
+        <p>ⓕ <a href="https://www.facebook.com" target="_blank">Torronificio Nardone S.R.L.</a></p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Il Nostro Showroom</h3>
+        <address>
+          <strong>Torronificio Nardone</strong><br>
+          Via Roma, 144<br>
+          83030 Pietradefusi fraz. Dentecane (AV)<br>
+          ☎️ <a href="tel:+390825962028">+39 0825 962028</a>
+        </address>
+      </div>
+
+      <div class="footer-column">
+        <h3>Orari di Apertura</h3>
+        <ul class="hours-list">
+          <li><strong>Lunedì - Venerdì:</strong> 08:30-13:30 / 15:30-20:00</li>
+          <li><strong>Sabato:</strong> 10:30-13:30 / 15:30-19:30</li>
+          <li><strong>Domenica:</strong> 08:30-12:30</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
+    </div>
+  </footer>
+
+  <script src="../script/Login.js"></script>
 </body>
 </html>

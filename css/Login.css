@@ -1,192 +1,383 @@
-/* ================= RESET BASE ================= */
+/* ================= RESET & BASE ================= */
+* { box-sizing: border-box; }
+
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #fff3cd, #fbe9e7);
-    color: #5d4037;
+    font-family: 'Georgia', serif;
+    background-color: #3e2723;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* ================= MINI HEADER ================= */
-.header-center {
+/* ================= ICONA HOME (CASSETTA) ================= */
+.header-right a {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+
+    background: rgba(255, 248, 225, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    color: #f4e3a1;
+    font-size: 24px;
+    transition: all 0.3s ease;
 }
+
+.header-right a:hover {
+    background: rgba(255, 248, 225, 0.4);
+    transform: scale(1.1) rotate(-5deg);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* (Opzionale) casetta solo CSS */
+.home-icon-css {
+    width: 20px;
+    height: 18px;
+    background: currentColor;
+    position: relative;
+    margin-top: 5px;
+}
+
+.home-icon-css::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 10px solid currentColor;
+}
+
+/* ================= SFONDO SFOCATO ================= */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url("../immagini jpg/stecche2.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+/* ================= MINI HEADER (CENTRO PERFETTO) ================= */
+.mini-header{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* sinistra - centro - destra */
+    align-items: center;
+    padding: 20px 50px;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left { justify-self: start; }
+.header-center { justify-self: center; }
+.header-right { justify-self: end; }
 
 .logo {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 8px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.6); /* sfondo semi-trasparente */
-    border: 1px solid rgba(201,161,59,0.22); /* bordo leggero dorato */
-    box-shadow: 0 10px 26px rgba(0,0,0,0.10); /* ombra soffusa */
+    padding: 10px 20px;
+    border-radius: 15px;
+
+    background: rgba(255, 248, 225, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .logo img {
-    height: 62px;
+    height: 55px;
     width: auto;
     display: block;
-    object-fit: contain; 
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.20)); /* ombra sull’immagine */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 .logo:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 34px rgba(0,0,0,0.13);
+    background: rgba(255, 248, 225, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-
-.mini-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background-color: #fff8e1;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    flex-shrink: 0;
-}
-
-.header-center img {
-    max-height: 90px;
-}
-
-.header-right a {
-    font-size: 28px;
-    text-decoration: none;
-    color: #5d4037;
-    transition: 0.3s;
-}
-
-.header-right a:hover {
-    color: #c62828;
-}
-
-/* ================= CONTAINER LOGIN / REGISTER ================= */
+/* ================= CONTENUTO ================= */
 .main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centra verticalmente tutto */
-    align-items: center;     /* centra orizzontalmente */
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    box-sizing: border-box;
-    width: 100%;
 }
 
-/* ================= BOX FORM ================= */
-.container {
+/* ================= MESSAGGI (error/success) ================= */
+.msg{
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 16px auto;
+    padding: 12px 16px;
+    border-radius: 18px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 248, 225, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.msg.error{
+    border-color: rgba(255, 155, 155, 0.65);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.15);
+}
+
+.msg.success{
+    border-color: rgba(127, 226, 142, 0.65);
+    box-shadow: 0 10px 25px rgba(0, 255, 120, 0.12);
+}
+
+/* ================= CONTAINER ================= */
+.container{
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
+/* ================= BOX (BASE) ================= */
 .box {
-    background: #fff8e1;
-    padding: 20px 15px; /* box compatto */
+    background: rgba(255, 248, 225, 0.15);
+    padding: 35px 30px;
     width: 100%;
-    max-width: 400px;   /* larghezza fissa */
-    border-radius: 25px;
+    max-width: 520px;        /* login più comodo */
+    border-radius: 30px;
     text-align: center;
-    margin: 10px 0;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* ================= TITOLI ================= */
 .box h2 {
-    color: #8d6e63;
-    margin-bottom: 10px;
-    font-size: 26px;
+    color: #ffffff;
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    margin: 0 0 18px 0;
 }
 
-/* ================= FORM ================= */
+/* ================= FORM & INPUT (BASE) ================= */
 .box form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0px; /* nessun gap tra label e input */
-    width: 100%;
+    gap: 14px;
+    align-items: center; /* centra bene i campi */
 }
 
 .box label {
-    display: block;
-    text-align: left;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
     font-weight: bold;
-    margin-bottom: 0px; /* zero spazio sotto label */
+    font-size: 0.8em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    width: 100%;
 }
 
 .box input {
     width: 100%;
-    max-width: 380px;
-    padding: 10px 12px; 
-    border-radius: 25px;
-    border: 1px solid #d7ccc8;
-    font-size: 15px;
+    max-width: 520px;
+    padding: 12px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff !important;
+    font-family: 'Georgia', serif;
     outline: none;
-    margin-bottom: 0px; /* zero spazio sotto input */
+    text-align: center;
+}
+
+.box input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .box input:focus {
-    border-color: #ff8f00;
-    box-shadow: 0 0 6px rgba(255,143,0,0.4);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #f4e3a1;
 }
 
-/* ================= BOTTONI ================= */
+/* ================= BOTTONE ================= */
 .box button {
     width: 100%;
-    max-width: 380px;
-    padding: 12px 0;
-    border-radius: 25px;
+    max-width: 520px;
+    margin: 8px 0 0 0;
+    padding: 14px;
+    border-radius: 50px;
     border: none;
-    background: linear-gradient(135deg, #c62828, #ff8f00);
+    background: linear-gradient(135deg, #c9a13b, #8d6e63);
     color: white;
-    font-size: 15px;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     transition: all 0.3s ease;
-    margin-top: 5px; /* piccolo spazio prima del pulsante */
 }
 
 .box button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.box button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
 /* ================= LINK ================= */
+.box p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Georgia', serif;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
 .box a {
-    color: #c62828;
+    color: #f4e3a1;
     font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1.2px;
+    margin-left: 5px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(244, 227, 161, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .box a:hover {
-    color: #ff8f00;
-    text-decoration: underline;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    text-shadow: 0 0 8px rgba(244, 227, 161, 0.6);
+    transform: scale(1.05);
 }
 
-/* ================= MESSAGGI DI ERRORE ================= */
-.box .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+/* ================= REGISTRAZIONE: GRIGLIA PULITA ================= */
+
+/* Box registrazione più largo */
+#registerContainer .box{
+    max-width: 720px;
+    padding: 30px 30px;
+}
+
+/* Form registrazione a griglia ordinata */
+.register-form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 18px;
+    align-items: end;
+}
+
+/* Ogni campo */
+.register-form .field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Label sinistra (più elegante) */
+.register-form label{
+    text-align: left;
+    margin-left: 8px;
+    font-size: 0.75em;
+}
+
+/* Input regolari */
+.register-form input{
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    text-align: center;
+}
+
+/* elementi larghi due colonne */
+.register-form .span-2{
+    grid-column: span 2;
+}
+
+/* bottone full width in register */
+#registerContainer .box button{
+    width: 100%;
+    max-width: none;
+    margin: 6px 0 0 0;
+}
+
+/* footer sotto registrazione centrato */
+.register-footer{
+    text-align: center;
+    margin-top: 14px;
 }
 
 /* ================= RESPONSIVE ================= */
-@media screen and (max-width: 768px) {
-    .box {
-        padding: 15px 10px;
-        max-width: 90%;
+@media (max-width: 720px){
+    .mini-header{
+        padding: 16px 16px;
     }
 
-    .header-right a {
-        font-size: 24px;
+    .box{
+        max-width: 460px;
+        padding: 30px 22px;
+    }
+
+    #registerContainer .box{
+        max-width: 460px;
+        padding: 30px 22px;
+    }
+
+    .register-form{
+        grid-template-columns: 1fr;
+    }
+
+    .register-form .span-2{
+        grid-column: span 1;
+    }
+}
+
+/* Opzionale: se schermo basso, scroll interno nella registrazione */
+@media (max-height: 750px){
+    #registerContainer .box{
+        max-height: 75vh;
+        overflow-y: auto;
     }
 }
