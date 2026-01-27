@@ -6,58 +6,111 @@ body {
     color: #5d4037;
 }
 
-/* ================= HEADER ================= */
-.header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+/* ================= HEADER HOME (NUOVO) ================= */
+.main-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    height: 100px;
-    padding: 0 50px;
-    box-sizing: border-box;
-    background-color: #fff8e1;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    padding: 15px 40px;
+    margin-bottom: 30px;
+
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+/* SINISTRA */
 .header-left {
     display: flex;
-    gap: 10px;
-    align-items: center;
+    gap: 15px;
 }
 
+.header-left a {
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: 15px;
+    color: #5d4037;
+
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
+}
+
+.header-left a:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* CENTRO LOGO */
+.header-center {
+    display: flex;
+    justify-content: center;
+}
+
+.header-center img {
+    max-height: 90px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.header-center img:hover {
+    transform: scale(1.05);
+}
+
+/* DESTRA */
 .header-right {
     display: flex;
+    justify-content: flex-end;
     gap: 15px;
-    align-items: center;
 }
 
-.header-icons {
-    display: inline-flex;     
-    gap: 10px;                
-    align-items: center;       
-}
-
-.header-icons a {
-    font-size: 22px;           
-    text-decoration: none; 
+.header-right a {
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: 15px;
     color: #5d4037;
-    transition: 0.3s;
+
+    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
 }
 
-.header-icons a:hover {
-    color: #ffd54f;            
+.header-right a:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-/* ================= LOGO + CHI SIAMO ================= */
-.logo-chi-siamo {
+/* CARRELLO */
+.cart-link {
+    position: relative;
+}
+
+.cart-link .badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #c62828;
+    color: white;
+    font-size: 0.7em;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+.chi-siamo-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    gap: 15px;
+    justify-content: center;
+    margin: 30px 0 20px 0;
 }
 
 button.chi-siamo {
@@ -76,6 +129,7 @@ button.chi-siamo:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
 
 /* ================= INTRO ================= */
 .intro-container {
