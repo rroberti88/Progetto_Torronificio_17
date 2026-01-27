@@ -1,142 +1,267 @@
-/* ===================== MINI HEADER ===================== */
-.mini-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: all 0.3s ease;
+/* ===================== RESET ===================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.mini-header:hover {
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.header-center {
-    flex: 1;
-    display: flex;           
-    justify-content: center; 
-    align-items: center;     
-}
-
-.header-center img {
-    max-height: 90px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.header-center img:hover {
-    transform: scale(1.05);
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 22px;
-}
-
-/* ===================== LINK HEADER ===================== */
-.header-right a,
-.home-link {
-    text-decoration: none;
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff8e1;
     color: #5d4037;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
 }
 
-.header-right a:hover,
-.home-link:hover {
-    background: linear-gradient(135deg, #fff8e1, #fff3cd);
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+/* ===================== SFONDO CARRELLO ===================== */
+.carrello-container {
+    max-width: 1400px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 40px;
+    padding: 0 30px;
+    position: relative; /* container relativo per sfondo */
+    z-index: 1; 
 }
 
-/* ===================== CARRELLO ===================== */
-.cart-link {
-    text-decoration: none;
-    color: #5d4037;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
-    font-weight: bold;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-}
-
-.cart-link:hover {
-    background: linear-gradient(135deg, #fff8e1, #fff3cd);
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* ===================== BADGE CARRELLO ===================== */
-.cart-link .badge {
+.carrello-container::before {
+    content: "";
     position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #c62828;
-    color: white;
-    font-size: 0.75em;
-    padding: 3px 7px;
-    border-radius: 50%;
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* copre tutta l'altezza del container */
+    background: url("/mnt/data/13a8277a-eb17-4fa6-a874-4ec8a2fa9ef2.png") center/cover no-repeat;
+    opacity: 0.15; 
+    z-index: -1; /* dietro il contenuto */
 }
 
-.cart-link .badge:hover {
-    transform: scale(1.1);
+/* ===================== HEADER ===================== */
+header {
+    height: 86px;
+    padding: 0 34px;
+    background: rgba(255, 248, 225, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(201,161,59,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+header::after {
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:3px;
+    background: linear-gradient(90deg, transparent, #c9a13b, #8d6e63, #c9a13b, transparent);
+}
+
+.header-left,
+.header-right {
+    width: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.header-left { justify-content: flex-start; }
+.header-right { justify-content: flex-end; }
+
+#home {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(201,161,59,0.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+#home:hover {
+    transform: translateY(-2px);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Dimensione riquadro identica a Shop */
-    width: 86px;   /* uguale all’altezza header in Shop */
-    height: 86px;
-    
-    padding: 8px;  /* spazio interno attorno all’immagine */
-    
+    padding: 4px 8px;
     border-radius: 18px;
-    background: rgba(255,255,255,.6);
-    border: 1px solid rgba(201,161,59,.22);
-    box-shadow: 0 10px 26px rgba(0,0,0,.10);
-    text-decoration: none;
+    background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(201,161,59,0.22);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.10);
 }
 
 .logo img {
-    max-height: 70px; /* leggermente più piccolo del contenitore per centrarlo */
-    max-width: 70px;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
+    height: 62px;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
 }
 
-/* Hover */
-.logo:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 34px rgba(0,0,0,.13);
+/* ===================== TITOLI ORO ===================== */
+.carrello-title,
+.riepilogo-ordine h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    background: linear-gradient(135deg, #c9a13b, #8d6e63, #c9a13b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===================== CARRELLO ===================== */
+.carrello-box {
+    background: rgba(255,255,255,0.95);
+    border-radius: 24px;
+    padding: 25px 20px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease;
+}
+
+.carrello-box:hover {
+    transform: translateY(-2px);
+}
+
+.carrello-header,
+.carrello-item {
+    display: grid;
+    grid-template-columns: 50px 130px 1.5fr 90px 70px 100px;
+    align-items: center;
+    gap: 15px;
+}
+
+.carrello-header {
+    font-weight: 600;
+    border-bottom: 2px solid #e0d5c1;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+.carrello-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0e6d2;
+    transition: background 0.2s ease;
+}
+
+.carrello-item:hover {
+    background: rgba(201,161,59,0.05);
+    border-radius: 18px;
+}
+
+.carrello-item img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease;
+}
+
+.carrello-item img:hover {
+    transform: scale(1.05);
+}
+
+.carrello-item input {
+    width: 60px;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #d6c8a2;
+    text-align: center;
+    transition: border 0.2s ease;
+}
+
+.carrello-item input:focus {
+    border-color: #c9a13b;
+    outline: none;
+}
+
+.remove {
+    background: rgba(255,230,230,0.8);
+    border: none;
+    color: #c62828;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 4px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.remove:hover {
+    background: #fddede;
+    transform: scale(1.1);
+}
+
+.carrello-vuoto {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+    color: #8d6e63;
+}
+
+/* ===================== RIEPILOGO ===================== */
+.riepilogo-ordine {
+    background: rgba(255,255,255,0.95);
+    border-radius: 24px;
+    padding: 25px 20px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+.riepilogo-riga {
+    display: flex;
+    justify-content: space-between;
+    margin: 14px 0;
+    font-size: 1em;
+    color: #5d4037;
+}
+
+.totale {
+    font-weight: 700;
+    font-size: 1.15em;
+}
+
+/* ===================== CHECKOUT ===================== */
+.checkout {
+    margin-top: 30px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 28px;
+    border: none;
+    background: linear-gradient(135deg, #c9a13b, #8d6e63);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkout:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+    .carrello-container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .carrello-header,
+    .carrello-item {
+        grid-template-columns: 40px 100px 1fr 70px 50px 80px;
+        gap: 10px;
+    }
+
+    .carrello-item img {
+        width: 90px;
+    }
 }

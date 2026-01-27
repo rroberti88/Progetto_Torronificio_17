@@ -2,50 +2,85 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Carrello</title>
-    <link rel="icon" type="image/png" href="../immagini jpg/logo (2).jpg">
+    <title>Carrello – Torrone Nardone</title>
+    <link rel="icon" type="image/png" href="../immagini jpg/LogoNardone.png">
     <link rel="stylesheet" href="../css/Carrello.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
-            <body>
-                <div class="mini-header">
 
-                    <div class="header-left"></div>
-                
-                    <div class="header-center">
-                        <a href="Home.html" class="logo">
-                            <img src="../immagini jpg/LogoNardone.png" width="150" alt="Logo Torronificio Nardone">
-                        </a>                        
-                    </div>
-                
-                    <div class="header-right">
-                        <a id="home" href="Home.html" title="Torna alla Home">🏠</a>
-                    </div>
-                
-                </div>
+<body>
 
-                <!-- Titolo del sito -->
-                <h1 style="margin-top: 10px;">Nardone Shop</h1>  
-                </div>
-                
-                <li><a href="Shop.html">Shop</a></li>
-                
-                <!-- Lista prodotti (vuota, da riempire con script) -->
-                <section class="carrello-prodotti" id="carrello-prodotti">
-                <p>Il tuo carrello è vuoto.</p>
-                </section>
-                
-                
-                <!-- Riepilogo ordine (inizialmente vuoto) -->
-                <aside class="riepilogo-ordine" id="riepilogo-ordine">
-                <h2>Riepilogo Ordine</h2>
-                <p>Totale parziale: €0,00</p>
-                <p>Spedizione: €0,00</p>
-                <p><strong>Totale: €0,00</strong></p>
-                <button class="checkout" disabled>Procedi al checkout</button>
-                </aside>
+<!-- ===================== HEADER ===================== -->
+<header>
+    <div class="header-left">
+        <a id="home" href="Home.html" title="Torna alla Home">🏠</a>
+    </div>
 
-<!-- FOOTER -->
+    <a href="Home.html" class="logo">
+        <img src="../immagini jpg/LogoNardone.png" alt="Logo Torronificio Nardone">
+    </a>
+
+    <div class="header-right"></div>
+</header>
+
+<!-- ===================== CONTENUTO CARRELLO ===================== -->
+<main class="carrello-container">
+
+    <!-- SINISTRA: Carrello -->
+    <section class="carrello-box">
+        <h2 class="carrello-title">Carrello</h2>
+
+        <div class="carrello-header">
+            <span></span>
+            <span>Prodotto</span>
+            <span>Nome</span>
+            <span>Prezzo</span>
+            <span>Qtà</span>
+            <span>Subtotale</span>
+        </div>
+
+        <!-- Riga prodotto esempio -->
+        <div class="carrello-item">
+            <button class="remove">✖</button>
+            <img src="../immagini jpg/070.jpg" alt="Torroncino Pistacchio">
+            <span class="nome-prodotto">Torroncino Pistacchio</span>
+            <span class="prezzo">€3,50</span>
+            <input type="number" value="1" min="1">
+            <span class="subtotale">€3,50</span>
+        </div>
+
+        <!-- Aggiungi altri prodotti qui -->
+
+        <p class="carrello-vuoto" style="display:none;">Il carrello è vuoto.</p>
+    </section>
+
+    <!-- DESTRA: Riepilogo Ordine -->
+    <aside class="riepilogo-ordine">
+        <h2>Riepilogo Ordine</h2>
+
+        <div class="riepilogo-riga">
+            <span>Subtotale</span>
+            <span>€3,50</span>
+        </div>
+
+        <div class="riepilogo-riga">
+            <span>Spedizione</span>
+            <span>€5,00</span>
+        </div>
+
+        <hr>
+
+        <div class="riepilogo-riga totale">
+            <span>Totale</span>
+            <span>€8,50</span>
+        </div>
+
+        <button class="checkout">Procedi al checkout</button>
+    </aside>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
 <footer class="main-footer">
     <div class="footer-intro">
         <h2>Dal 1903, Custodi dell'Arte del Torrone</h2>
