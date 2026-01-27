@@ -1,415 +1,369 @@
 /* ===================== RESET DI BASE ===================== */
+* { box-sizing: border-box; }
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #fdf8f3;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #fdf8f3;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: #333;
 }
 
-/* ===================== HEADER ===================== */
-.mini-header {
-    display: flex;                  
-    align-items: center;            
-    justify-content: space-between; 
-    padding: 10px 20px;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: white;
+/* ===================== HEADER (UNICO, NO DOPPIONI) ===================== */
+.mini-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  height: 86px;
+  margin: 20px 20px 30px;
+  background: linear-gradient(135deg, #fff3cd, #fff8e1);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
 }
 
-.header-left {
-    width: 150px;                   
-}
-
-.header-center {
-    flex: 1;
-    text-align: center;             
-}
-
-.header-center img {
-    max-height: 100px;              
-}
-
-.header-right {
-    width: 50px;                    
-    text-align: right;
-    font-size: 30px;                
-}
-
-.header-right a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* BACK LINK (se presente) */
-.back-link {
-    display: block;
-    font-size: 0.9em;
-    color: #8d6e63;
-    text-decoration: none;
-    margin-top: 10px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.back-link:hover {
-    color: #5d4037;
-}
-
-/* ===================== SEZIONE PRODOTTI ===================== */
-.mustof-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.mustof-section .titolo {
-    font-size: 2.2em;
-    color: #5d4037;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.prodotti-griglia {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
-    justify-items: center;
-}
-
-.prodotto-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    width: 100%;
-    max-width: 280px;
-    cursor: pointer;
-}
-
-.prodotto-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(93, 64, 55, 0.1);
-}
-
-.prodotto-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.prodotto-card p {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #5d4037;
-    margin: 0;
-}
-
-/* ===================== FIERE E CERTIFICAZIONI ===================== */
-.events-certifications {
-    background-color: #f9f3ee;
-    padding: 80px 20px;
-}
-
-.titolo-sezione {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 50px;
-    color: #5d4037;
-    text-transform: uppercase;
-}
-
-.griglia-fiere {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1050px;
-    margin: 0 auto;
-}
-
-.event-card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(93,64,55,0.1);
-}
-
-.foto-fiera {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.logo-fiera {
-    height: 50px;
-    margin: 20px 0;
-}
-
-/* ===================== BOX CERTIFICAZIONE ===================== */
-.cert-box {
-    display: flex;
-    align-items: center;
-    background: #5d4037;
-    color: white;
-    padding: 50px;
-    border-radius: 20px;
-    max-width: 900px;
-    margin: 60px auto 0;
-    gap: 40px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    flex-wrap: wrap; 
-    transition: all 0.3s ease; /* aggiunto per hover */
-    cursor: pointer;
-}
-
-.cert-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.cert-text h2 {
-    color: #ffd54f;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.cert-text p {
-    line-height: 1.6;
-    opacity: 0.95;
-}
-
-.cert-tags {
-    margin-top: 15px;
-}
-
-.tag {
-    background: rgba(255,255,255,0.15);
-    padding: 6px 15px;
-    border-radius: 25px;
-    font-size: 0.85em;
-    margin-right: 10px;
-    display: inline-block;
-}
-
-.cert-img-container {
-    flex: 0 0 220px;
-}
-
-.cert-img {
-    width: 100%;
-    border-radius: 10px;
-    border: 5px solid rgba(255,255,255,0.1);
-}
-
-/* ===================== RESPONSIVE ===================== */
-@media screen and (max-width: 768px) {
-    .prodotti-griglia {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cert-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cert-img-container {
-        flex: 1 0 auto;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .prodotti-griglia {
-        grid-template-columns: 1fr;
-    }
-
-    .header-right {
-        font-size: 26px;
-    }
-
-    .header-center img {
-        max-height: 80px;
-    }
-}
-
-/* ===================== MINI HEADER ===================== */
-.mini-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: all 0.3s ease;
-}
-
-.mini-header:hover {
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.header-center {
-    text-align: center;
-    flex: 1;
-}
-
-.header-center img {
-    max-height: 90px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.header-center img:hover {
-    transform: scale(1.05);
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 22px;
-}
-
-/* ===================== LINK HEADER ===================== */
-.header-right a,
-.home-link {
-    text-decoration: none;
-    color: #5d4037;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-}
-
-.header-right a:hover,
-.home-link:hover {
-    background: linear-gradient(135deg, #fff8e1, #fff3cd);
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* ===================== CARRELLO ===================== */
-.cart-link {
-    text-decoration: none;
-    color: #5d4037;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
-    font-weight: bold;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-}
-
-.cart-link:hover {
-    background: linear-gradient(135deg, #fff8e1, #fff3cd);
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* ===================== BADGE CARRELLO ===================== */
-.cart-link .badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #c62828;
-    color: white;
-    font-size: 0.75em;
-    padding: 3px 7px;
-    border-radius: 50%;
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-}
-
-.cart-link .badge:hover {
-    transform: scale(1.1);
-}
-
-/* HEADER CENTRATO COME SHOP */
-.mini-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 25px;           /* zero top/bottom per allineare bene */
-    height: 86px;               /* stessa altezza di Shop */
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: all 0.3s ease;
+.mini-header:hover{
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
 }
 
 .header-left,
-.header-right {
-    width: 90px;               /* blocchi laterali uguali a Shop */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.header-right{
+  width: 90px;                 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;   /* centro orizzontalmente */
-    align-items: center;       /* centro verticalmente */
-    height: 100%;              /* prende tutta l’altezza dell’header */
+.header-center{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 /* LOGO */
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 86px;              /* uguale all’altezza header */
-    height: 86px;
-    padding: 0;               /* zero padding per farlo “quadrato” come Shop */
-    border-radius: 18px;
-    background: rgba(255,255,255,.6);
-    border: 1px solid rgba(201,161,59,.22);
-    box-shadow: 0 10px 26px rgba(0,0,0,.10);
-    text-decoration: none;
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 86px;
+  height: 86px;
+  padding: 0;
+  border-radius: 18px;
+  background: rgba(255,255,255,.6);
+  border: 1px solid rgba(201,161,59,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  text-decoration: none;
+  transition: all .25s ease;
 }
 
-.logo img {
-    max-height: 70px;         /* leggermente più piccolo del contenitore */
-    max-width: 70px;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
+.logo img{
+  max-height: 70px;
+  max-width: 70px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
 }
 
-.logo:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 34px rgba(0,0,0,.13);
+.logo:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.13);
+}
+
+/* HOME LINK */
+.header-right a{
+  text-decoration: none;
+  color: #5d4037;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.55);
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  font-size: 22px;
+}
+
+.header-right a:hover{
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ===================== SEZIONE PRODOTTI ===================== */
+.mustof-section{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.mustof-section .titolo{
+  font-size: 2.2em;
+  color: #5d4037;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.prodotti-griglia{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.prodotto-card{
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 320px;  /* leggermente più largo */
+  cursor: pointer;
+}
+
+.prodotto-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(93, 64, 55, 0.12);
+}
+
+.prodotto-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.prodotto-card p{
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #5d4037;
+  margin: 0;
+}
+
+/* ===================== FIERE E CERTIFICAZIONI ===================== */
+.events-certifications{
+  background-color: #f9f3ee;
+  padding: 80px 20px;
+}
+
+.titolo-sezione{
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #5d4037;
+  text-transform: uppercase;
+}
+
+.griglia-fiere{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.event-card{
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.event-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(93,64,55,0.1);
+}
+
+.foto-fiera{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logo-fiera{
+  height: 50px;
+  margin: 20px 0;
+}
+
+/* ===================== BOX CERTIFICAZIONE ===================== */
+.cert-box{
+  display: flex;
+  align-items: center;
+  background: #5d4037;
+  color: white;
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 60px auto 0;
+  gap: 40px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cert-box:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.cert-text h2{
+  color: #ffd54f;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.cert-text p{
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.cert-tags{
+  margin-top: 15px;
+}
+
+.tag{
+  background: rgba(255,255,255,0.15);
+  padding: 6px 15px;
+  border-radius: 25px;
+  font-size: 0.85em;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.cert-img-container{
+  flex: 0 0 220px;
+}
+
+.cert-img{
+  width: 100%;
+  border-radius: 10px;
+  border: 5px solid rgba(255,255,255,0.1);
+}
+
+/* ===================== MODAL POPUP ===================== */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+}
+
+.modal.show{
+  display: flex;
+}
+
+.modal-content{
+  background: white;
+  width: 100%;
+  max-width: 820px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.modal-close{
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  border: none;
+  font-size: 34px;
+  background: none;
+  cursor: pointer;
+  color: #5d4037;
+}
+
+.modal-body{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.modal-img-wrap{
+  background: #f9f3ee;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img-wrap img{
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-text{
+  padding: 30px;
+  text-align: left;
+}
+
+.modal-text h3{
+  margin: 0 0 10px;
+  color: #5d4037;
+  font-size: 1.6em;
+}
+
+.modal-text p{
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+
+.modal-text ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+  color: #5d4037;
+}
+
+.modal-text li{
+  margin-bottom: 8px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media screen and (max-width: 768px){
+  .prodotti-griglia{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-box{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cert-img-container{
+    flex: 1 0 auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .modal-body{
+    grid-template-columns: 1fr;
+  }
+
+  .modal-text{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .prodotti-griglia{
+    grid-template-columns: 1fr;
+  }
 }

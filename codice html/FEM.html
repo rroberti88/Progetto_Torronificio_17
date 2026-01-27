@@ -7,94 +7,146 @@
     <link rel="stylesheet" href="../css/FEM.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
+
 <body>
 
+    <!-- ================= HEADER ================= -->
     <header class="mini-header">
         <div class="header-left"></div>
-    
+
         <div class="header-center">
             <a href="Home.html" class="logo">
                 <img src="../immagini jpg/LogoNardone.png" width="150" alt="Logo Torronificio Nardone">
-            </a>            
+            </a>
         </div>
-    
+
         <div class="header-right">
             <a id="home" href="Home.html" title="Torna alla Home">🏠</a>
         </div>
     </header>
-    
-    
+
+
+    <!-- ================= ECCELLENZE ================= -->
     <section class="mustof-section">
         <div id="sezione-eccellenze" style="display: none;">
-        <h2 class="titolo">Le nostre Eccellenze</h2>
-        <div class="prodotti-griglia">
-            <div class="prodotto-card">
-            <img src="../immagini jpg/0101.jpg" alt="Pannardone Tradizionale">
-            <p>Pannardone Tradizionale</p>
-            </div>
-            <div class="prodotto-card">
-                <img src="../immagini jpg/0102.jpg" alt="Pannardone Cherry">
-                <p>Pannardone Cherry</p>
-            </div>
-            <div class="prodotto-card">
-                <img src="../immagini jpg/0107.jpg" alt="Pannardone Limoncello">
-                <p>Pannardone Limoncello</p>
-            </div>
-            <div class="prodotto-card">
-                <img src="../immagini jpg/0128.jpg" alt="Le Gioie">
-                <p>Le Gioie</p>
-            </div>
-            <div class="prodotto-card">
-                <img src="../immagini jpg/0142 pannardelli.jpg" alt="Pannardelli">
-                <p>Pannardelli</p>
-            </div>
-            <div class="prodotto-card">
-                <img src="../immagini jpg/mokup panettone.jpg" alt="Panettone Artigianale">
-                <p>Panettone Artigianale</p>
+
+            <h2 class="titolo">Le nostre Eccellenze</h2>
+
+            <div class="prodotti-griglia">
+
+                <!-- PRODOTTO 1 -->
+                <div class="prodotto-card"
+                     data-title="Pannardone Tradizionale"
+                     data-img="../immagini jpg/0101.jpg"
+                     data-desc="Il Pannardone tradizionale è il must of per eccellenza dell'azienda Nardone: un pan di spagna friabile imbevuto di liquore delicato con uno strato di cioccolato fondente che lo avvolge: un pò come quando la nonna ti avvolgeva la coperta da piccolo. Con un morso ti sentirai immediatamente catapultato nella tua infanzia rivivendo ricordi fantastici."
+                     data-features="Ricetta tradizionale|Ricoperto di cioccolato|Perfetto come regalo">
+                    <img src="../immagini jpg/0101.jpg">
+                    <p>Pannardone Tradizionale</p>
+                </div>
+
+                <!-- PRODOTTO 2 -->
+                <div class="prodotto-card"
+                     data-title="Pannardone Cherry"
+                     data-img="../immagini jpg/0102.jpg"
+                     data-desc="Il Pannardone allo Cherry è una variante molto valida del Pannardone Tradizionale: la composizione è molto simile con l'unica differenza che in questo caso il liquore utilizzato per bagnare il pan di spagna è lo Cherry. In questo modo il sapore assume una nota fruttata e piacevole che ti provoca un senso di piacere immenso: come se stessi nell'Eden e al posto della mela stessi mangiando un mon cheri."
+                     data-features="Aroma fruttato|Gusto intenso|Ricoperto di cioccolato">
+                    <img src="../immagini jpg/0102.jpg">
+                    <p>Pannardone Cherry</p>
+                </div>
+
+                <!-- PRODOTTO 3 -->
+                <div class="prodotto-card"
+                     data-title="Pannardone Limoncello"
+                     data-img="../immagini jpg/0107.jpg"
+                     data-desc="Il Pannardone al Limoncello costituisce la variante più forte del Pannardone tradizionale: l'utilizzo del Limoncello per ammorbidire il pan di spagna è stata la scelta vincente sin da subito. Il sapore dolce ma agrumato del Limoncello conferisce un senso di freschezza al morso inequivocabile. Dopo averlo addentato verrai trasportato direttamente sulle spiaggie di Sorrento."
+                     data-features="Fresco|Agrumato|Perfetto dopo pasto">
+                    <img src="../immagini jpg/0107.jpg">
+                    <p>Pannardone Limoncello</p>
+                </div>
+
+                <!-- PRODOTTO 4 -->
+                <div class="prodotto-card"
+                     data-title="Le Gioie"
+                     data-img="../immagini jpg/0128.jpg"
+                     data-desc="Le Gioie sono dei cioccolatini ripieni di crema alla nocciola ricoperti interamente di cioccolato al Gianduia. Inutile sottolineare che il nome associato a questo prodotto non è casuale: una volta provato ti immedesimi immediatamente in uno scoiattolo che prova gioia immensa per aver trovato la sua ghianda."
+                     data-features="Snack dolce|Formato pratico|Ideale da condividere">
+                    <img src="../immagini jpg/0128.jpg">
+                    <p>Le Gioie</p>
+                </div>
+
+                <!-- PRODOTTO 5 -->
+                <div class="prodotto-card"
+                     data-title="Pannardelli"
+                     data-img="../immagini jpg/0142 pannardelli.jpg"
+                     data-desc="I pannardelli hanno decisamente un sapore più forte delle gioie : croccantini di mandorle ricoperti di cioccolato fondente. La durezza delle mandorle associate al sapore leggermente amaro del cioccolato fondente danno vita ad un abbinamento che potrebbe sembrare poco piacevole ma che invece rappresenta un'esplosione di gusto al primo morso. Il binomio di gusti all'inizio era un'incognita ma a giudicare dall'apprezzamento dei clienti, nel corso degli anni sono diventati dei prodotti di punta eccellenti dell'azienda Nardone."
+                     data-features="Croccante|Fondente|Snack gourmet">
+                    <img src="../immagini jpg/0142 pannardelli.jpg">
+                    <p>Pannardelli</p>
+                </div>
+
+                <!-- PRODOTTO 6 -->
+                <div class="prodotto-card"
+                     data-title="Panettone Artigianale"
+                     data-img="../immagini jpg/mokup panettone.jpg"
+                     data-desc="Il Panettone Artiginiale Nardone è il regalo migliore in diverse occasioni. La base è sempre un panettone con lievito madre ma si può scegliere tra diverse varianti, ma con molti punti in comune: la base, la scatola regalo ma soprattutto la bontà del prodotto; che tu scelga la variante al cioccolato semplice o quella con albicocche molto più sbizzarrina una cosa è certa : rimarrai sicuramente soddisfatto dalla morbidezza dell'impasto e dal gusto saporito."
+                     data-features="Pistacchio con fondente e scaglie bianche|Cioccolato fondente|Albicocche e frutta esotica|Uvetta e canditi|Crema al caramello salato con mela e cannella">
+                    <img src="../immagini jpg/mokup panettone.jpg">
+                    <p>Panettone Artigianale</p>
+                </div>
+
             </div>
         </div>
-    </div>
     </section>
 
+
+    <!-- ================= EVENTI ================= -->
     <section class="events-certifications">
         <div id="sezione-eventi" style="display: none;">
-        <h2 class="titolo-sezione">Il Nostro Percorso d'Eccellenza</h2>
-        
-        <div class="griglia-fiere">
-            <div class="event-card">
-                <img src="../immagini jpg/fotofiera.jpg" alt="Stand Fiera" class="foto-fiera">
-                <img src="../immagini jpg/tuttofood.jpg" alt="Logo Fiera" class="logo-fiera">
-                <p>TuttoFood Milano</p>
-            </div>
-            <div class="event-card">
-                <img src="../immagini jpg/fotofiera2.jpg" alt="Esposizione" class="foto-fiera">
-                <img src="../immagini jpg/ism.jpg" alt="Logo Evento" class="logo-fiera">
-                <p>ISM Colonia - Germania</p>
-            </div>
-            <div class="event-card">
-                <img src="../immagini jpg/fotofiera3.jpg" alt="Team" class="foto-fiera">
-                <img src="../immagini jpg/cibus2.jpg" alt="Logo Cibus" class="logo-fiera">
-                <p>Cibus Parma</p>
-            </div>
-        </div>
-    
 
-        <div class="cert-box">
-            <div class="cert-text">
-                <h2>Qualità Certificata IFS Food</h2>
-                <p>La nostra promessa di bontà è certificata dai più rigorosi standard globali. Dal 2018, il Torronificio Nardone è orgogliosamente certificato IFS Food, un traguardo che garantisce ai nostri partner e consumatori la massima sicurezza, trasparenza e qualità.</p>
-                <div class="cert-tags">
-                    <span class="tag">✔ Sicurezza Alimentare</span>
-                    <span class="tag">✔ Alta Qualità</span>
+            <h2 class="titolo-sezione">Il Nostro Percorso d'Eccellenza</h2>
+
+            <div class="griglia-fiere">
+                <div class="event-card">
+                    <img src="../immagini jpg/fotofiera.jpg" class="foto-fiera">
+                    <img src="../immagini jpg/tuttofood.jpg" class="logo-fiera">
+                    <p>TuttoFood Milano</p>
+                </div>
+
+                <div class="event-card">
+                    <img src="../immagini jpg/fotofiera2.jpg" class="foto-fiera">
+                    <img src="../immagini jpg/ism.jpg" class="logo-fiera">
+                    <p>ISM Colonia - Germania</p>
+                </div>
+
+                <div class="event-card">
+                    <img src="../immagini jpg/fotofiera3.jpg" class="foto-fiera">
+                    <img src="../immagini jpg/cibus2.jpg" class="logo-fiera">
+                    <p>Cibus Parma</p>
                 </div>
             </div>
-            <div class="cert-img-container">
-                <img src="../immagini jpg/certificazioneifs.jpg" alt="Certificato IFS" class="cert-img">
+
+
+            <!-- CERTIFICAZIONE -->
+            <div class="cert-box">
+                <div class="cert-text">
+                    <h2>Qualità Certificata IFS Food</h2>
+                    <p>Dal 2018 garantiamo sicurezza, qualità e trasparenza grazie alla certificazione IFS Food.</p>
+                    <div class="cert-tags">
+                        <span class="tag">✔ Sicurezza Alimentare</span>
+                        <span class="tag">✔ Alta Qualità</span>
+                    </div>
+                </div>
+
+                <div class="cert-img-container">
+                    <img src="../immagini jpg/certificazioneifs.jpg" class="cert-img">
+                </div>
             </div>
+
         </div>
-    </div>
     </section>
 
+
+    <!-- ================= FOOTER ================= -->
     <footer class="main-footer">
         <div class="footer-intro">
             <h2>Dal 1903, Custodi dell'Arte del Torrone</h2>
@@ -136,6 +188,29 @@
         </div>
     </footer>
 
+    <!-- ================= MODAL POPUP PRODOTTO ================= -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+
+            <button id="modalClose" class="modal-close">×</button>
+
+            <div class="modal-body">
+                <div class="modal-img-wrap">
+                    <img id="modalImg">
+                </div>
+
+                <div class="modal-text">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDesc"></p>
+                    <ul id="modalFeatures"></ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
     <script src="../script/FEM.js"></script>
+
 </body>
 </html>
