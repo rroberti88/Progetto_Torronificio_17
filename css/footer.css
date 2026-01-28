@@ -1,193 +1,340 @@
+/* ======================================================
+   RESET BASE
+====================================================== */
+* {
+  box-sizing: border-box;
+}
 
-/* ===== CONTENITORE ===== */
-.main-footer{
-    position: relative;
-    overflow: hidden;
-  
-    padding: 80px 20px 30px;
-    color: #fdf8f3;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ======================================================
+   SFONDO BLUR PAGINA
+====================================================== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../immagini jpg/WhatsApp Image 2026-01-25 at 17.50.49.jpg")
+              center / cover no-repeat;
+  filter: blur(10px) brightness(0.7);
+  z-index: -1;
+}
+
+/* ======================================================
+   HEADER FEM – IDENTICO ALLO SHOP
+====================================================== */
+.mini-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 86px;
+  padding: 0 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #fff8e1;
+  border-bottom: 1px solid rgba(201,161,59,.28);
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
+
+.mini-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c9a13b,
+    #8d6e63,
+    #c9a13b,
+    transparent
+  );
+}
+
+.header-left,
+.header-right {
+  width: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.header-left { justify-content: flex-start; }
+.header-right { justify-content: flex-end; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.6);
+  border: 1px solid rgba(201,161,59,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.logo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.13);
+}
+
+.logo img {
+  height: 62px;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
+}
+
+.header-right a {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(201,161,59,.25);
+  border-radius: 14px;
+  font-size: 22px;
+  color: #5d4037;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.header-right a:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.95);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+/* ======================================================
+   SEZIONI PRINCIPALI
+====================================================== */
+.mustof-section,
+.events-certifications {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* ======================================================
+   GRIGLIE UNIFICATE
+====================================================== */
+.prodotti-griglia,
+.griglia-fiere {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* ======================================================
+   CARD UNIFICATA (PRODOTTI – FIERE – EVENTI)
+====================================================== */
+.prodotto-card,
+.event-card {
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 25px;
+
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.prodotto-card:hover,
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.15);
+}
+
+/* IMMAGINI CARD */
+.prodotto-card img,
+.event-card .foto-fiera {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* TESTI CARD */
+.prodotto-card p,
+.event-card p {
+  margin: 0 0 8px;
+  font-size: 1.05em;
+  font-weight: bold;
+  color: #5d4037;
+}
+
+/* ======================================================
+   CERTIFICATO DI QUALITÀ
+====================================================== */
+.cert-box {
+  width: 100%;
+  max-width: 900px; /* più lungo */
+  background: #3e2723; /* marrone scuro come footer */
+  color: #fdf8f3;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  cursor: default;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.cert-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.22);
+}
+
+.cert-text {
+  flex: 2; /* testo più largo */
+  text-align: left;
+}
+
+.cert-text h2 {
+  margin: 0 0 15px;
+  font-size: 1.5em;
+  color: #ffd54f;
+}
+
+.cert-text p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cert-img {
+  flex: 1;
+  max-width: 250px;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE CERTIFICATO */
+@media (max-width: 768px) {
+  .cert-box {
+    flex-direction: column;
     text-align: center;
-  
-    border-top: 1px solid rgba(201,161,59,.30);
-    box-shadow: 0 -12px 35px rgba(0,0,0,.25);
   }
-  
-  
-  /* ===== IMMAGINE DI SFONDO ===== */
-  
-  .main-footer::before{
-    content:"";
-    position:absolute;
-    inset:0;
-  
-    background: url("../immagini jpg/mandorle.jpg") center/cover no-repeat;
-    opacity: .55;   /* trasparenza immagine */
-    z-index: 0;
+
+  .cert-text {
+    flex: unset;
   }
-  
-  
-  /* ===== OVERLAY CIOCCOLATO (leggibilità testo) ===== */
-  .main-footer::after{
-    content:"";
-    position:absolute;
-    inset:0;
-  
-    background: linear-gradient(135deg, rgba(62,39,35,.75), rgba(42,26,20,.75));
-  
-    z-index: 1;
+
+  .cert-img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
   }
-  
-  
-  /* contenuto sopra overlay */
-  .main-footer > *{
-    position: relative;
-    z-index: 2;
+}
+
+/* ======================================================
+   MODAL POPUP – SHOP STYLE
+====================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.6);
+  z-index: 9999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  height: 480px;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5d4037;
+  z-index: 10;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  height: 100%;
+}
+
+.modal-img-wrap {
+  background: #f9f3ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.modal-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-text {
+  padding: 30px;
+  overflow-y: auto;
+  color: #5d4037;
+}
+
+/* ======================================================
+   RESPONSIVE MODAL
+====================================================== */
+@media (max-width: 768px) {
+  .modal-content {
+    height: 90vh;
+    max-width: 95%;
   }
-  
-  
-  /* ===== INTRO ===== */
-  .footer-intro{
-    max-width: 900px;
-    margin: 0 auto 60px;
+
+  .modal-body {
+    grid-template-columns: 1fr;
   }
-  
-  .footer-intro h2{
-    color: #ffd54f;
-    font-size: 2.1em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+
+  .modal-img-wrap {
+    height: 220px;
   }
-  
-  .footer-intro p{
-    font-style: italic;
-    opacity: .85;
-    line-height: 1.6;
+
+  .modal-text {
+    height: calc(90vh - 220px);
   }
-  
-  
-  /* ===== LINEA DIVISORIA ORO ===== */
-  .footer-divider{
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #ffd54f, transparent);
-    margin: 40px auto;
-    max-width: 1100px;
-  }
-  
-  
-  /* ===== COLONNE ===== */
-  .footer-content{
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-  
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
-  .footer-column{
-    flex: 1;
-    min-width: 250px;
-  
-    /* glass effect coerente header */
-    background: rgba(255,255,255,.06);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  
-    border: 1px solid rgba(255,213,79,.18);
-    border-radius: 16px;
-  
-    padding: 22px;
-  
-    box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  }
-  
-  
-  /* ===== LOGO (niente quadrato bianco) ===== */
-  .footer-column img{
-    background: transparent !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-  
-    width: 140px;
-    margin-bottom: 20px;
-  
-    filter: drop-shadow(0 6px 12px rgba(0,0,0,.4));
-  }
-  
-  
-  /* ===== TITOLI COLONNE ===== */
-  .footer-column h3{
-    color: #ffd54f;
-    font-size: 1.25em;
-    margin-bottom: 18px;
-  
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  
-    border-bottom: 1px solid rgba(255,213,79,.4);
-    padding-bottom: 6px;
-  }
-  
-  
-  /* ===== TESTI ===== */
-  .footer-column p,
-  .footer-column address,
-  .hours-list li{
-    font-size: .95em;
-    line-height: 1.8;
-    color: rgba(255,255,255,.88);
-    font-style: normal;
-  }
-  
-  
-  /* ===== LINK ===== */
-  .footer-column a{
-    text-decoration: none;
-    color: #ffd54f;
-    transition: .25s;
-  }
-  
-  .footer-column a:hover{
-    color: white;
-  }
-  
-  
-  /* ===== ORARI ===== */
-  .hours-list{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .hours-list li{
-    padding: 6px 0;
-    border-bottom: 1px dashed rgba(255,255,255,.15);
-  }
-  
-  .hours-list li:last-child{
-    border-bottom: none;
-  }
-  
-  
-  /* ===== COPYRIGHT ===== */
-  .footer-bottom{
-    margin-top: 60px;
-    padding-top: 20px;
-  
-    border-top: 1px solid rgba(255,255,255,.15);
-  
-    font-size: .85em;
-    color: rgba(255,255,255,.6);
-  }
-  
-  
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px){
-    .footer-content{
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+}

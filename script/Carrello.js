@@ -75,37 +75,37 @@ function getCart() {
       return;
     }
   
-    let totale = 0;
+    let subtotale = 0;
+    const spedizione = 6.50; // costo fisso spedizione
   
     cart.forEach((item) => {
       const prezzo = Number(item.prezzo) || 0;
       const qty = clampQty(item.qty);
       const subtotaleItem = prezzo * qty;
-      totale += subtotaleItem;
+      subtotale += subtotaleItem;
   
       const row = document.createElement("div");
       row.className = "carrello-item";
   
-      // ✅ 1ª colonna: X + immagine affiancate (NON sovrapposte)
       row.innerHTML = `
-  <div class="product-cell">
-    <button class="remove-btn" type="button" title="Rimuovi">✕</button>
-    <div class="thumb">
-      <img src="${item.img}" alt="${item.nome}">
-    </div>
-  </div>
-
-  <div class="cart-name-cell" title="${item.nome}">${item.nome}</div>
-
-  <div class="money">${formatEuro(prezzo)}</div>
-
-  <div class="qty-wrap">
-    <input class="qty-input" type="number" min="1" value="${qty}">
-  </div>
-
-  <div class="money">${formatEuro(subtotaleItem)}</div>
-`;
-
+        <div class="product-cell">
+          <button class="remove-btn" type="button" title="Rimuovi">✕</button>
+          <div class="thumb">
+            <img src="${item.img}" alt="${item.nome}">
+          </div>
+        </div>
+  
+        <div class="cart-name-cell" title="${item.nome}">${item.nome}</div>
+  
+        <div class="money">${formatEuro(prezzo)}</div>
+  
+        <div class="qty-wrap">
+          <input class="qty-input" type="number" min="1" value="${qty}">
+        </div>
+  
+        <div class="money">${formatEuro(subtotaleItem)}</div>
+      `;
+  
       row.querySelector(".remove-btn").addEventListener("click", () => {
         removeItem(item.id);
         renderCart();
@@ -119,13 +119,14 @@ function getCart() {
       container.appendChild(row);
     });
   
-    if (subtotaleEl) subtotaleEl.textContent = formatEuro(totale);
-    if (spedizioneEl) spedizioneEl.textContent = formatEuro(0);
-    if (totaleEl) totaleEl.textContent = formatEuro(totale);
+    // Aggiorna subtotale, spedizione e totale
+    if (subtotaleEl) subtotaleEl.textContent = formatEuro(subtotale);
+    if (spedizioneEl) spedizioneEl.textContent = formatEuro(cart.length > 0 ? spedizione : 0);
+    if (totaleEl) totaleEl.textContent = formatEuro(cart.length > 0 ? subtotale + spedizione : 0);
   
     updateCartBadge();
   }
-  
+   
   document.addEventListener("DOMContentLoaded", () => {
     renderCart();
     updateCartBadge();
