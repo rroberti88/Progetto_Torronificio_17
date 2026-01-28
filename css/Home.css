@@ -1,429 +1,506 @@
-/* ================= RESET BASE ================= */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: #fff; /* testo bianco per leggibilità sullo sfondo */
-    position: relative;
-    min-height: 100vh;
-    overflow-x: hidden;
-    line-height: 1.5;
-    background: none; /* rimuovo il gradient originale */
+/* ======================================================
+   HOME.CSS — UNIFORME ALLO SHOP (solo CSS, nessun HTML)
+====================================================== */
+
+/* ===================== RESET BASE ===================== */
+* { box-sizing: border-box; }
+
+button, a, .categoria-box, .logo { transition: .25s ease; }
+
+body{
+  margin:0;
+  font-family:'Georgia', serif;
+  line-height:1.5;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:#5d4037;
+  background: none;
+  position:relative;
 }
 
-/* ================= SFONDO BLUR ================= */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("../immagini jpg/torronificio.jpg") no-repeat center center;
-    background-size: cover;
-    filter: blur(6px) brightness(0.7); /* sfocatura + leggero scurimento */
-    z-index: -1;
-}
-/* ================= ICONA SHOP SVG (tile coerente) ================= */
-.icon-link {
-    /* mantiene il tuo stile: glass + dimensione */
-    text-decoration: none;
-    font-size: 22px;
-    padding: 10px 14px;
-    border-radius: 15px;
-    color: #5d4037;
-
-    background: rgba(255,255,255,0.3);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
+/* ===================== SFONDO BLUR HOME ===================== */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("../immagini jpg/torronificio.jpg") center/cover no-repeat;
+  filter: blur(6px) brightness(.7);
+  z-index:-1;
 }
 
-.icon-link:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+/* ======================================================
+   HEADER HOME (uguale allo Shop)
+   - Vale per: .main-header (Home) e per header (se lo usi)
+====================================================== */
+.main-header,
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 86px;
+  padding: 0 34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background: rgba(255, 248, 225, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(201,161,59,.28);
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
 }
 
-/* dimensioni SVG */
+/* linea oro sotto */
+.main-header::after,
+header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:3px;
+  background: linear-gradient(90deg, transparent, #c9a13b, #8d6e63, #c9a13b, transparent);
+  opacity:.9;
+}
+
+/* blocchi laterali coerenti (logo centrato) */
+.main-header .header-left,
+.main-header .header-right,
+header .header-left,
+header .header-right{
+  width: 90px;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.main-header .header-left,
+header .header-left{ justify-content:flex-start; }
+.main-header .header-right,
+header .header-right{ justify-content:flex-end; }
+
+/* ======================================================
+   ICONE LATERALI — FIX “troppo strette / fatte male”
+   Applico lo stile “tile” sia ai tuoi #home/#carrello,
+   sia ai link generici dentro header-left/right,
+   sia a .icon-link (che avevi già)
+====================================================== */
+
+/* base tile */
+.main-header .header-left a,
+.main-header .header-right a,
+header .header-left a,
+header .header-right a,
+.icon-link,
+#home, #carrello{
+  width:46px;
+  height:46px;
+
+  display:grid;
+  place-items:center;
+
+  padding:0;                 /* <-- FIX: niente padding che stringe */
+  line-height:1;             /* <-- FIX: niente line-height strano */
+  font-size:22px;
+
+  border-radius:14px;
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(201,161,59,.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+
+  color:#5d4037;
+  text-decoration:none;
+}
+
+.main-header .header-left a:hover,
+.main-header .header-right a:hover,
+header .header-left a:hover,
+header .header-right a:hover,
+.icon-link:hover,
+#home:hover, #carrello:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.95);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+/* se usi SVG nelle icone: non deformarle */
 .icon-link__svg{
-    width: 22px;
-    height: 22px;
-    display: block;
+  width:22px;
+  height:22px;
+  display:block;
 }
 
-/* piccolo “accent” oro in hover (come richiamo ai titoli) */
-.icon-link--shop:hover{
-    color: #c9a13b; /* oro */
+/* ======================================================
+   LOGO — FIX “fatto male” (niente deformazioni)
+====================================================== */
+.main-header .logo,
+header .logo,
+.logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding: 4px 10px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.6);
+  border: 1px solid rgba(201,161,59,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+
+  text-decoration:none;
 }
 
-/* ===== ICONA LOGIN (omino) ===== */
-.icon-link--user:hover{
-    color: #c9a13b; /* oro brand */
+.main-header .logo:hover,
+header .logo:hover,
+.logo:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.13);
 }
 
-/* ===== ICONA FIERE/EVENTI ===== */
-.icon-link--eventi:hover{
-    color: #c9a13b; /* oro brand */
-}
-.icon-link--shop:hover{
-    color: #c9a13b;
-}
-.icon-link--trofeo:hover{
-    color: #c9a13b; /* oro brand */
-}
-/* ================= HEADER HOME ================= */
-.main-header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 15px 40px;
-    margin-bottom: 30px;
-    background: rgba(255,255,255,0.3); /* leggermente trasparente */
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    backdrop-filter: blur(1px); /* effetto vetro leggero */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.main-header .logo img,
+header .logo img,
+.logo img{
+  height: 62px;
+  width: auto;
+  display:block;
+  object-fit: contain;
+  image-rendering: auto;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
 }
 
-/* SINISTRA */
-.header-left {
-    display: flex;
-    gap: 15px;
+/* ======================================================
+   BOTTONE “SCOPRI CHI SIAMO” — sotto l’header
+   (senza cambiare HTML: agisco su container e bottone)
+====================================================== */
+.chi-siamo-container{
+  display:flex;
+  justify-content:flex-start;  /* lo metto a sinistra come nello screenshot */
+  padding: 18px 34px 0;        /* sotto header */
+  margin: 0;
 }
 
-.header-left a {
-    text-decoration: none;
-    font-size: 22px;
-    padding: 10px 14px;
-    border-radius: 15px;
-    color: #5d4037;
+button.chi-siamo{
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  cursor:pointer;
 
-    background: rgba(255,255,255,0.3);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
+  background: rgba(255,255,255,.45);
+  color:#5d4037;
+  font-weight: 800;
+  letter-spacing:.2px;
+
+  border: 1px solid rgba(201,161,59,.25);
+  box-shadow: 0 10px 26px rgba(0,0,0,.12);
+  backdrop-filter: blur(6px);
 }
 
-.header-left a:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+button.chi-siamo:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 14px 34px rgba(0,0,0,.16);
 }
 
-/* LOGO */
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 8px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.3);
-    border: 1px solid rgba(201,161,59,0.22);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.10);
-    text-decoration: none;
-    transition: all 0.3s ease;
+/* ======================================================
+   INTRO TESTO (centrato e leggibile sul blur)
+====================================================== */
+.intro-container{
+  display:flex;
+  justify-content:center;
+  margin: 26px 0 0;
+  padding: 0 34px;
 }
 
-.logo img {
-    height: 62px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.20));
+.intro-text{
+  max-width: 820px;
+  text-align:center;
+  color:#fff;
+  font-size: 18px;
+  line-height: 1.65;
+
+  padding: 26px 24px;
+  border-radius: 22px;
+
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.22);
 }
 
-.logo:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 34px rgba(0,0,0,0.13);
+/* ======================================================
+   TITOLO CATEGORIE + SPAZIATURA PRIMA DEL FOOTER
+====================================================== */
+.categorie-principali{
+  margin-top: 55px;
+  margin-bottom: 95px; /* <-- più spazio tra categorie e footer */
+  text-align:center;
+  padding: 0 34px;
 }
 
-/* CENTRO LOGO */
-.header-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.categorie-principali h2{
+  margin: 0 0 26px;
+  font-size: 34px;
+  color:#fff;
+  text-shadow: 0 10px 26px rgba(0,0,0,.25);
 }
 
-.header-center img {
-    max-height: 90px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+/* ======================================================
+   CATEGORIE — CARD “SHOP STYLE” (uniformi + immagini dentro)
+   Fix: foto che escono fuori -> overflow hidden + contain
+====================================================== */
+.categorie-row{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 26px;
+  justify-items:center;
+  margin-top: 20px;
 }
 
-.header-center img:hover {
-    transform: scale(1.05);
+/* card come prodotto shop */
+.categoria-box{
+  width:100%;
+  max-width: 320px;
+
+  background:#ffffff;
+  border-radius:18px;
+  padding: 18px;
+
+  text-decoration:none;
+  color:#5d4037;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+  border: 1px solid rgba(201,161,59,.18);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+
+  overflow:hidden; /* <-- IMPORTANTISSIMO: niente immagini fuori */
 }
 
-/* DESTRA */
-.header-right {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
+.categoria-box:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.16);
 }
 
-.header-right a {
-    text-decoration: none;
-    font-size: 22px;
-    padding: 10px 14px;
-    border-radius: 15px;
-    color: #5d4037;
-
-    background: rgba(255,255,255,0.3);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
+/* immagine sempre dentro */
+.categoria-box img{
+  width:100%;
+  height: 170px;          /* altezza uniforme come shop */
+  object-fit: contain;    /* <-- non taglia, non esce */
+  display:block;
+  margin: 6px 0 14px;
 }
 
-.header-right a:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+/* testo sotto immagine */
+.categoria-box span{
+  font-weight: 900;
+  letter-spacing:.6px;
+  text-transform: uppercase;
+  color:#5d4037;
 }
 
-/* CARRELLO */
-.cart-link {
-    position: relative;
+/* ======================================================
+   POPUP STORIA — più visibile/leggibile
+====================================================== */
+.storia-overlay{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.65); /* più scuro */
+  opacity:0;
+  visibility:hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+  z-index: 998;
 }
 
-.cart-link .badge {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: #c62828;
-    color: white;
-    font-size: 0.7em;
-    padding: 3px 6px;
-    border-radius: 50%;
-    font-weight: bold;
+.storia-overlay.active{
+  opacity:1;
+  visibility:visible;
 }
 
-/* CHI SIAMO BUTTON */
-.chi-siamo-container {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0 20px 0;
+.storia-container{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(.98);
+
+  width: min(920px, 92vw);
+  max-height: 82vh;
+  overflow:auto;
+
+  padding: 36px 34px;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.94);
+  color:#5d4037;
+
+  border: 1px solid rgba(201,161,59,.35);
+  box-shadow: 0 26px 70px rgba(0,0,0,.45);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity:0;
+  visibility:hidden;
+  transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+  z-index: 999;
 }
 
-button.chi-siamo {
-    padding: 12px 25px;
-    cursor: pointer;
-    background: rgba(255,255,255,0.3);
-    color: #5d4037;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
+.storia-container.active{
+  opacity:1;
+  visibility:visible;
+  transform: translate(-50%, -50%) scale(1);
 }
 
-button.chi-siamo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 900px){
+  .chi-siamo-container{ padding: 14px 16px 0; }
+  .intro-container{ padding: 0 16px; }
+  .categorie-principali{ padding: 0 16px; }
+
+  .categorie-principali h2{ font-size: 28px; }
+
+  .main-header,
+  header{ padding: 0 16px; }
+
+  .main-header .header-left,
+  .main-header .header-right,
+  header .header-left,
+  header .header-right{
+    width: 80px;
+    gap: 10px;
+  }
 }
 
-/* ================= INTRO ================= */
-.intro-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    padding: 0 50px;
-    background: transparent;
+@media (max-width: 520px){
+  .categoria-box img{ height: 150px; }
+  .intro-text{ font-size: 16px; padding: 20px 18px; }
 }
 
-.intro-text {
-    max-width: 600px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #fff;
+/* ======================================================
+   FIX FINALI HEADER + CTA + USERNAME
+====================================================== */
+
+
+/* ======================================================
+   ICONE HEADER – TILE LARGHE STILE SHOP (FIX DEFINITIVO)
+====================================================== */
+
+.main-header .header-left a,
+.main-header .header-right a,
+header .header-left a,
+header .header-right a,
+.icon-link,
+#home,
+#carrello{
+
+  width:120px;          /* ➜ più larghe */
+  height:25px;         /* ➜ meno alte */
+
+  border-radius:8px;  /* ➜ angoli arrotondati stile shop */
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:22px;
+
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(201,161,59,.28);
+
+  box-shadow: 0 6px 16px rgba(0,0,0,.10);
+
+  transition: transform .25s ease,
+              box-shadow .25s ease,
+              background .25s ease;
 }
 
-.shop-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+/* hover elegante identico allo shop */
+.main-header .header-left a:hover,
+.main-header .header-right a:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 10px 22px rgba(0,0,0,.15);
 }
 
-.shop-button button {
-    padding: 12px 30px;
-    cursor: pointer;
-    background: rgba(255,255,255,0.3);
-    color: #5d4037;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
+/* ================= LOGO PIÙ PROTAGONISTA ================= */
+.main-header .logo img,
+header .logo img{
+  height:70px;   /* leggermente più grande */
 }
 
-.shop-button button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+/* ================= BOTTONE "SCOPRI CHI SIAMO" CENTRATO ================= */
+.chi-siamo-container{
+  display:flex;
+  justify-content:center;   /* CENTRATO */
+  margin-top:22px;
+  padding:0;
 }
 
-/* ================= CATEGORIE PRINCIPALI ================= */
-.categorie-principali {
-    margin-top: 60px;
-    text-align: center;
+button.chi-siamo{
+  padding:14px 34px;
+  font-size:15px;
+
+  border-radius:999px;
+
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(201,161,59,.35);
+
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+  backdrop-filter: blur(8px);
 }
 
-.categorie-principali h2 {
-    font-size: 32px;
-    color: #fff;
-    margin-bottom: 25px;
+button.chi-siamo:hover{
+  transform: translateY(-3px);
 }
 
-.categorie-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 20px;
-    background: transparent;
+
+/* ================= "CIAO USERNAME" SU UNA RIGA ================= */
+
+/* container utente */
+.saluto-utente{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  white-space:nowrap;     /* <-- impedisce andare a capo */
+  font-size:15px;
+  font-weight:700;
+
+  padding:10px 16px;
+  border-radius:999px;
+
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(201,161,59,.25);
+
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
 }
 
-.categoria-box {
-    width: 180px;
-    height: 180px;
-    border-radius: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255,255,255,0.3);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
-    cursor: pointer;
+/* se hai icona + testo */
+.saluto-utente span{
+  white-space:nowrap;
 }
 
-.categoria-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    border-color: #ff8f00;
-    background: rgba(255,255,255,0.35);
-}
 
-.categoria-box img {
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
+/* ================= RESPONSIVE EXTRA ================= */
+@media (max-width:768px){
 
-.categoria-box span {
-    font-weight: bold;
-    color: #fff;
-}
+  .main-header .header-left a,
+  .main-header .header-right a{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
 
-/* ================= STORIA POPUP ================= */
-.storia-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    width: 80%;
-    max-width: 900px;
-    max-height: 80vh;
-    overflow-y: auto;
-
-    background: rgba(255,255,255,0.3);
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    backdrop-filter: blur(6px);
-    color: #5d4037;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
-    z-index: 999;
-}
-
-.storia-container.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* ================= OVERLAY ================= */
-.storia-overlay {
-    position: fixed;
-    inset: 0; 
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-    z-index: 998;
-}
-
-.storia-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.saluto-utente {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 14px;
-    border-radius: 15px;
-    color: #5d4037;
-    background: rgba(255,255,255,0.3);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    backdrop-filter: blur(4px);
-}
-
-/* ================= RESPONSIVE ================= */
-@media screen and (max-width: 768px) {
-    .intro-container {
-        flex-direction: column;
-        padding: 0 20px;
-    }
-
-    .categorie-row {
-        gap: 15px;
-    }
-
-    .categoria-box {
-        width: 140px;
-        height: 140px;
-    }
-
-    .shop-button button,
-    button.chi-siamo {
-        padding: 10px 20px;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .header {
-        padding: 10px 20px;
-    }
-
-    .header-right a {
-        font-size: 24px;
-    }
-
-    .categoria-box {
-        width: 120px;
-        height: 120px;
-    }
-
-    .intro-text {
-        font-size: 16px;
-    }
+  .main-header .logo img{
+    height:60px;
+  }
 }

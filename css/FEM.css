@@ -21,9 +21,9 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("../immagini jpg/WhatsApp Image 2026-01-25 at 17.50.49.jpg")
+  background: url("../immagini jpg/miele\ mandorle.jpg")
               center / cover no-repeat;
-  filter: blur(10px) brightness(0.7);
+  filter: blur(6px) brightness(0.7);
   z-index: -1;
 }
 
