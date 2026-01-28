@@ -57,7 +57,7 @@ header{
     box-shadow: 0 10px 30px rgba(0,0,0,.10);
   }
   
-  /* linea oro sotto (dà subito premium) */
+  /* linea oro sotto (dÃ  subito premium) */
   header::after{
     content:"";
     position:absolute;
