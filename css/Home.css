@@ -2,23 +2,36 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #fff3cd, #fbe9e7);
-    color: #5d4037;
+    color: #fff; /* testo bianco per leggibilità sullo sfondo */
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.5;
+    background: none; /* rimuovo il gradient originale */
 }
 
-/* ================= HEADER HOME (NUOVO) ================= */
+/* ================= SFONDO BLUR ================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../immagini jpg/torronificio.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(6px) brightness(0.7); /* sfocatura + leggero scurimento */
+    z-index: -1;
+}
+
+/* ================= HEADER HOME ================= */
 .main-header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-
     padding: 15px 40px;
     margin-bottom: 30px;
-
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    background: rgba(255,255,255,0.3); /* leggermente trasparente */
     border-radius: 25px;
-
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    backdrop-filter: blur(1px); /* effetto vetro leggero */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -37,9 +50,9 @@ body {
     border-radius: 15px;
     color: #5d4037;
 
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    background: rgba(255,255,255,0.3);
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-
+    backdrop-filter: blur(4px);
     transition: all 0.3s ease;
 }
 
@@ -48,15 +61,16 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
+/* LOGO */
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4px 8px;
     border-radius: 18px;
-    background: rgba(255,255,255,0.6); /* sfondo semi-trasparente */
-    border: 1px solid rgba(201,161,59,0.22); /* bordo leggero dorato */
-    box-shadow: 0 10px 26px rgba(0,0,0,0.10); /* ombra soffusa */
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(201,161,59,0.22);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.10);
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -65,8 +79,8 @@ body {
     height: 62px;
     width: auto;
     display: block;
-    object-fit: contain; 
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.20)); /* ombra sull’immagine */
+    object-fit: contain;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.20));
 }
 
 .logo:hover {
@@ -105,9 +119,9 @@ body {
     border-radius: 15px;
     color: #5d4037;
 
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    background: rgba(255,255,255,0.3);
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-
+    backdrop-filter: blur(4px);
     transition: all 0.3s ease;
 }
 
@@ -133,7 +147,7 @@ body {
     font-weight: bold;
 }
 
-
+/* CHI SIAMO BUTTON */
 .chi-siamo-container {
     display: flex;
     justify-content: center;
@@ -143,12 +157,13 @@ body {
 button.chi-siamo {
     padding: 12px 25px;
     cursor: pointer;
-    background: linear-gradient(135deg, #c62828, #ff8f00);
-    color: white;
+    background: rgba(255,255,255,0.3);
+    color: #5d4037;
     font-weight: bold;
     border: none;
     border-radius: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
     transition: all 0.3s ease;
 }
 
@@ -157,13 +172,13 @@ button.chi-siamo:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-
 /* ================= INTRO ================= */
 .intro-container {
     display: flex;
-    justify-content: center; /* centrato orizzontalmente */
+    justify-content: center;
     margin-top: 40px;
     padding: 0 50px;
+    background: transparent;
 }
 
 .intro-text {
@@ -171,7 +186,7 @@ button.chi-siamo:hover {
     text-align: center;
     font-size: 18px;
     line-height: 1.6;
-    color: #6d4c41;
+    color: #fff;
 }
 
 .shop-button {
@@ -183,12 +198,13 @@ button.chi-siamo:hover {
 .shop-button button {
     padding: 12px 30px;
     cursor: pointer;
-    background: linear-gradient(135deg, #c62828, #ff8f00);
-    color: white;
+    background: rgba(255,255,255,0.3);
+    color: #5d4037;
     font-weight: bold;
     border: none;
     border-radius: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
     transition: all 0.3s ease;
 }
 
@@ -205,7 +221,7 @@ button.chi-siamo:hover {
 
 .categorie-principali h2 {
     font-size: 32px;
-    color: #8d6e63;
+    color: #fff;
     margin-bottom: 25px;
 }
 
@@ -215,22 +231,24 @@ button.chi-siamo:hover {
     flex-wrap: wrap;
     gap: 25px;
     margin-top: 20px;
+    background: transparent;
 }
 
 .categoria-box {
     width: 180px;
     height: 180px;
     border-radius: 20px;
-    border: 2px solid #ffd54f;
-    background: #fff3cd;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255,255,255,0.3);
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #5d4037;
+    color: #fff;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -239,7 +257,7 @@ button.chi-siamo:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     border-color: #ff8f00;
-    background: #fff8e1;
+    background: rgba(255,255,255,0.35);
 }
 
 .categoria-box img {
@@ -251,7 +269,7 @@ button.chi-siamo:hover {
 
 .categoria-box span {
     font-weight: bold;
-    color: #6d4c41;
+    color: #fff;
 }
 
 /* ================= STORIA POPUP ================= */
@@ -265,10 +283,12 @@ button.chi-siamo:hover {
     max-height: 80vh;
     overflow-y: auto;
 
-    background: #fff8e1;
+    background: rgba(255,255,255,0.3);
     padding: 40px;
     border-radius: 25px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    color: #5d4037;
 
     opacity: 0;
     visibility: hidden;
@@ -300,22 +320,21 @@ button.chi-siamo:hover {
 
 .hidden {
     display: none !important;
-    }
-    
-    
-    .saluto-utente {
+}
+
+.saluto-utente {
     font-size: 16px;
     font-weight: bold;
     padding: 10px 14px;
     border-radius: 15px;
     color: #5d4037;
-    background: linear-gradient(135deg, #fff3cd, #fff8e1);
+    background: rgba(255,255,255,0.3);
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    }
-
+    backdrop-filter: blur(4px);
+}
 
 /* ================= RESPONSIVE ================= */
 @media screen and (max-width: 768px) {
@@ -357,4 +376,3 @@ button.chi-siamo:hover {
         font-size: 16px;
     }
 }
-

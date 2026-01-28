@@ -20,7 +20,7 @@ body::before {
   inset: 0;            
   background: url("../immagini jpg/WhatsApp Image 2026-01-25 at 17.50.49.jpg") no-repeat center center;
   background-size: cover; 
-  filter: blur(18px) brightness(0.7);  
+  filter: blur(10px) brightness(0.7);  
   z-index: -1;         
 }
 
