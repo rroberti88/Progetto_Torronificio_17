@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if ($username === '' || $password === '') {
-        header("Location: ../codice%20html/Login.html?mode=login&error=1");
+        header("Location: ../codice_html/Login.html?mode=login&error=1");
         exit;
     }
 
@@ -24,18 +24,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header("Location: ../codice%20html/Home.html");
+            header("Location: ../codice_html/Home.html");
             exit;
         }
 
-        header("Location: ../codice%20html/Login.html?mode=login&error=1");
+        header("Location: ../codice_html/Login.html?mode=login&error=1");
         exit;
 
     } catch (PDOException $e) {
-        header("Location: ../codice%20html/Login.html?mode=login&error=1");
+        header("Location: ../codice_html/Login.html?mode=login&error=1");
         exit;
     }
 }
 
-header("Location: ../codice%20html/Login.html?mode=login");
+header("Location: ../codice_html/Login.html?mode=login");
 exit;

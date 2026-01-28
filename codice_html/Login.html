@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Registrazione</title>
+
+  <link rel="icon" type="image/png" href="../immagini jpg/logo (2).jpg">
+  <link rel="stylesheet" href="../css/Login.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="mini-header">
+    <div class="header-left"></div>
+
+    <div class="header-center">
+      <a href="Home.html" class="logo">
+        <img src="../immagini jpg/LogoNardone.png"
+             alt="Logo Torronificio Nardone">
+      </a>
+    </div>
+
+    <div class="header-right">
+      <a href="Home.html" title="Torna alla Home">
+        <span class="home-icon"></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CONTENUTO PRINCIPALE -->
+  <div class="main-content">
+
+    <!-- MESSAGGIO GLOBALE -->
+    <div id="globalMsg" class="msg" role="alert" aria-live="polite"></div>
+
+    <!-- LOGIN -->
+    <div id="loginContainer" class="container">
+      <div class="box">
+        <h2>Login</h2>
+
+        <form action="../script/login.php"
+              method="post"
+              id="loginForm"
+              novalidate>
+
+          <label for="username">Username</label>
+          <input type="text"
+                 id="username"
+                 name="username"
+                 placeholder="Inserisci il tuo username"
+                 required>
+
+          <label for="password">Password</label>
+          <input type="password"
+                 id="password"
+                 name="password"
+                 placeholder="Inserisci la password"
+                 required>
+
+          <button type="submit"
+                  id="loginBtn"
+                  disabled>
+            Accedi
+          </button>
+        </form>
+
+        <p>
+          Non hai un account?
+          <a href="#" id="showRegister">Registrati</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- REGISTRAZIONE -->
+    <div id="registerContainer"
+         class="container"
+         style="display:none;">
+
+      <div class="box">
+        <h2>Registrati</h2>
+
+        <form action="../script/register.php"
+              method="post"
+              id="registerForm"
+              class="register-form"
+              novalidate>
+
+          <label for="newName">Nome</label>
+          <input type="text"
+                 id="newName"
+                 name="newName"
+                 required>
+
+          <label for="newCognome">Cognome</label>
+          <input type="text"
+                 id="newCognome"
+                 name="newCognome"
+                 required>
+
+          <label for="newMail">E-mail</label>
+          <input type="email"
+                 id="newMail"
+                 name="newMail"
+                 required>
+
+          <label for="data_nascita">Data di nascita</label>
+          <input type="date"
+                 id="data_nascita"
+                 name="data_nascita"
+                 required>
+
+          <label for="newUsername">Username</label>
+          <input type="text"
+                 id="newUsername"
+                 name="newUsername"
+                 required>
+
+          <label for="newPassword">Password</label>
+          <input type="password"
+                 id="newPassword"
+                 name="newPassword"
+                 required>
+
+          <button type="submit"
+                  id="regBtn"
+                  disabled>
+            Registrati
+          </button>
+        </form>
+
+        <p>
+          Hai già un account?
+          <a href="#" id="showLogin">Accedi</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script/Login.js"></script>
+</body>
+</html>
