@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!globalMsg) return;
       globalMsg.textContent = text;
       globalMsg.className = `msg ${type}`;
-      globalMsg.style.display = "block";
+      globalMsg.hidden = false;   // ✅ mostra
     }
-  
+    
     function hideMessage() {
       if (!globalMsg) return;
-      globalMsg.style.display = "none";
+      globalMsg.hidden = true;    // ✅ nasconde
       globalMsg.textContent = "";
       globalMsg.className = "msg";
     }
