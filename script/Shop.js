@@ -1,3 +1,5 @@
+const SESSION_URL = "../script/session_user.php";
+
 document.addEventListener("DOMContentLoaded", () => {
     // ====== ELEMENTI UI ======
     const searchBar = document.getElementById("searchBar");
@@ -7,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const noResults = document.getElementById("noResults");
     const titoloCategoria = document.getElementById("titolo-categoria");
   
+    const carrello = document.querySelector("#carrello");
     let currentCategory = "all";
   
     // ====== (OPZIONALE) categoria da URL ?categoria=torrone ======
@@ -82,6 +85,74 @@ document.addEventListener("DOMContentLoaded", () => {
         filterProducts();
       });
     });
+
+
+    async function fetchSessionUser() {
+      try {
+        const res = await fetch(SESSION_URL, {
+          method: "GET",
+          credentials: "include",
+          headers: { "Accept": "application/json" }
+        });
+    
+        if (!res.ok) return { authenticated: false, username: null };
+        const data = await res.json();
+    
+        return {
+          authenticated: !!data.authenticated,
+          username: data.username || null
+        };
+      } catch (e) {
+        return { authenticated: false, username: null };
+      }
+    }
+
+
+
+ // carrello: popup diverso se auth / no-auth (con sessione PHP)
+if (carrello) {
+  carrello.addEventListener("click", async function (e) {
+    e.preventDefault();
+
+    const session = await fetchSessionUser(); // <-- usa session_user.php
+
+    if (session.authenticated) {
+      Swal.fire({
+        title: "Vuoi andare al carrello?",
+        text: "Conferma per procedere",
+        imageUrl: "../immagini jpg/LogoNardone.jpg",
+        imageWidth: 120,
+        imageHeight: 80,
+        imageAlt: "Logo Torronificio Nardone",
+        showCancelButton: true,
+        confirmButtonText: "Sì",
+        cancelButtonText: "No",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = carrello.getAttribute("href");
+        }
+      });
+      return;
+    }
+
+    Swal.fire({
+      icon: "warning",
+      title: "Devi autenticarti prima",
+      text: "Per accedere al carrello effettua il login.",
+      imageUrl: "../immagini jpg/LogoNardone.jpg",
+      imageWidth: 120,
+      imageHeight: 80,
+      imageAlt: "Logo Torronificio Nardone",
+      showCancelButton: true,
+      confirmButtonText: "Vai al login",
+      cancelButtonText: "Annulla",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "Login.html?mode=login";
+      }
+    });
+  });
+}
   
     // ====== CARRELLO (localStorage) ======
     function getCart() {
@@ -121,6 +192,30 @@ document.addEventListener("DOMContentLoaded", () => {
       badge.textContent = totaleQta;
       badge.style.display = totaleQta > 0 ? "inline-block" : "none";
     }
+
+    async function syncCartOwnerAndBadge() {
+      const session = await fetchSessionUser();
+    
+      // non loggato → svuota tutto
+      if (!session.authenticated) {
+        localStorage.removeItem("cart");
+        localStorage.removeItem("cart_owner");
+        updateCartBadge();
+        return;
+      }
+    
+      const currentUser = session.username || "";
+      const lastUser = localStorage.getItem("cart_owner");
+    
+      // utente cambiato → svuota
+      if (lastUser && lastUser !== currentUser) {
+        localStorage.removeItem("cart");
+      }
+    
+      localStorage.setItem("cart_owner", currentUser);
+    
+      updateCartBadge(); // 🔥 aggiorna numerino
+    }
   
     function addToCart({ id, nome, prezzo, img }) {
       const cart = getCart();
@@ -143,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    updateCartBadge();
+    syncCartOwnerAndBadge();
   
     // click sui bottoni "Aggiungi al carrello"
     const shopContainer = document.querySelector(".shop");
@@ -173,3 +268,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // prima applicazione filtro
     filterProducts();
   });
+
+  
