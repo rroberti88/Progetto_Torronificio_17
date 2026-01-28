@@ -11,28 +11,20 @@ body {
     color: #5d4037;
 }
 
-/* ===================== SFONDO CARRELLO ===================== */
-.carrello-container {
-    max-width: 1400px;
-    margin: 50px auto;
-    display: grid;
-    grid-template-columns: 2.5fr 1fr;
-    gap: 40px;
-    padding: 0 30px;
-    position: relative; /* container relativo per sfondo */
-    z-index: 1; 
+/* ===================== WRAPPER PAGINA ===================== */
+.carrello-page{
+    position: relative;
 }
 
-.carrello-container::before {
+/* ===================== SFONDO CARRELLO ===================== */
+.carrello-page::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* copre tutta l'altezza del container */
-    background: url("/mnt/data/13a8277a-eb17-4fa6-a874-4ec8a2fa9ef2.png") center/cover no-repeat;
-    opacity: 0.15; 
-    z-index: -1; /* dietro il contenuto */
+    inset: 0;
+    background: url("../immagini jpg/negozio2.jpg") center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* ===================== HEADER ===================== */
@@ -102,6 +94,18 @@ header::after {
     filter: drop-shadow(0 6px 10px rgba(0,0,0,0.2));
 }
 
+/* ===================== LAYOUT CARRELLO ===================== */
+.carrello-container {
+    max-width: 1250px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 30px;
+    padding: 0 26px;
+    position: relative;
+    z-index: 1;
+}
+
 /* ===================== TITOLI ORO ===================== */
 .carrello-title,
 .riepilogo-ordine h2 {
@@ -118,9 +122,9 @@ header::after {
 /* ===================== CARRELLO ===================== */
 .carrello-box {
     background: rgba(255,255,255,0.95);
-    border-radius: 24px;
-    padding: 25px 20px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    border-radius: 28px;
+    padding: 24px 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     transition: transform 0.2s ease;
 }
 
@@ -131,10 +135,11 @@ header::after {
 .carrello-header,
 .carrello-item {
     display: grid;
-    grid-template-columns: 50px 130px 1.5fr 90px 70px 100px;
+    grid-template-columns: 50px 1fr 1.5fr 90px 70px 100px; /* colonna immagine 50px */
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
+
 
 .carrello-header {
     font-weight: 600;
@@ -155,19 +160,31 @@ header::after {
     border-radius: 18px;
 }
 
-.carrello-item img {
-    width: 120px;
-    height: auto;
+/* ===================== IMMAGINE CONTAINER ===================== */
+/* ===================== IMMAGINE CONTAINER ===================== */
+.img-container {
+    width: 50px;   
+    height: 50px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img-container img {
+    max-width: 100%;   /* non supera la larghezza del container */
+    max-height: 100%;  /* non supera l’altezza del container */
     object-fit: contain;
-    border-radius: 14px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    border-radius: 12px;
+    display: block;    /* evita spazi bianchi sotto img */
     transition: transform 0.2s ease;
 }
 
-.carrello-item img:hover {
+.img-container img:hover {
     transform: scale(1.05);
 }
 
+/* INPUT QUANTITÀ */
 .carrello-item input {
     width: 60px;
     padding: 6px;
@@ -182,6 +199,7 @@ header::after {
     outline: none;
 }
 
+/* PULSANTE RIMUOVI */
 .remove {
     background: rgba(255,230,230,0.8);
     border: none;
@@ -208,9 +226,9 @@ header::after {
 /* ===================== RIEPILOGO ===================== */
 .riepilogo-ordine {
     background: rgba(255,255,255,0.95);
-    border-radius: 24px;
-    padding: 25px 20px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    border-radius: 28px;
+    padding: 26px 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
 .riepilogo-riga {
@@ -257,11 +275,16 @@ header::after {
 
     .carrello-header,
     .carrello-item {
-        grid-template-columns: 40px 100px 1fr 70px 50px 80px;
+        grid-template-columns: 50px 1fr 1fr 70px 50px 80px;
         gap: 10px;
     }
 
-    .carrello-item img {
-        width: 90px;
+    .img-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .img-container img {
+        height: 100%;
     }
 }

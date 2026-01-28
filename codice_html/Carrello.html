@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="../css/Carrello.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
-
 <body>
 
-<!-- ===================== HEADER ===================== -->
 <header>
     <div class="header-left">
         <a id="home" href="Home.html" title="Torna alla Home">🏠</a>
@@ -20,83 +18,69 @@
         <img src="../immagini jpg/LogoNardone.png" alt="Logo Torronificio Nardone">
     </a>
 
-    <div class="header-right"></div>
+    <div class="header-right">
+        <a id="carrello" href="Carrello.html" title="Carrello">🛒</a>
+    </div>
 </header>
 
-<!-- ===================== CONTENUTO CARRELLO ===================== -->
-<main class="carrello-container">
+<div class="carrello-page">
+    <div class="carrello-container">
 
-    <!-- SINISTRA: Carrello -->
-    <section class="carrello-box">
-        <h2 class="carrello-title">Carrello</h2>
+        <section class="carrello-box">
+            <h2 class="carrello-title">Carrello</h2>
 
-        <div class="carrello-header">
-            <span></span>
-            <span>Prodotto</span>
-            <span>Nome</span>
-            <span>Prezzo</span>
-            <span>Qtà</span>
-            <span>Subtotale</span>
-        </div>
+            <div class="carrello-header">
+                <div></div> <!-- colonna immagine -->
+                <div>Prodotto</div>
+                <div>Nome</div>
+                <div>Prezzo</div>
+                <div>Qtà</div>
+                <div>Subtotale</div>
+            </div>
 
-        <!-- Riga prodotto esempio -->
-        <div class="carrello-item">
-            <button class="remove">✖</button>
-            <img src="../immagini jpg/070.jpg" alt="Torroncino Pistacchio">
-            <span class="nome-prodotto">Torroncino Pistacchio</span>
-            <span class="prezzo">€3,50</span>
-            <input type="number" value="1" min="1">
-            <span class="subtotale">€3,50</span>
-        </div>
+            <div id="carrello-items">
+                <p class="carrello-vuoto">Il carrello è vuoto.</p>
+            </div>
+        </section>
 
-        <!-- Aggiungi altri prodotti qui -->
+        <aside class="riepilogo-ordine">
+            <h2>Riepilogo ordine</h2>
+            <div class="riepilogo-riga">
+                <span>Subtotale</span>
+                <span id="subtotale">€0,00</span>
+            </div>
 
-        <p class="carrello-vuoto" style="display:none;">Il carrello è vuoto.</p>
-    </section>
+            <div class="riepilogo-riga">
+                <span>Spedizione</span>
+                <span id="spedizione">€0,00</span>
+            </div>
 
-    <!-- DESTRA: Riepilogo Ordine -->
-    <aside class="riepilogo-ordine">
-        <h2>Riepilogo Ordine</h2>
+            <hr style="border:none; border-top:1px solid #e0d5c1; margin:18px 0;">
 
-        <div class="riepilogo-riga">
-            <span>Subtotale</span>
-            <span>€3,50</span>
-        </div>
+            <div class="riepilogo-riga totale">
+                <span>Totale</span>
+                <span id="totale">€0,00</span>
+            </div>
 
-        <div class="riepilogo-riga">
-            <span>Spedizione</span>
-            <span>€5,00</span>
-        </div>
+            <button class="checkout" type="button">Procedi al checkout</button>
+        </aside>
 
-        <hr>
+    </div>
+</div>
 
-        <div class="riepilogo-riga totale">
-            <span>Totale</span>
-            <span>€8,50</span>
-        </div>
-
-        <button class="checkout">Procedi al checkout</button>
-    </aside>
-
-</main>
-
-<!-- ===================== FOOTER ===================== -->
 <footer class="main-footer">
     <div class="footer-intro">
         <h2>Dal 1903, Custodi dell'Arte del Torrone</h2>
         <p>Tramandiamo una storia fatta di passione e ingredienti purissimi.<br>
            Vieni a scoprire dove nasce la magia nel nostro Showroom.</p>
     </div>
-
     <hr class="footer-divider">
-
     <div class="footer-content">
         <div class="footer-column">
             <img src="../immagini jpg/LogoNardone.png" alt="Logo Torronificio Nardone" width="130">
             <p>📧 <a href="mailto:info@torronenardone.it">info@torronenardone.it</a></p>
             <p>ⓕ <a href="https://www.facebook.com" target="_blank">Torronificio Nardone S.R.L.</a></p>
         </div>
-
         <div class="footer-column">
             <h3>Il Nostro Showroom</h3>
             <address>
@@ -106,7 +90,6 @@
                 ☎️ <a href="tel:+390825962028">+39 0825 962028</a>
             </address>
         </div>
-
         <div class="footer-column">
             <h3>Orari di Apertura</h3>
             <ul class="hours-list">
@@ -116,11 +99,11 @@
             </ul>
         </div>
     </div>
-
     <div class="footer-bottom">
         <small>&copy; 2026 Torrone Nardone - P.IVA 02373310644</small>
     </div>
 </footer>
 
+<script src="../script/Carrello.js"></script>
 </body>
 </html>

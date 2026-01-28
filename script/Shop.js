@@ -1,117 +1,92 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const searchBar = document.getElementById("searchBar");
-    const categorieLinks = document.querySelectorAll(".categoria");
-    const prodotti = document.querySelectorAll(".lista-prodotti .prodotto"); // SOLO prodotti veri
-    const sezioni = document.querySelectorAll(".sezione-prodotti");
-    const noResults = document.getElementById("noResults");
-    const titoloCategoria = document.getElementById("titolo-categoria");
+// shop.js – gestione aggiunta prodotti al carrello
 
-    let currentCategory = "all";
+// Recupera carrello dal localStorage
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-    const params = new URLSearchParams(window.location.search);
-    const catFromHome = params.get("categoria");
-    
+// Salva carrello su localStorage
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
+// Aggiorna badge carrello
+function updateCartBadge() {
+    const cart = getCart();
+    const totaleQta = cart.reduce((sum, item) => sum + item.qty, 0);
+    const carrelloLink = document.querySelector("#carrello");
+    if (!carrelloLink) return;
 
-    if (catFromHome) {
-    currentCategory = catFromHome;
-
-  // attiva visivamente la categoria nella sidebar
-    categorieLinks.forEach(l => l.classList.remove("active"));
-    const linkDaAttivare = document.querySelector(`.categoria[data-category="${catFromHome}"]`);
-    if (linkDaAttivare) linkDaAttivare.classList.add("active");
+    let badge = carrelloLink.querySelector(".cart-badge");
+    if (!badge) {
+        badge = document.createElement("span");
+        badge.className = "cart-badge";
+        carrelloLink.style.position = "relative";
+        badge.style.position = "absolute";
+        badge.style.top = "-8px";
+        badge.style.right = "-10px";
+        badge.style.background = "red";
+        badge.style.color = "white";
+        badge.style.fontSize = "12px";
+        badge.style.fontWeight = "700";
+        badge.style.padding = "2px 6px";
+        badge.style.borderRadius = "999px";
+        badge.style.lineHeight = "1";
+        carrelloLink.appendChild(badge);
     }
 
-    function getNomeCategoriaAttiva() {
-        const linkAttivo = document.querySelector(".categoria.active");
-        return linkAttivo ? linkAttivo.textContent.trim() : "Tutti i prodotti";
-    }
+    badge.textContent = totaleQta;
+    badge.style.display = totaleQta > 0 ? "inline-block" : "none";
+}
 
-    function filterProducts() {
-        const searchTerm = searchBar.value.toLowerCase().trim();
-        let visibleCount = 0;
+// Funzione per aggiungere prodotto al carrello
+function addToCart(nome, prezzo, img, id) {
+    const cart = getCart();
+    const itemInCart = cart.find(i => i.id === id);
 
-        // 1) Filtra i singoli prodotti
-        prodotti.forEach(prodotto => {
-            const nome = prodotto.querySelector(".nome-prodotto")?.textContent.toLowerCase() || "";
-            const category = prodotto.dataset.category;
-
-            const okCategoria = (currentCategory === "all" || currentCategory === category);
-            const okRicerca = nome.includes(searchTerm);
-
-            if (okCategoria && okRicerca) {
-                prodotto.style.display = "block";
-                visibleCount++;
-            } else {
-                prodotto.style.display = "none";
-            }
-        });
-
-        // 2) Nascondi/mostra le sezioni in base ai prodotti visibili dentro
-        sezioni.forEach(sezione => {
-            const prodottiInSezione = sezione.querySelectorAll(".lista-prodotti .prodotto");
-            let almenoUnoVisibile = false;
-
-            prodottiInSezione.forEach(p => {
-                if (p.style.display !== "none") almenoUnoVisibile = true;
-            });
-
-            sezione.style.display = almenoUnoVisibile ? "block" : "none";
-        });
-
-        // 3) No results
-        noResults.style.display = visibleCount === 0 ? "block" : "none";
-
-        // 4) Aggiorna titolo sopra
-        const nomeCat = (currentCategory === "all") ? "Tutti i prodotti" :"";
-        if (searchTerm.length > 0) {
-            titoloCategoria.textContent = `${nomeCat} — risultati per: "${searchBar.value.trim()}"`;
-        } else {
-            titoloCategoria.textContent = nomeCat;
-        }
-    }
-
-    // Ricerca
-    searchBar.addEventListener("input", filterProducts);
-
-    // Click categoria
-    categorieLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-
-            categorieLinks.forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
-
-            currentCategory = this.dataset.category;
-            filterProducts();
-        });
-    });
-
-    filterProducts();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const carrello = document.getElementById("carrello");
-    if (carrello) {
-      carrello.addEventListener("click", function (e) {
-        e.preventDefault();
-        Swal.fire({
-          title: "Vuoi andare al carrello?",
-          text: "Conferma per procedere",
-          imageUrl: "../immagini jpg/LogoNardone.jpg",
-          imageWidth: 120,
-          imageHeight: 80,
-          imageAlt: "Logo Torronificio Nardone",
-          showCancelButton: true,
-          confirmButtonText: "Sì",
-          cancelButtonText: "No",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = carrello.getAttribute("href");
-          }
-        });
-      });
+    if(itemInCart){
+        itemInCart.qty += 1;
     } else {
-      console.error("Link carrello non trovato!");
+        cart.push({ id, nome, prezzo, img, qty: 1 });
     }
+
+    saveCart(cart);
+    updateCartBadge();
+
+    // Avviso con SweetAlert2
+    Swal.fire({
+        icon: 'success',
+        title: 'Aggiunto al carrello',
+        text: nome,
+        timer: 1200,
+        showConfirmButton: false
+    });
+}
+
+// Inizializzazione
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartBadge();
+
+    // Event delegation: ascolta tutti i click su bottoni all'interno di ".shop"
+    const shopContainer = document.querySelector(".shop");
+    if (!shopContainer) return;
+
+    shopContainer.addEventListener("click", function(e) {
+        if (e.target.tagName === "BUTTON") {
+            const prodEl = e.target.closest(".prodotto");
+            if (!prodEl) return;
+
+            const nome = prodEl.querySelector(".nome-prodotto").textContent.trim();
+            const prezzoText = prodEl.querySelector(".prezzo").textContent.replace("€","").replace(",",".").trim();
+            const prezzo = parseFloat(prezzoText) || 0;
+            const img = prodEl.querySelector("img").src;
+
+            // Generiamo un id univoco basato sull'index tra i fratelli
+            const parentList = prodEl.parentElement;
+            const children = Array.from(parentList.querySelectorAll(".prodotto"));
+            const id = children.indexOf(prodEl) + 1;
+
+            addToCart(nome, prezzo, img, id);
+        }
+    });
 });
