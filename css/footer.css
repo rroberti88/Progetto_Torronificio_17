@@ -1,14 +1,31 @@
-/* ===================== FOOTER PREMIUM GLASS ===================== */
+/* ===================== FOOTER PREMIUM GLASS + SFONDO MANDORLE ===================== */
 
 .main-footer{
   position: relative;
-  background:#3e2723;
+  overflow: hidden; /* serve per il blur dello sfondo */
+
   color:#fdf8f3;
   padding: 70px 22px 30px;
   margin-top: 70px;
 
   border-top: 1px solid rgba(201,161,59,.28);
   box-shadow: 0 -10px 35px rgba(0,0,0,.22);
+}
+
+/* ===== SFONDO BLUR CON IMMAGINE MANDORLE ===== */
+.main-footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    /* overlay scuro per leggibilità */
+    linear-gradient(rgba(62,39,35,.88), rgba(62,39,35,.88)),
+    url("../immagini jpg/mandorle.jpg") center/cover no-repeat;
+
+  filter: blur(8px);
+  transform: scale(1.05); /* evita bordi “tagliati” dal blur */
+  z-index:-1;
 }
 
 /* ----------------- LINK ----------------- */
@@ -73,7 +90,6 @@
 
 .footer-column{
   padding: 26px 22px;
-
   border-radius: 18px;
 
   /* ✨ effetto vetro */
@@ -82,7 +98,6 @@
   -webkit-backdrop-filter: blur(8px);
 
   border: 1px solid rgba(255,255,255,0.08);
-
   box-shadow: 0 8px 20px rgba(0,0,0,.15);
 
   transition: transform .25s ease, box-shadow .25s ease;
