@@ -1,6 +1,7 @@
 const SESSION_URL = "../script/session_user.php";
 const LOGOUT_URL  = "../script/logout.php";
 
+// ===================== SESSIONE E LOGOUT =====================
 async function doLogout() {
   const res = await fetch(LOGOUT_URL, { method: "POST", credentials: "include" });
   return res.ok;
@@ -26,6 +27,7 @@ async function fetchSessionUser() {
   }
 }
 
+// ===================== APPLICA UI AUTENTICAZIONE =====================
 function applyAuthUI(isAuth, username) {
   const loginLink = document.getElementById("login");
   const saluto = document.getElementById("salutoUtente");
@@ -51,8 +53,8 @@ function applyAuthUI(isAuth, username) {
           if (result.isConfirmed) {
             const ok = await doLogout();
             if (ok) {
-            localStorage.removeItem("cart"); 
-            window.location.href = "Home.html";
+              localStorage.removeItem("cart");
+              window.location.href = "Home.html";
             } else {
               Swal.fire("Errore", "Logout non riuscito.", "error");
             }
@@ -69,16 +71,16 @@ function applyAuthUI(isAuth, username) {
   }
 }
 
+// ===================== DOMCONTENTLOADED =====================
 document.addEventListener("DOMContentLoaded", async function () {
   const loginLink = document.getElementById("login");
-  const carrello = document.getElementById("carrello");
 
   // leggo sessione
   const session = await fetchSessionUser();
   const isAuth = session.authenticated;
   const username = session.username;
 
-  // UI
+  // applica UI
   applyAuthUI(isAuth, username);
 
   // popup login/registrazione solo se NON autenticato
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   }
 
-  // chi siamo (come avevi tu)
+  // ===================== CHI SIAMO =====================
   const btnChiSiamo = document.getElementById("btnChiSiamo");
   const storia = document.getElementById("storia");
   const overlay = document.getElementById("overlay");
@@ -123,46 +125,56 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   }
 
-  // carrello: popup diverso se auth / no-auth
-  if (carrello) {
-    carrello.addEventListener("click", function (e) {
-      e.preventDefault();
+  // ===================== BLOCCO CARRELLO =====================
+  // intercetta QUALSIASI link verso Carrello.html
+  document.addEventListener("click", function (e) {
+    const link = e.target.closest("a");
+    if (!link) return;
 
-      if (isAuth) {
-        Swal.fire({
-          title: "Vuoi andare al carrello?",
-          text: "Conferma per procedere",
-          imageUrl: "../immagini jpg/LogoNardone.jpg",
-          imageWidth: 120,
-          imageHeight: 80,
-          imageAlt: "Logo Torronificio Nardone",
-          showCancelButton: true,
-          confirmButtonText: "Sì",
-          cancelButtonText: "No",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = carrello.getAttribute("href");
-          }
-        });
-        return;
-      }
+    const href = link.getAttribute("href");
+    if (!href) return;
 
+    // intercetta solo link verso Carrello.html
+    if (!href.includes("Carrello.html")) return;
+
+    // blocco default
+    e.preventDefault();
+
+    if (isAuth) {
       Swal.fire({
-        icon: "warning",
-        title: "Devi autenticarti prima",
-        text: "Per accedere al carrello effettua il login.",
+        title: "Vuoi andare al carrello?",
+        text: "Conferma per procedere",
         imageUrl: "../immagini jpg/LogoNardone.jpg",
         imageWidth: 120,
         imageHeight: 80,
         imageAlt: "Logo Torronificio Nardone",
         showCancelButton: true,
-        confirmButtonText: "Vai al login",
-        cancelButtonText: "Annulla",
+        confirmButtonText: "Sì",
+        cancelButtonText: "No",
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = "Login.html?mode=login";
+          window.location.href = href;
         }
       });
+      return;
+    }
+
+    // utente NON autenticato → popup login
+    Swal.fire({
+      icon: "warning",
+      title: "Devi autenticarti prima",
+      text: "Per accedere al carrello effettua il login.",
+      imageUrl: "../immagini jpg/LogoNardone.jpg",
+      imageWidth: 120,
+      imageHeight: 80,
+      imageAlt: "Logo Torronificio Nardone",
+      showCancelButton: true,
+      confirmButtonText: "Vai al login",
+      cancelButtonText: "Annulla",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "Login.html?mode=login";
+      }
     });
-  }
+  });
 });
