@@ -127,7 +127,43 @@ function getCart() {
     updateCartBadge();
   }
    
-  document.addEventListener("DOMContentLoaded", () => {
+  
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("../script/session_user.php", {
+        method: "GET",
+        credentials: "include",
+        headers: { "Accept": "application/json" }
+      });
+  
+      const data = res.ok ? await res.json() : { authenticated: false, username: null };
+  
+      // Se NON autenticato: svuota e basta
+      if (!data.authenticated) {
+        localStorage.removeItem("cart");
+        localStorage.removeItem("cart_owner");
+        renderCart();
+        updateCartBadge();
+        return;
+      }
+  
+      // Se autenticato: se è cambiato utente, svuota il carrello
+      const currentUser = data.username || "";
+      const lastUser = localStorage.getItem("cart_owner");
+  
+      if (lastUser && lastUser !== currentUser) {
+        localStorage.removeItem("cart");
+      }
+  
+      // aggiorna owner
+      localStorage.setItem("cart_owner", currentUser);
+  
+    } catch (e) {
+      // se la fetch fallisce, non fidarti: svuota
+      localStorage.removeItem("cart");
+      localStorage.removeItem("cart_owner");
+    }
+  
     renderCart();
     updateCartBadge();
   });

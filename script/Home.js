@@ -51,7 +51,8 @@ function applyAuthUI(isAuth, username) {
           if (result.isConfirmed) {
             const ok = await doLogout();
             if (ok) {
-              window.location.href = "Home.html"; // torna alla home "da non loggato"
+            localStorage.removeItem("cart"); 
+            window.location.href = "Home.html";
             } else {
               Swal.fire("Errore", "Logout non riuscito.", "error");
             }
