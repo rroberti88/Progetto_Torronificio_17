@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = "";
     }
   
-    document.querySelectorAll(".prodotto-card").forEach(card => {
+    document.querySelectorAll(".prodotto-card, .event-card").forEach(card => {
       card.addEventListener("click", () => openModal(card));
     });
   
