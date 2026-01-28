@@ -1,66 +1,118 @@
-/* ===================== FOOTER (main-footer) ===================== */
+/* ===================== FOOTER PREMIUM GLASS ===================== */
+
 .main-footer{
+  position: relative;
   background:#3e2723;
   color:#fdf8f3;
-  padding: 60px 22px 22px;
-  margin-top: 60px;
-  box-shadow: 0 -10px 30px rgba(0,0,0,.18);
+  padding: 70px 22px 30px;
+  margin-top: 70px;
+
   border-top: 1px solid rgba(201,161,59,.28);
+  box-shadow: 0 -10px 35px rgba(0,0,0,.22);
 }
 
+/* ----------------- LINK ----------------- */
 .main-footer a{
   color:#ffd54f;
   text-decoration:none;
+  transition:.2s ease;
 }
 
 .main-footer a:hover{
+  opacity:.85;
   text-decoration:underline;
 }
 
+
+/* ================= INTRO ================= */
+
 .footer-intro{
   max-width:1100px;
-  margin:0 auto 26px;
+  margin:0 auto 40px;
   text-align:center;
 }
 
 .footer-intro h2{
-  margin:0 0 10px;
-  font-size:1.55rem;
+  margin:0 0 12px;
+  font-size:1.65rem;
   color:#ffd54f;
+  letter-spacing:.5px;
 }
 
 .footer-intro p{
   margin:0;
   opacity:.95;
+  line-height:1.6;
 }
+
+
+/* ================= DIVIDER ORO ================= */
 
 .footer-divider{
   max-width:1100px;
-  margin: 26px auto;
+  margin: 35px auto 40px;
   border: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, #c9a13b, transparent);
 }
+
+
+/* ================= GRIGLIA ================= */
 
 .footer-content{
   max-width:1100px;
   margin:0 auto;
+
   display:grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 28px;
-  align-items:start;
 }
 
+
+/* ================= CARD GLASS ================= */
+
+.footer-column{
+  padding: 26px 22px;
+
+  border-radius: 18px;
+
+  /* ✨ effetto vetro */
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* hover elegante */
+.footer-column:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.22);
+}
+
+
+/* ================= TESTI ================= */
+
 .footer-column h3{
-  margin:0 0 10px;
+  margin:0 0 12px;
   color:#ffd54f;
+  font-size:1.05rem;
+  letter-spacing:.6px;
 }
 
 .footer-column p,
 .footer-column address{
   margin: 10px 0;
   font-style: normal;
+  line-height: 1.5;
 }
+
+
+/* ================= LISTA ORARI ================= */
 
 .hours-list{
   list-style:none;
@@ -69,25 +121,38 @@
 }
 
 .hours-list li{
-  margin: 10px 0;
+  margin: 8px 0;
 }
+
+
+/* ================= BOTTOM ================= */
 
 .footer-bottom{
   max-width:1100px;
-  margin: 28px auto 0;
-  padding-top: 18px;
+  margin: 45px auto 0;
+  padding-top: 20px;
   text-align:center;
-  border-top: 1px solid rgba(255,255,255,.12);
+
+  border-top: 1px solid rgba(255,255,255,.15);
+  font-size:.9rem;
   opacity:.9;
 }
 
+
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px){
+
   .footer-content{
     grid-template-columns: 1fr;
+  }
+
+  .footer-column{
     text-align:center;
   }
+
   .footer-column img{
-    margin: 0 auto;
     display:block;
+    margin: 0 auto 10px;
   }
 }
