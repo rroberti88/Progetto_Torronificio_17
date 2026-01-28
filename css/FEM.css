@@ -24,6 +24,8 @@ body::before {
   z-index: -1;         
 }
 
+
+
 /* ===================== HEADER ===================== */
 .mini-header {
   display: flex;
@@ -106,6 +108,40 @@ body::before {
 .header-right a:hover {
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+/* ===== ICONA HOME SVG (coerente con header) ===== */
+.header-right a.icon-link{
+  /* mantiene esattamente il tuo stile */
+  text-decoration: none;
+  color: #5d4037;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.55);
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.header-right a.icon-link:hover{
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* dimensione SVG */
+.header-right .icon-link__svg{
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* hover oro brand */
+.icon-link--home:hover{
+  color: #c9a13b;
 }
 
 /* ===================== SEZIONE PRODOTTI ===================== */

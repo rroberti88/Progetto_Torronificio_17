@@ -20,7 +20,58 @@ body::before {
     filter: blur(6px) brightness(0.7); /* sfocatura + leggero scurimento */
     z-index: -1;
 }
+/* ================= ICONA SHOP SVG (tile coerente) ================= */
+.icon-link {
+    /* mantiene il tuo stile: glass + dimensione */
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: 15px;
+    color: #5d4037;
 
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.icon-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* dimensioni SVG */
+.icon-link__svg{
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* piccolo “accent” oro in hover (come richiamo ai titoli) */
+.icon-link--shop:hover{
+    color: #c9a13b; /* oro */
+}
+
+/* ===== ICONA LOGIN (omino) ===== */
+.icon-link--user:hover{
+    color: #c9a13b; /* oro brand */
+}
+
+/* ===== ICONA FIERE/EVENTI ===== */
+.icon-link--eventi:hover{
+    color: #c9a13b; /* oro brand */
+}
+.icon-link--shop:hover{
+    color: #c9a13b;
+}
+.icon-link--trofeo:hover{
+    color: #c9a13b; /* oro brand */
+}
 /* ================= HEADER HOME ================= */
 .main-header {
     display: grid;

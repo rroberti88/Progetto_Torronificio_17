@@ -13,9 +13,86 @@
 
         <!-- SINISTRA -->
         <div class="header-left">
-            <a href="Shop.html" title="Shop">🏪</a>
-            <a href="FEM.html?tipo=eventi" title="Eventi e Fiere">🎪</a>
-            <a href="FEM.html?tipo=eccellenze" title="Prodotti di punta">🏆</a>
+           <a href="Shop.html" title="Shop" class="icon-link icon-link--shop" aria-label="Shop">
+  <svg class="icon-link__svg" viewBox="0 0 24 24" aria-hidden="true">
+    <!-- tenda/awning -->
+    <path d="M3 9l2-4h14l2 4" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M3 9h18" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+    <!-- onde tenda -->
+    <path d="M5 9c0 1.2 1 2.2 2.2 2.2S9.4 10.2 9.4 9"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9.4 9c0 1.2 1 2.2 2.2 2.2S13.8 10.2 13.8 9"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13.8 9c0 1.2 1 2.2 2.2 2.2S18.2 10.2 18.2 9"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- corpo negozio -->
+    <path d="M6 11.2V20h12v-8.8" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- porta -->
+    <path d="M11 20v-5a1 1 0 0 1 1-1h0a1 1 0 0 1 1 1v5"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- vetrine -->
+    <path d="M7.6 14h2.6" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+    <path d="M13.8 14h2.6" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+  </svg>
+</a>
+            <a href="FEM.html?tipo=eventi" title="Eventi e Fiere" class="icon-link icon-link--eventi" aria-label="Eventi e Fiere">
+  <svg class="icon-link__svg" viewBox="0 0 24 24" aria-hidden="true">
+    <!-- tetto tendone -->
+    <path d="M3 10l9-6 9 6" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- bordo superiore -->
+    <path d="M4.5 10h15" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+    <!-- tende -->
+    <path d="M6 10v10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M18 10v10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- arco ingresso -->
+    <path d="M9 20v-4a3 3 0 0 1 6 0v4" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- bandierina -->
+    <path d="M7.5 4.5v2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M7.5 4.5h3l-1 1 1 1h-3" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
+            <a href="FEM.html?tipo=eccellenze" title="Prodotti di punta" class="icon-link icon-link--trofeo" aria-label="Eccellenze">
+  <svg class="icon-link__svg" viewBox="0 0 24 24" aria-hidden="true">
+    <!-- coppa -->
+    <path d="M8 4h8v3a4 4 0 0 1-8 0V4z"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linejoin="round"/>
+
+    <!-- manici -->
+    <path d="M8 6H6a2.5 2.5 0 0 0 0 5h2"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+    <path d="M16 6h2a2.5 2.5 0 0 1 0 5h-2"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+
+    <!-- stelo -->
+    <path d="M12 11v4"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+
+    <!-- base -->
+    <path d="M9 20h6M8 16h8"
+          fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round"/>
+  </svg>
+</a>
         </div>
     
         <!-- CENTRO (LOGO) -->
@@ -27,14 +104,30 @@
     
         <!-- DESTRA -->
         <div class="header-right">
-            <a href="Login.html" title="Login" id="login">👤</a>
+            <a href="Login.html" title="Login" id="login" class="icon-link icon-link--user" aria-label="Login">
+  <svg class="icon-link__svg" viewBox="0 0 24 24" aria-hidden="true">
+    <!-- testa -->
+    <circle cx="12" cy="8" r="4"
+            fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <!-- spalle -->
+    <path d="M4 20c0-4.2 3.6-7 8-7s8 2.8 8 7"
+          fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>
+</a>
 
             <!-- Saluto (nascosto finché non sei autenticato) -->
             <span id="salutoUtente" class="saluto-utente hidden"></span>
     
-            <a href="Carrello.html" class="cart-link" id="carrello" title="Carrello">
-                🛒
-            </a>
+            <a href="Carrello.html" title="Carrello" class="icon-link icon-link--shop" aria-label="Carrello">
+  <svg class="icon-link__svg" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6.5 6.5h15l-1.4 7.2a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.6L5.7 3.8H3"
+          fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 20.2a1.1 1.1 0 1 0 0-2.2a1.1 1.1 0 0 0 0 2.2Z"
+          fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M18 20.2a1.1 1.1 0 1 0 0-2.2a1.1 1.1 0 0 0 0 2.2Z"
+          fill="none" stroke="currentColor" stroke-width="1.8"/>
+  </svg>
+</a>
         </div>
     
     </header>
