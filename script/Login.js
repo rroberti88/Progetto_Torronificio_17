@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       history.replaceState(null, "", "Login.html?mode=login");
     });
   
-    // LOGIN: abilita bottone
+    // LOGIN
     const loginUsername = document.getElementById("username");
     const loginPassword = document.getElementById("password");
     const loginBtn = document.getElementById("loginBtn");
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loginPassword.addEventListener("input", checkLoginInputs);
     checkLoginInputs();
   
-    // REGISTRAZIONE: abilita bottone
+    // REGISTRAZIONE
     const regNome = document.getElementById("newName");
     const regCognome = document.getElementById("newCognome");
     const regEmail = document.getElementById("newMail");

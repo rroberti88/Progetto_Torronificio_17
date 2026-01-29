@@ -1,18 +1,16 @@
 const SESSION_URL = "../script/session_user.php";
 
 document.addEventListener("DOMContentLoaded", () => {
-    // ====== ELEMENTI UI ======
+    // ELEMENTI UI
     const searchBar = document.getElementById("searchBar");
     const categorieLinks = document.querySelectorAll(".categoria");
-    const prodotti = document.querySelectorAll(".lista-prodotti .prodotto"); // solo card vere
+    const prodotti = document.querySelectorAll(".lista-prodotti .prodotto");
     const sezioni = document.querySelectorAll(".sezione-prodotti");
     const noResults = document.getElementById("noResults");
     const titoloCategoria = document.getElementById("titolo-categoria");
   
     const carrello = document.querySelector("#carrello");
     let currentCategory = "all";
-  
-    // ====== (OPZIONALE) categoria da URL ?categoria=torrone ======
     const params = new URLSearchParams(window.location.search);
     const catFromHome = params.get("categoria");
     if (catFromHome) {
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // 3) messaggio "nessun prodotto"
       if (noResults) noResults.style.display = visibleCount === 0 ? "block" : "none";
   
-      // 4) titolo sopra (se esiste)
+      // 4) titolo sopra
       if (titoloCategoria) {
         const nomeCat =
           currentCategory === "all"
@@ -109,12 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
- // carrello: popup diverso se auth / no-auth (con sessione PHP)
+ // carrello: popup diverso se l'utente ha o meno effettuato il login
 if (carrello) {
   carrello.addEventListener("click", async function (e) {
     e.preventDefault();
 
-    const session = await fetchSessionUser(); // <-- usa session_user.php
+    const session = await fetchSessionUser();
 
     if (session.authenticated) {
       Swal.fire({
@@ -129,7 +127,7 @@ if (carrello) {
         confirmButton: 'swal-confirm-btn',
         cancelButton: 'swal-cancel-btn'
     },
-    buttonsStyling: false  // disattiva stile di default per permettere il tuo
+    buttonsStyling: false  // disattiva lo stile di default
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = carrello.getAttribute("href");
@@ -153,7 +151,7 @@ if (carrello) {
         confirmButton: 'swal-confirm-btn',
         cancelButton: 'swal-cancel-btn'
     },
-    buttonsStyling: false  // disattiva stile di default per permettere il tuo
+    buttonsStyling: false
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.href = "Login.html?mode=login";
@@ -162,7 +160,7 @@ if (carrello) {
   });
 }
   
-    // ====== CARRELLO (localStorage) ======
+    // CARRELLO (localStorage)
     function getCart() {
       return JSON.parse(localStorage.getItem("cart")) || [];
     }
@@ -204,7 +202,7 @@ if (carrello) {
     async function syncCartOwnerAndBadge() {
       const session = await fetchSessionUser();
     
-      // non loggato → svuota tutto
+      // non loggato -> svuota tutto
       if (!session.authenticated) {
         localStorage.removeItem("cart");
         localStorage.removeItem("cart_owner");
@@ -215,14 +213,14 @@ if (carrello) {
       const currentUser = session.username || "";
       const lastUser = localStorage.getItem("cart_owner");
     
-      // utente cambiato → svuota
+      // utente cambiato -> svuota
       if (lastUser && lastUser !== currentUser) {
         localStorage.removeItem("cart");
       }
     
       localStorage.setItem("cart_owner", currentUser);
     
-      updateCartBadge(); // 🔥 aggiorna numerino
+      updateCartBadge();
     }
   
     function addToCart({ id, nome, prezzo, img }) {
@@ -266,13 +264,11 @@ if (carrello) {
         const prezzo = parseFloat(prezzoText) || 0;
         const img = prodEl.querySelector("img")?.src || "";
   
-        // ID stabile: meglio nome (o data-id se lo aggiungi in HTML)
+        // ID stabile
         const id = prodEl.dataset.id || nome;
   
         addToCart({ id, nome, prezzo, img });
       });
     }
-  
-    // prima applicazione filtro
     filterProducts();
   });

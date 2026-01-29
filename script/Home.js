@@ -84,7 +84,7 @@ function applyAuthUI(isAuth, username) {
   }
 }
 
-// ===================== DOMCONTENTLOADED =====================
+// DOMCONTENTLOADED 
 document.addEventListener("DOMContentLoaded", async function () {
   const loginLink = document.getElementById("login");
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   // applica UI
   applyAuthUI(isAuth, username);
 
-  // popup login/registrazione solo se NON autenticato
+  // popup login/registrazione solo se non autenticato
   if (loginLink) {
     loginLink.addEventListener("click", function (e) {
       if (isAuth) return;
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         confirmButton: 'swal-confirm-btn',
         cancelButton: 'swal-cancel-btn'
     },
-    buttonsStyling: false  // disattiva stile di default per permettere il tuo
+    buttonsStyling: false  // disattiva lo stile di default
         
       }).then((result) => {
         if (result.isConfirmed) {
@@ -129,8 +129,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   }
 
-  // ===================== CHI SIAMO =====================
-// ===================== CHI SIAMO (4 PARTI, STESSA ALTEZZA) =====================
+// CHI SIAMO
 const btnChiSiamo = document.getElementById("btnChiSiamo");
 
 if (btnChiSiamo) {
@@ -144,7 +143,6 @@ if (btnChiSiamo) {
                 font-family: Georgia, serif;
                 max-width: 950px;
             ">
-                <!-- ===================== RIGA 1: TESTO SINISTRA, IMMAGINE DESTRA ===================== -->
                 <div style="
                     display: flex; 
                     flex-direction: row; 
@@ -164,7 +162,6 @@ if (btnChiSiamo) {
                         </p>
                     </div>
                     <div style="flex: 1; min-width: 200px; display: flex; justify-content: center; align-items: center;">
-                        <!-- SOSTITUISCI QUI IL PERCORSO DELLA TUA PRIMA IMMAGINE -->
                         <img src="../immagini jpg/caldaia2.jpg" alt="Chi siamo" style="
                             width: 100%;
                             height: 100%;
@@ -174,8 +171,6 @@ if (btnChiSiamo) {
                         ">
                     </div>
                 </div>
-
-                <!-- ===================== RIGA 2: IMMAGINE SINISTRA, TESTO DESTRA ===================== -->
                 <div style="
                     display: flex; 
                     flex-direction: row; 
@@ -184,7 +179,6 @@ if (btnChiSiamo) {
                     flex-wrap: wrap;
                 ">
                     <div style="flex: 1; min-width: 200px; display: flex; justify-content: center; align-items: center;">
-                        <!-- SOSTITUISCI QUI IL PERCORSO DELLA TUA SECONDA IMMAGINE -->
                         <img src="../immagini jpg/torronificio.jpg" alt="Chi siamo" style="
                             width: 100%;
                             height: 100%;
@@ -217,8 +211,8 @@ if (btnChiSiamo) {
         });
     });
 }
-  // ===================== BLOCCO CARRELLO =====================
-  // intercetta QUALSIASI link verso Carrello.html
+  // BLOCCO CARRELLO
+  // intercetta qualsiasi link verso Carrello.html
   document.addEventListener("click", function (e) {
     const link = e.target.closest("a");
     if (!link) return;
@@ -226,7 +220,6 @@ if (btnChiSiamo) {
     const href = link.getAttribute("href");
     if (!href) return;
 
-    // intercetta solo link verso Carrello.html
     if (!href.includes("Carrello.html")) return;
 
     // blocco default
@@ -247,7 +240,7 @@ if (btnChiSiamo) {
         confirmButton: 'swal-confirm-btn',
         cancelButton: 'swal-cancel-btn'
     },
-    buttonsStyling: false  // disattiva stile di default per permettere il tuo
+    buttonsStyling: false  // disattiva lo stile di default
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = href;
@@ -256,7 +249,7 @@ if (btnChiSiamo) {
       return;
     }
 
-    // utente NON autenticato → popup login
+    // utente non autenticato -> popup login
     Swal.fire({
       icon: "warning",
       title: "Devi autenticarti prima",
@@ -272,7 +265,7 @@ if (btnChiSiamo) {
         confirmButton: 'swal-confirm-btn',
         cancelButton: 'swal-cancel-btn'
     },
-    buttonsStyling: false  // disattiva stile di default per permettere il tuo
+    buttonsStyling: false  // disattiva lo stile di default
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.href = "Login.html?mode=login";

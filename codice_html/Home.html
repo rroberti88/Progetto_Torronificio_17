@@ -11,26 +11,24 @@
 
     <header class="main-header">
 
-        <!-- SINISTRA -->
-        <div class="header-left">
-           
-           <a href="Shop.html" title="Shop" class="icon-link icon-link--shop" aria-label="Shop">
-  <svg class="icon-link__svg" viewBox="0 0 24 24" aria-hidden="true">
-    <!-- tenda/awning -->
-    <path d="M3 9l2-4h14l2 4" fill="none" stroke="currentColor" stroke-width="1.8"
-          stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M3 9h18" fill="none" stroke="currentColor" stroke-width="1.8"
-          stroke-linecap="round"/>
-    <!-- onde tenda -->
-    <path d="M5 9c0 1.2 1 2.2 2.2 2.2S9.4 10.2 9.4 9"
-          fill="none" stroke="currentColor" stroke-width="1.8"
-          stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9.4 9c0 1.2 1 2.2 2.2 2.2S13.8 10.2 13.8 9"
-          fill="none" stroke="currentColor" stroke-width="1.8"
-          stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M13.8 9c0 1.2 1 2.2 2.2 2.2S18.2 10.2 18.2 9"
-          fill="none" stroke="currentColor" stroke-width="1.8"
-          stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="header-left">   
+        <a href="Shop.html" title="Shop" class="icon-link icon-link--shop" aria-label="Shop">
+        <svg class="icon-link__svg" viewBox="0 0 24 24" aria-hidden="true">
+        <!-- tenda -->
+        <path d="M3 9l2-4h14l2 4" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 9h18" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round"/>
+        <!-- onde tenda -->
+        <path d="M5 9c0 1.2 1 2.2 2.2 2.2S9.4 10.2 9.4 9"
+        fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9.4 9c0 1.2 1 2.2 2.2 2.2S13.8 10.2 13.8 9"
+        fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.8 9c0 1.2 1 2.2 2.2 2.2S18.2 10.2 18.2 9"
+        fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round"/>
 
     <!-- corpo negozio -->
     <path d="M6 11.2V20h12v-8.8" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -96,7 +94,7 @@
 </a>
         </div>
     
-        <!-- CENTRO (LOGO) -->
+        <!-- LOGO CENTRALE -->
         <div class="header-center">
             <a href="Home.html" class="logo">
                 <img src="../immagini jpg/LogoNardone.png" width="150" alt="Logo Torronificio Nardone">
@@ -116,7 +114,7 @@
   </svg>
 </a>
 
-            <!-- Saluto (nascosto finché non sei autenticato) -->
+            <!-- Serve a far comparire la scritta "Ciao, user" una volta loggato -->
             <span id="salutoUtente" class="saluto-utente hidden"></span>
     
             <a href="Carrello.html" title="Carrello" class="icon-link icon-link--shop" aria-label="Carrello">
@@ -137,7 +135,7 @@
         <button class="chi-siamo" id="btnChiSiamo">Scopri chi siamo</button>
     </div>
     
-    <!-- INTRO TESTO A DESTRA -->
+    <!-- Corpo centrale della home -->
     <div class="intro-container">
         <div class="intro-text">
             <h2>Non è solo torrone, è l'arte di sapersi viziare!</h2>
@@ -152,7 +150,7 @@
         </div>
     </div>
 
-    <!-- CATEGORIE PRINCIPALI (VISIBILI SOLO SE AUTH) -->
+    <!-- CATEGORIE PRINCIPALI (solo per utenti autenticati) -->
     <div class="categorie-principali hidden" id="categoriePrincipali">
 
         <h2>Scopri le nostre categorie principali</h2>
