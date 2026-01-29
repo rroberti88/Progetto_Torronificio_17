@@ -125,8 +125,11 @@ if (carrello) {
         imageHeight: 80,
         imageAlt: "Logo Torronificio Nardone",
         showCancelButton: true,
-        confirmButtonText: "Sì",
-        cancelButtonText: "No",
+        customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+    },
+    buttonsStyling: false  // disattiva stile di default per permettere il tuo
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = carrello.getAttribute("href");
@@ -146,6 +149,11 @@ if (carrello) {
       showCancelButton: true,
       confirmButtonText: "Vai al login",
       cancelButtonText: "Annulla",
+      customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+    },
+    buttonsStyling: false  // disattiva stile di default per permettere il tuo
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.href = "Login.html?mode=login";

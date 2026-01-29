@@ -57,6 +57,11 @@ function applyAuthUI(isAuth, username) {
           showCancelButton: true,
           confirmButtonText: "Logout",
           cancelButtonText: "Annulla",
+          customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+    },
+    buttonsStyling: false  // disattiva stile di default per permettere il tuo
         }).then(async (result) => {
           if (result.isConfirmed) {
             const ok = await doLogout();
@@ -106,8 +111,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         imageHeight: 80,
         imageAlt: "Logo Torronificio Nardone",
         showCancelButton: true,
-        confirmButtonText: "Sì, intendo loggarmi",
-        cancelButtonText: "No, procedo con la registrazione",
+        confirmButtonText: "Sì, effettuo il login",
+        cancelButtonText: "No, voglio registrarmi",
+        customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+    },
+    buttonsStyling: false  // disattiva stile di default per permettere il tuo
+        
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = "Login.html?mode=login";
@@ -197,7 +208,7 @@ if (btnChiSiamo) {
                 </div>
             </div>
             `,
-            width: 950,
+            width: 1025,
             showCloseButton: true,
             showConfirmButton: false,
             customClass: {
@@ -232,6 +243,11 @@ if (btnChiSiamo) {
         showCancelButton: true,
         confirmButtonText: "Sì",
         cancelButtonText: "No",
+        customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+    },
+    buttonsStyling: false  // disattiva stile di default per permettere il tuo
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = href;
@@ -252,6 +268,11 @@ if (btnChiSiamo) {
       showCancelButton: true,
       confirmButtonText: "Vai al login",
       cancelButtonText: "Annulla",
+      customClass: {
+        confirmButton: 'swal-confirm-btn',
+        cancelButton: 'swal-cancel-btn'
+    },
+    buttonsStyling: false  // disattiva stile di default per permettere il tuo
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.href = "Login.html?mode=login";

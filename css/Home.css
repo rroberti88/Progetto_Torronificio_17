@@ -360,6 +360,51 @@ button.chi-siamo:hover{
 .hidden {
   display: none !important;
 }
+.swal-confirm-btn {
+    background: linear-gradient(135deg, #c9a13b, #f7b800);  /* Sfumatura oro */
+    color: white;
+    padding: 12px 28px;
+    border-radius: 18px;  /* Bordi arrotondati */
+    font-weight: bold;
+    font-size: medium;
+    font-family: 'Georgia', serif;
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: background 0.3s, transform 0.2s;
+    margin-right: 20px; /* Più separazione tra i bottoni */
+    width: 138px; /* Stessa larghezza per entrambi */
+    display: inline-block;  /* Per mantenere la disposizione in linea */
+}
+
+/* Bottone di annullamento (Cancel) */
+.swal-cancel-btn {
+    background: linear-gradient(135deg, #8d6e63, #a87f60);  /* Sfumatura marrone */
+    color: white;
+    padding: 12px 28px;
+    border-radius: 18px;  /* Bordi arrotondati */
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    font-family: 'Georgia', serif;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: background 0.3s, transform 0.2s;
+    width: 138px;  /* Stessa larghezza per entrambi */
+    display: inline-block;  /* Per mantenere la disposizione in linea */
+}
+
+/* Effetto hover */
+.swal-confirm-btn:hover,
+.swal-cancel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.20);
+}
+
+/* Separazione tra i bottoni */
+.swal-button {
+    margin: 0 10px;  /* Spazio tra i bottoni */
+    display: inline-block;  /* Assicura che i bottoni siano allineati orizzontalmente */
+}
 
 /* ======================================================
    RESPONSIVE
