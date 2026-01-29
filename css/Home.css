@@ -357,6 +357,10 @@ button.chi-siamo:hover{
   transform: translate(-50%, -50%) scale(1);
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* ======================================================
    RESPONSIVE
 ====================================================== */

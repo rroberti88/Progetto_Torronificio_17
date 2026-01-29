@@ -268,5 +268,3 @@ if (carrello) {
     // prima applicazione filtro
     filterProducts();
   });
-
-  

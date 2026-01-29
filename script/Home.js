@@ -7,6 +7,13 @@ async function doLogout() {
   return res.ok;
 }
 
+function parseAuth(v) {
+  // accetta boolean, numeri e stringhe comuni
+  if (v === true || v === 1) return true;
+  if (typeof v === "string") return v === "1" || v.toLowerCase() === "true";
+  return false;
+}
+
 async function fetchSessionUser() {
   try {
     const res = await fetch(SESSION_URL, {
@@ -16,10 +23,11 @@ async function fetchSessionUser() {
     });
 
     if (!res.ok) return { authenticated: false, username: null };
+
     const data = await res.json();
 
     return {
-      authenticated: !!data.authenticated,
+      authenticated: parseAuth(data.authenticated),
       username: data.username || null
     };
   } catch (e) {
@@ -79,6 +87,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   const session = await fetchSessionUser();
   const isAuth = session.authenticated;
   const username = session.username;
+  console.log("SESSION:", session);
+  console.log("isAuth:", isAuth, "username:", username);
 
   // applica UI
   applyAuthUI(isAuth, username);
