@@ -1,10 +1,8 @@
 /* ======================================================
    FEM — HEADER + LOGO + SFONDO + CARD + MODAL + CERTIFICAZIONE
-   (versione completa MODIFICATA partendo dal tuo CSS)
-====================================================== */
+  ====================================================== */
 
-/* ================= SFONDO BLUR PAGINA ================= */
-/* File: "miele\ mandorle.jpg" */
+
 
 html, body{
   margin: 0;
@@ -27,14 +25,14 @@ body::before{
   top: 0;
   z-index: 1000;
 
-  padding: 0; /* ✅ niente spazio interno ai bordi */
-  margin: 0; /* ✅ nessun margine */
+  padding: 0; 
+  margin: 0; 
   left: 0;
   right: 0;
   width: 100%;
   height: 86px;
 
-  /* ⬇️ grid: logo SEMPRE centrato */
+  /*logo SEMPRE centrato */
   display:grid;
   grid-template-columns: 90px 1fr 90px;
   align-items:center;
@@ -112,7 +110,7 @@ body::before{
   display:block;
 }
 
-/* ================= LOGO NON STRETCHATO ================= */
+/* ================= LOGO CENTRATO ================= */
 .mini-header .logo{
   display:flex;
   align-items:center;
@@ -160,8 +158,8 @@ body::before{
   display:grid;
   grid-template-columns: repeat(auto-fit, 280px);
   justify-content:center;
-  gap:58px;          /* ⬅️ più spazio tra card */
-  margin-top:18px;   /* ⬅️ stacca dal titolo */
+  gap:58px;          
+  margin-top:18px;   
 }
 
 /* ======================================================
@@ -230,7 +228,7 @@ body::before{
 }
 
 /* ======================================================
-   CERTIFICAZIONE: LARGA, BASSA, ORIZZONTALE (sotto eventi)
+   CERTIFICAZIONE: LARGA, BASSA, ORIZZONTALE 
 ====================================================== */
 .events-certifications{
   padding-bottom: 40px;

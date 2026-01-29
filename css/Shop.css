@@ -108,7 +108,7 @@ header{
     position: relative;
     width: 22px;
     height: 18px;
-    background: currentColor;
+    background: #efde9a;; /* Pantone 186 C */
     border-radius: 3px;
     margin-top: 6px;
 }
@@ -123,7 +123,7 @@ header{
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 12px solid currentColor;
+    border-bottom: 12px solid #efde9a; /* Pantone 186 C */
 }
 
 /* PORTA (dettaglio luxury) */
@@ -134,10 +134,91 @@ header{
     left: 8px;
     width: 6px;
     height: 10px;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.25); /* Porta */
     border-radius: 2px;
 }
 
+/* ================= ICONA CARRELLO PREMIUM CSS ================= */
+
+/* Contenitore principale (già stilizzato nel tuo header) */
+#carrello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-premium {
+    position: relative;
+    width: 28px;
+    height: 22px;
+    margin-right: 2px; /* Bilanciamento visivo */
+}
+
+/* CESTINO (La scocca principale) */
+.cart-premium .basket {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 20px;
+    height: 12px;
+    background: #efde9a; /* Tuo Pantone Oro */
+    border-radius: 2px 2px 6px 6px;
+    /* Effetto trama intrecciata luxury */
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(141, 110, 99, 0.2) 5px),
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(141, 110, 99, 0.2) 4px);
+}
+
+/* MANICO (Inclinato ed elegante) */
+.cart-premium .handle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 15px;
+    border-left: 2px solid #efde9a;
+    border-bottom: 2px solid #efde9a;
+    transform: skewX(-15deg); /* Inclinazione dinamica */
+    border-radius: 0 0 0 3px;
+}
+
+/* Impugnatura del manico */
+.cart-premium .handle::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -4px;
+    width: 5px;
+    height: 2px;
+    background: #efde9a;
+    border-radius: 2px;
+}
+
+/* RUOTE (Con dettaglio interno) */
+.cart-premium .wheels {
+    position: absolute;
+    bottom: 2px;
+    left: 7px;
+    width: 5px;
+    height: 5px;
+    background: #5d4037; /* Marrone scuro come i tuoi testi */
+    border-radius: 50%;
+    /* Seconda ruota creata con l'ombra per simmetria perfetta */
+    box-shadow: 11px 0 0 #5d4037; 
+}
+
+/* Effetto riflesso sulle ruote per dare tridimensionalità */
+.cart-premium .wheels::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 2px;
+    height: 2px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    box-shadow: 11px 0 0 rgba(255,255,255,0.4);
+}
   
   /* logo centrato */
   .logo{
