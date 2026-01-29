@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once "db.php";  // Assicurati che $pdo sia definito correttamente
+require_once "db.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: ../codice_html/Login.html?mode=register&reg_error=1");

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================= SEZIONI ================= */
+    /* SEZIONI */
     const eccellenze = document.getElementById("sezione-eccellenze");
     const eventi = document.getElementById("sezione-eventi");
   
@@ -12,13 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const params = new URLSearchParams(window.location.search);
     const tipo = params.get("tipo");
-  
-    // ✅ DEFAULT: se non c'è ?tipo=..., mostra eccellenze
     if (tipo === "eventi") mostraSezione(eventi);
     else mostraSezione(eccellenze);
   
   
-    /* ================= MODAL PRODOTTO ================= */
+    /* MODAL PRODOTTO */
     const modal = document.getElementById("productModal");
     const closeBtn = document.getElementById("modalClose");
   
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalDesc = document.getElementById("modalDesc");
     const modalFeatures = document.getElementById("modalFeatures");
   
-    // ✅ Se manca qualcosa, evitiamo che il JS "crashi" e non funzioni nulla
     if (!modal || !closeBtn || !modalImg || !modalTitle || !modalDesc || !modalFeatures) {
       console.error("Popup: manca un elemento (controlla gli ID: productModal, modalClose, modalImg, modalTitle, modalDesc, modalFeatures).");
       return;

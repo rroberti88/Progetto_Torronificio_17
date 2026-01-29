@@ -1,9 +1,3 @@
-/* ======================================================
-   FEM — HEADER + LOGO + SFONDO + CARD + MODAL + CERTIFICAZIONE
-  ====================================================== */
-
-
-
 html, body{
   margin: 0;
   padding: 0;
@@ -19,7 +13,7 @@ body::before{
   z-index:-1;
 }
 
-/* ================= HEADER UGUALE A HOME/SHOP (CENTRATO) ================= */
+/* HEADER */
 .mini-header{
   position: sticky;
   top: 0;
@@ -32,7 +26,7 @@ body::before{
   width: 100%;
   height: 86px;
 
-  /*logo SEMPRE centrato */
+  /*logo centrato */
   display:grid;
   grid-template-columns: 90px 1fr 90px;
   align-items:center;
@@ -57,7 +51,7 @@ body::before{
   opacity:.9;
 }
 
-/* colonne laterali (logo centrato) */
+/* colonne laterali */
 .mini-header .header-left,
 .mini-header .header-right{
   width: 90px;
@@ -75,7 +69,7 @@ body::before{
   align-items:center;
 }
 
-/* icona HOME tile "shop style" */
+/* icona HOME */
 .mini-header .header-right a,
 .mini-header .header-left a{
   width:64px;
@@ -110,7 +104,7 @@ body::before{
   display:block;
 }
 
-/* ================= LOGO CENTRATO ================= */
+/* LOGO CENTRATO */
 .mini-header .logo{
   display:flex;
   align-items:center;
@@ -140,7 +134,7 @@ body::before{
   filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
 }
 
-/* ================= SEZIONI (container) ================= */
+/* SEZIONI (container) */
 .mustof-section,
 .events-certifications{
   max-width:1100px;
@@ -150,9 +144,6 @@ body::before{
   color:#fff;
 }
 
-/* ======================================================
-   GRIGLIE: CENTRATE + DIMENSIONE NORMALE + PIÙ SPAZIO
-====================================================== */
 .prodotti-griglia,
 .griglia-fiere{
   display:grid;
@@ -162,9 +153,6 @@ body::before{
   margin-top:18px;   
 }
 
-/* ======================================================
-   CARD UNIFICATE (PRODOTTI + EVENTI) — STESSO IDENTICO TILE
-====================================================== */
 .prodotto-card,
 .event-card{
   width: 280px;
@@ -227,9 +215,6 @@ body::before{
   color: #5d4037;
 }
 
-/* ======================================================
-   CERTIFICAZIONE: LARGA, BASSA, ORIZZONTALE 
-====================================================== */
 .events-certifications{
   padding-bottom: 40px;
 }
@@ -304,9 +289,6 @@ body::before{
   padding: 8px;
 }
 
-/* ======================================================
-   MODAL POPUP — DIMENSIONI MEDIE “NORMALI”
-====================================================== */
 .modal{
   position: fixed;
   inset: 0;
