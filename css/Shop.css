@@ -1,4 +1,4 @@
-/* ===================== SFONDO ===================== */
+/*SFONDO*/
 
 .shop {
     position: relative;
@@ -10,13 +10,13 @@
     inset: 0;
 
     background: url("../immagini jpg/caldaia.jpg") center/cover fixed;
-    opacity: 0.15; /* regola qui la trasparenza */
+    opacity: 0.15; 
 
     z-index: -1;
 }
 
 
-/* ===================== RESET & BASE ===================== */
+
 * {
     box-sizing: border-box;
     transition: all 0.3s ease;
@@ -30,12 +30,12 @@ body {
 }
 .categorie a {
     text-decoration: none;
-    color: #5b3a29; /* il tuo marrone */
+    color: #5b3a29; 
   }
 
 
   
-/* ===================== HEADER  ===================== */
+/*  HEADER  */
 header{
     height: 86px;
     padding: 0 34px;
@@ -57,7 +57,7 @@ header{
     box-shadow: 0 10px 30px rgba(0,0,0,.10);
   }
   
-  /* linea oro sotto (dÃ  subito premium) */
+ 
   header::after{
     content:"";
     position:absolute;
@@ -69,10 +69,10 @@ header{
     opacity: .9;
   }
   
-  /* blocchi laterali */
+ 
   .header-left,
   .header-right{
-    width: 90px;           /* mantiene il logo centrato */
+    width: 90px;           
     display:flex;
     align-items:center;
   }
@@ -80,7 +80,7 @@ header{
   .header-left{ justify-content:flex-start; }
   .header-right{ justify-content:flex-end; }
   
-  /* icone home/carrello */
+ 
   #home, #carrello{
     width: 46px;
     height: 46px;
@@ -103,12 +103,12 @@ header{
     background: rgba(255,255,255,.95);
     box-shadow: 0 10px 24px rgba(0,0,0,.12);
   }
-  /* ================= ICONA CASA ELEGANTE SOLO CSS ================= */
+  /*ICONA CASA */
 .home-icon {
     position: relative;
     width: 22px;
     height: 18px;
-    background: #efde9a;; /* Pantone 186 C */
+    background: #efde9a;; 
     border-radius: 3px;
     margin-top: 6px;
 }
@@ -123,10 +123,10 @@ header{
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 12px solid #efde9a; /* Pantone 186 C */
+    border-bottom: 12px solid #efde9a; 
 }
 
-/* PORTA (dettaglio luxury) */
+/* PORTA  */
 .home-icon::after {
     content: "";
     position: absolute;
@@ -134,13 +134,11 @@ header{
     left: 8px;
     width: 6px;
     height: 10px;
-    background: rgba(0,0,0,0.25); /* Porta */
+    background: rgba(0,0,0,0.25); 
     border-radius: 2px;
 }
 
-/* ================= ICONA CARRELLO PREMIUM CSS ================= */
-
-/* Contenitore principale (già stilizzato nel tuo header) */
+/*  ICONA CARRELLO*/
 #carrello {
     display: flex;
     justify-content: center;
@@ -151,25 +149,25 @@ header{
     position: relative;
     width: 28px;
     height: 22px;
-    margin-right: 2px; /* Bilanciamento visivo */
+    margin-right: 2px; 
 }
 
-/* CESTINO (La scocca principale) */
+
 .cart-premium .basket {
     position: absolute;
     top: 2px;
     left: 4px;
     width: 20px;
     height: 12px;
-    background: #efde9a; /* Tuo Pantone Oro */
+    background: #efde9a; 
     border-radius: 2px 2px 6px 6px;
-    /* Effetto trama intrecciata luxury */
+    
     background-image: 
         repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(141, 110, 99, 0.2) 5px),
         repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(141, 110, 99, 0.2) 4px);
 }
 
-/* MANICO (Inclinato ed elegante) */
+
 .cart-premium .handle {
     position: absolute;
     top: 0;
@@ -178,11 +176,11 @@ header{
     height: 15px;
     border-left: 2px solid #efde9a;
     border-bottom: 2px solid #efde9a;
-    transform: skewX(-15deg); /* Inclinazione dinamica */
+    transform: skewX(-15deg); 
     border-radius: 0 0 0 3px;
 }
 
-/* Impugnatura del manico */
+
 .cart-premium .handle::before {
     content: "";
     position: absolute;
@@ -194,20 +192,20 @@ header{
     border-radius: 2px;
 }
 
-/* RUOTE (Con dettaglio interno) */
+
 .cart-premium .wheels {
     position: absolute;
     bottom: 2px;
     left: 7px;
     width: 5px;
     height: 5px;
-    background: #5d4037; /* Marrone scuro come i tuoi testi */
+    background: #5d4037; 
     border-radius: 50%;
-    /* Seconda ruota creata con l'ombra per simmetria perfetta */
+   
     box-shadow: 11px 0 0 #5d4037; 
 }
 
-/* Effetto riflesso sulle ruote per dare tridimensionalità */
+
 .cart-premium .wheels::after {
     content: "";
     position: absolute;
@@ -220,7 +218,7 @@ header{
     box-shadow: 11px 0 0 rgba(255,255,255,0.4);
 }
   
-  /* logo centrato */
+  /*logo*/
   .logo{
     display:flex;
     align-items:center;
@@ -247,28 +245,27 @@ header{
     box-shadow: 0 14px 34px rgba(0,0,0,.13);
   }
 
-/* ===================== LAYOUT SHOP ===================== */
+/*  LAYOUT SHOP  */
 .shop {
     display: flex;
     align-items: flex-start;
     gap: 25px;
-    padding: 15px 40px; /* Padding ridotto per alzare la sezione bianca */
+    padding: 15px 40px; 
     max-width: 1600px;
     margin: auto;
 }
 
-/* ===================== ASIDE CATEGORIE (VISIBILE SUBITO) ===================== */
+/* ASIDE CATEGORIE */
 aside {
     width: 270px;
     flex-shrink: 0;
-    background: #ffffff; /* Bianco pulito */
+    background: #ffffff; 
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     position: sticky;
-    top: 105px; /* Si attacca appena sotto l'header */
+    top: 105px; 
     border: 1px solid rgba(201, 161, 59, 0.2);
-    /* Assicura che anche su schermi bassi si veda tutto */
     max-height: calc(100vh - 120px); 
     overflow-y: auto;
 }
@@ -291,7 +288,7 @@ aside ul {
     margin: 0;
 }
 
-/* STILE SCRITTE (ELEGANTE MARRONE - NO BLU) */
+
 aside li {
     margin-bottom: 6px;
     padding: 10px;
@@ -304,11 +301,11 @@ aside li {
     align-items: center;
     text-align: center;
     
-    /* Font Raffinato */
+    
     font-family: 'Georgia', serif;
     font-weight: bold;
     font-size: 0.85em;
-    color: #5d4037; /* Marrone scuro artigianale */
+    color: #5d4037; 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -319,7 +316,7 @@ aside li:hover {
     border-color: #c9a13b;
 }
 
-/* CERCA PRODOTTO DENTRO LA SEZIONE BIANCA */
+/* CERCA PRODOTTO  */
 .cerca-sezione {
     margin-top: 15px;
     padding-top: 15px;
@@ -372,37 +369,36 @@ aside li:hover {
     transform:scale(1.02);
     }
 
-    /* Bottone di conferma (OK) */
+    /* Bottone di conferma  */
 .swal-confirm-btn {
-    background: linear-gradient(135deg, #c9a13b, #f7b800);  /* Sfumatura oro */
+    background: linear-gradient(135deg, #c9a13b, #f7b800); 
     color: white;
     padding: 12px 28px;
-    border-radius: 18px;  /* Bordi arrotondati */
+    border-radius: 18px;  
     font-weight: bold;
     font-size: large;
     font-family: 'Georgia', serif;
     border: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: background 0.3s, transform 0.2s;
-    margin-right: 20px; /* Più separazione tra i bottoni */
-    width: 130px; /* Stessa larghezza per entrambi */
-    display: inline-block;  /* Per mantenere la disposizione in linea */
+    margin-right: 20px; 
+    width: 130px; 
+    display: inline-block;  
 }
 
-/* Bottone di annullamento (Cancel) */
+/* Bottone di annullamento  */
 .swal-cancel-btn {
-    background: linear-gradient(135deg, #8d6e63, #a87f60);  /* Sfumatura marrone */
-    color: white;
+    background: linear-gradient(135deg, #8d6e63, #a87f60);  
     padding: 12px 28px;
-    border-radius: 18px;  /* Bordi arrotondati */
+    border-radius: 18px;  
     font-weight: bold;
     font-size: large;
     font-family: 'Georgia', serif;
     border: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: background 0.3s, transform 0.2s;
-    width: 130px;  /* Stessa larghezza per entrambi */
-    display: inline-block;  /* Per mantenere la disposizione in linea */
+    width: 130px;  
+    display: inline-block;  
 }
 
 /* Effetto hover */
@@ -414,11 +410,11 @@ aside li:hover {
 
 /* Separazione tra i bottoni */
 .swal-button {
-    margin: 0 10px;  /* Spazio tra i bottoni */
-    display: inline-block;  /* Assicura che i bottoni siano allineati orizzontalmente */
+    margin: 0 10px;  
+    display: inline-block;  
 }
 
-/* ===================== GRIGLIA PRODOTTI ===================== */
+/*  GRIGLIA PRODOTTI */
 main {
     flex-grow: 1;
 }
