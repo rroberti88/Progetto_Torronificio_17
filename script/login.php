@@ -8,7 +8,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username'] ?? '');
+    $username = strtolower(trim($_POST['username'] ?? ''));  // Converti il nome utente in minuscolo
     $password = $_POST['password'] ?? '';
 
     if ($username === '' || $password === '') {
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
-        $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = ?");
+        $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE LOWER(username) = LOWER(?)");  // Usa LOWER per la comparazione case-insensitive
         $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
