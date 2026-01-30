@@ -1,8 +1,6 @@
-/* ======================================================
-   HOME.CSS — UNIFORME ALLO SHOP (solo CSS, nessun HTML)
-====================================================== */
 
-/* ===================== RESET BASE ===================== */
+
+ 
 * { box-sizing: border-box; }
 
 button, a, .categoria-box, .logo { transition: .25s ease; }
@@ -18,7 +16,7 @@ body{
   position:relative;
 }
 
-/* ===================== SFONDO BLUR HOME ===================== */
+/*  Home */
 body::before{
   content:"";
   position:fixed;
@@ -28,10 +26,6 @@ body::before{
   z-index:-1;
 }
 
-/* ======================================================
-   HEADER HOME (uguale allo Shop)
-   - Vale per: .main-header (Home) e per header (se lo usi)
-====================================================== */
 .main-header,
 header{
   position: sticky;
@@ -54,7 +48,7 @@ header{
   box-shadow: 0 10px 30px rgba(0,0,0,.10);
 }
 
-/* linea oro sotto */
+
 .main-header::after,
 header::after{
   content:"";
@@ -67,7 +61,7 @@ header::after{
   opacity:.9;
 }
 
-/* blocchi laterali coerenti (logo centrato) */
+
 .main-header .header-left,
 .main-header .header-right,
 header .header-left,
@@ -83,12 +77,7 @@ header .header-left{ justify-content:flex-start; }
 .main-header .header-right,
 header .header-right{ justify-content:flex-end; }
 
-/* ======================================================
-   ICONE LATERALI — FIX “troppo strette / fatte male”
-   Applico lo stile “tile” sia ai tuoi #home/#carrello,
-   sia ai link generici dentro header-left/right,
-   sia a .icon-link (che avevi già)
-====================================================== */
+
 
 /* base tile */
 .main-header .header-left a,
@@ -103,8 +92,8 @@ header .header-right a,
   display:grid;
   place-items:center;
 
-  padding:0;                 /* <-- FIX: niente padding che stringe */
-  line-height:1;             /* <-- FIX: niente line-height strano */
+  padding:0;                 
+  line-height:1;             
   font-size:22px;
 
   border-radius:14px;
@@ -127,16 +116,14 @@ header .header-right a:hover,
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
 }
 
-/* se usi SVG nelle icone: non deformarle */
+/* SVG icone:  */
 .icon-link__svg{
   width:22px;
   height:22px;
   display:block;
 }
 
-/* ======================================================
-   LOGO — FIX “fatto male” (niente deformazioni)
-====================================================== */
+
 .main-header .logo,
 header .logo,
 .logo{
@@ -172,14 +159,11 @@ header .logo img,
   filter: drop-shadow(0 6px 10px rgba(0,0,0,.20));
 }
 
-/* ======================================================
-   BOTTONE “SCOPRI CHI SIAMO” — sotto l’header
-   (senza cambiare HTML: agisco su container e bottone)
-====================================================== */
+/* BOTTONE “SCOPRI CHI SIAMO” */
 .chi-siamo-container{
   display:flex;
-  justify-content:flex-start;  /* lo metto a sinistra come nello screenshot */
-  padding: 18px 34px 0;        /* sotto header */
+  justify-content:flex-start;  
+  padding: 18px 34px 0;      
   margin: 0;
 }
 
@@ -205,9 +189,7 @@ button.chi-siamo:hover{
   box-shadow: 0 14px 34px rgba(0,0,0,.16);
 }
 
-/* ======================================================
-   INTRO TESTO (centrato e leggibile sul blur)
-====================================================== */
+/* INTRO TESTO */
 .intro-container{
   display:flex;
   justify-content:center;
@@ -230,13 +212,11 @@ button.chi-siamo:hover{
   backdrop-filter: blur(6px);
   box-shadow: 0 14px 40px rgba(0,0,0,.22);
 }
-
-/* ======================================================
-   TITOLO CATEGORIE + SPAZIATURA PRIMA DEL FOOTER
-====================================================== */
+ 
+/* TITOLO CATEGORIE */
 .categorie-principali{
   margin-top: 55px;
-  margin-bottom: 95px; /* <-- più spazio tra categorie e footer */
+  margin-bottom: 95px; 
   text-align:center;
   padding: 0 34px;
 }
@@ -248,10 +228,7 @@ button.chi-siamo:hover{
   text-shadow: 0 10px 26px rgba(0,0,0,.25);
 }
 
-/* ======================================================
-   CATEGORIE — CARD “SHOP STYLE” (uniformi + immagini dentro)
-   Fix: foto che escono fuori -> overflow hidden + contain
-====================================================== */
+/*CATEGORIE — CARD*/
 .categorie-row{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -260,7 +237,7 @@ button.chi-siamo:hover{
   margin-top: 20px;
 }
 
-/* card come prodotto shop */
+
 .categoria-box{
   width:100%;
   max-width: 320px;
@@ -280,7 +257,7 @@ button.chi-siamo:hover{
   align-items:center;
   text-align:center;
 
-  overflow:hidden; /* <-- IMPORTANTISSIMO: niente immagini fuori */
+  overflow:hidden; /
 }
 
 .categoria-box:hover{
@@ -288,11 +265,11 @@ button.chi-siamo:hover{
   box-shadow: 0 14px 32px rgba(0,0,0,.16);
 }
 
-/* immagine sempre dentro */
+/* card - immagine */
 .categoria-box img{
   width:100%;
-  height: 170px;          /* altezza uniforme come shop */
-  object-fit: contain;    /* <-- non taglia, non esce */
+  height: 170px;          
+  object-fit: contain;    
   display:block;
   margin: 6px 0 14px;
 }
@@ -305,13 +282,11 @@ button.chi-siamo:hover{
   color:#5d4037;
 }
 
-/* ======================================================
-   POPUP STORIA — più visibile/leggibile
-====================================================== */
+/* POPUP STORIA */
 .storia-overlay{
   position:fixed;
   inset:0;
-  background: rgba(0,0,0,.65); /* più scuro */
+  background: rgba(0,0,0,.65); 
   opacity:0;
   visibility:hidden;
   transition: opacity .25s ease, visibility .25s ease;
@@ -360,28 +335,29 @@ button.chi-siamo:hover{
 .hidden {
   display: none !important;
 }
+/* Bottone di conferma  */
 .swal-confirm-btn {
-    background: linear-gradient(135deg, #c9a13b, #f7b800);  /* Sfumatura oro */
+    background: linear-gradient(135deg, #c9a13b, #f7b800);  
     color: white;
     padding: 12px 28px;
-    border-radius: 18px;  /* Bordi arrotondati */
+    border-radius: 18px;  
     font-weight: bold;
     font-size: medium;
     font-family: 'Georgia', serif;
     border: none !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: background 0.3s, transform 0.2s;
-    margin-right: 20px; /* Più separazione tra i bottoni */
-    width: 138px; /* Stessa larghezza per entrambi */
-    display: inline-block;  /* Per mantenere la disposizione in linea */
+    margin-right: 20px; 
+    width: 138px; 
+    display: inline-block;  
 }
 
-/* Bottone di annullamento (Cancel) */
+/* Bottone di annullamento */
 .swal-cancel-btn {
-    background: linear-gradient(135deg, #8d6e63, #a87f60);  /* Sfumatura marrone */
+    background: linear-gradient(135deg, #8d6e63, #a87f60); 
     color: white;
     padding: 12px 28px;
-    border-radius: 18px;  /* Bordi arrotondati */
+    border-radius: 18px;  
     text-align: center;
     font-weight: bold;
     font-size: medium;
@@ -389,8 +365,8 @@ button.chi-siamo:hover{
     border: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: background 0.3s, transform 0.2s;
-    width: 138px;  /* Stessa larghezza per entrambi */
-    display: inline-block;  /* Per mantenere la disposizione in linea */
+    width: 138px;  
+    display: inline-block;  
 }
 
 /* Effetto hover */
@@ -400,15 +376,13 @@ button.chi-siamo:hover{
     box-shadow: 0 6px 14px rgba(0,0,0,0.20);
 }
 
-/* Separazione tra i bottoni */
+
 .swal-button {
-    margin: 0 10px;  /* Spazio tra i bottoni */
-    display: inline-block;  /* Assicura che i bottoni siano allineati orizzontalmente */
+    margin: 0 10px;  
+    display: inline-block;  
 }
 
-/* ======================================================
-   RESPONSIVE
-====================================================== */
+/* RESPONSIVE */
 @media (max-width: 900px){
   .chi-siamo-container{ padding: 14px 16px 0; }
   .intro-container{ padding: 0 16px; }
@@ -433,14 +407,7 @@ button.chi-siamo:hover{
   .intro-text{ font-size: 16px; padding: 20px 18px; }
 }
 
-/* ======================================================
-   FIX FINALI HEADER + CTA + USERNAME
-====================================================== */
 
-
-/* ======================================================
-   ICONE HEADER – TILE LARGHE STILE SHOP (FIX DEFINITIVO)
-====================================================== */
 
 .main-header .header-left a,
 .main-header .header-right a,
@@ -450,10 +417,10 @@ header .header-right a,
 #home,
 #carrello{
 
-  width:120px;          /* ➜ più larghe */
-  height:25px;         /* ➜ meno alte */
+  width:120px;         
+  height:25px;         
 
-  border-radius:8px;  /* ➜ angoli arrotondati stile shop */
+  border-radius:8px;  
 
   display:flex;
   align-items:center;
@@ -471,7 +438,7 @@ header .header-right a,
               background .25s ease;
 }
 
-/* hover elegante identico allo shop */
+/* hover*/
 .main-header .header-left a:hover,
 .main-header .header-right a:hover{
   transform: translateY(-2px);
@@ -479,17 +446,17 @@ header .header-right a,
   box-shadow: 0 10px 22px rgba(0,0,0,.15);
 }
 
-/* ================= LOGO PIÙ PROTAGONISTA ================= */
+/*  LOGO  */
 .main-header .logo img,
 header .logo img{
-  height:70px;   /* leggermente più grande */
+  height:70px;   
 }
 
 
-/* ================= BOTTONE "SCOPRI CHI SIAMO" CENTRATO ================= */
+/* BOTTONE "SCOPRI CHI SIAMO"  */
 .chi-siamo-container{
   display:flex;
-  justify-content:center;   /* CENTRATO */
+  justify-content:center;   
   margin-top:22px;
   padding:0;
 }
@@ -512,15 +479,14 @@ button.chi-siamo:hover{
 }
 
 
-/* ================= "CIAO USERNAME" SU UNA RIGA ================= */
+/* "Nome di login" sull'header  */
 
-/* container utente */
 .saluto-utente{
   display:flex;
   align-items:center;
   gap:8px;
 
-  white-space:nowrap;     /* <-- impedisce andare a capo */
+  white-space:nowrap;    
   font-size:15px;
   font-weight:700;
 
@@ -533,13 +499,13 @@ button.chi-siamo:hover{
   box-shadow: 0 6px 14px rgba(0,0,0,.08);
 }
 
-/* se hai icona + testo */
+
 .saluto-utente span{
   white-space:nowrap;
 }
 
 
-/* ================= RESPONSIVE EXTRA ================= */
+
 @media (max-width:768px){
 
   .main-header .header-left a,

@@ -138,7 +138,7 @@ function getCart() {
   
       const data = res.ok ? await res.json() : { authenticated: false, username: null };
   
-      // Se NON autenticato: svuota e basta
+      // Se non autenticato, svuota e basta
       if (!data.authenticated) {
         localStorage.removeItem("cart");
         localStorage.removeItem("cart_owner");
@@ -147,7 +147,7 @@ function getCart() {
         return;
       }
   
-      // Se autenticato: se è cambiato utente, svuota il carrello
+      // Se autenticato e se è cambiato utente, svuota il carrello
       const currentUser = data.username || "";
       const lastUser = localStorage.getItem("cart_owner");
   
@@ -159,7 +159,7 @@ function getCart() {
       localStorage.setItem("cart_owner", currentUser);
   
     } catch (e) {
-      // se la fetch fallisce, non fidarti: svuota
+      // se la fetch fallisce, svuota
       localStorage.removeItem("cart");
       localStorage.removeItem("cart_owner");
     }

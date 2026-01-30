@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "torronificio"; // Nome esatto del database
+$dbname = "torronificio";
 $user = "root";
 $pass = "";
 

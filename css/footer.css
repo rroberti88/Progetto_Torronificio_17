@@ -1,4 +1,4 @@
-/* ===================== FOOTER PREMIUM GLASS + SFONDO MANDORLE ===================== */
+/* FOOTER + SFONDO MANDORLE */
 
 .main-footer{
   position: relative;
@@ -12,7 +12,7 @@
   box-shadow: 0 -10px 35px rgba(0,0,0,.22);
 }
 
-/* ===== SFONDO BLUR CON IMMAGINE MANDORLE ===== */
+/* SFONDO BLUR CON IMMAGINE MANDORLE */
 .main-footer::before{
   content:"";
   position:absolute;
@@ -28,7 +28,7 @@
   z-index:-1;
 }
 
-/* ----------------- LINK ----------------- */
+/* LINK */
 .main-footer a{
   color:#ffd54f;
   text-decoration:none;
@@ -41,7 +41,7 @@
 }
 
 
-/* ================= INTRO ================= */
+/* INTRO */
 
 .footer-intro{
   max-width:1100px;
@@ -63,7 +63,7 @@
 }
 
 
-/* ================= DIVIDER ORO ================= */
+/* DIVIDER ORO */
 
 .footer-divider{
   max-width:1100px;
@@ -74,7 +74,7 @@
 }
 
 
-/* ================= GRIGLIA ================= */
+/* GRIGLIA */
 
 .footer-content{
   max-width:1100px;
@@ -86,13 +86,13 @@
 }
 
 
-/* ================= CARD GLASS ================= */
+/* CARD GLASS */
 
 .footer-column{
   padding: 26px 22px;
   border-radius: 18px;
 
-  /* ✨ effetto vetro */
+  /* effetto vetro */
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -103,14 +103,14 @@
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* hover elegante */
+/* hover */
 .footer-column:hover{
   transform: translateY(-5px);
   box-shadow: 0 14px 28px rgba(0,0,0,.22);
 }
 
 
-/* ================= TESTI ================= */
+/* TESTI */
 
 .footer-column h3{
   margin:0 0 12px;
@@ -127,7 +127,7 @@
 }
 
 
-/* ================= LISTA ORARI ================= */
+/* LISTA ORARI */
 
 .hours-list{
   list-style:none;
@@ -140,7 +140,7 @@
 }
 
 
-/* ================= BOTTOM ================= */
+/* BOTTOM */
 
 .footer-bottom{
   max-width:1100px;
@@ -154,7 +154,7 @@
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 
 @media (max-width: 900px){
 
