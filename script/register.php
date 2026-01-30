@@ -24,7 +24,7 @@ if ($nome === "" || $cognome === "" || $email === "" || $data_nascita === "" || 
     exit();
 }
 
-try {
+try {   
     // Controllo se username o email esistono già
     $checkSql = "SELECT id FROM users WHERE username = :username OR email = :email";
     $checkStmt = $pdo->prepare($checkSql);
