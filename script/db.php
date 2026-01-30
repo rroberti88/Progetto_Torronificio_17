@@ -1,12 +1,13 @@
 <?php
 $host = "localhost";
-$dbname = "torronificio";
-$user = "root";
-$pass = "";
+$dbname = "gruppo_17";  
+$user = "www";          
+$pass = "www";         
 
 try {
+    // Connessione a PostgreSQL
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8",
+        "pgsql:host=$host;dbname=$dbname", // Stringa di connessione per PostgreSQL
         $user,
         $pass
     );
