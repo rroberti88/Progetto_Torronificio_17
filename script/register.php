@@ -15,12 +15,18 @@ $nome = trim($_POST["newName"] ?? "");
 $cognome = trim($_POST["newCognome"] ?? "");
 $email = strtolower(trim($_POST["newMail"] ?? ""));
 $data_nascita = $_POST["data_nascita"] ?? "";
-$username = strtolower(trim($_POST["newUsername"] ?? ""));
+$username = trim($_POST["newUsername"] ?? ""); // Mantieni il formato del nome utente
 $password = $_POST["newPassword"] ?? "";
 
 // Controllo campi vuoti
 if ($nome === "" || $cognome === "" || $email === "" || $data_nascita === "" || $username === "" || $password === "") {
     header("Location: ../codice_html/Login.html?mode=register&reg_error=1");
+    exit();
+}
+
+// Verifica formato email
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: ../codice_html/Login.html?mode=register&reg_error=invalid_email");
     exit();
 }
 
