@@ -17,7 +17,7 @@ INSERT INTO users  (nome, cognome, email, data_nascita, username, password) VALU
     'Robi@esempio.com', 
     '1990-01-01', 
     'CdkLover', 
-    '$2y$10$8K1p/vG9.N1p/vG9.N1p/vuo3YvG9.N1p/vG9.N1p/vG9.N1p/' -- Questo è un hash d'esempio per 'www'
+    '$2y$10$hQtudPbcp5/vTNqvRBex.eFuBVj8GVns0PTMt3VKaJ0VBHn6OWTTO' -- Questo è un hash d'esempio per '1234'
 );
 
 
